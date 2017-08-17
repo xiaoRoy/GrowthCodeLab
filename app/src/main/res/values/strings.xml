@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Growth Code Lab</string>
+
+    <string name="s_data_binding">Data Binding</string>
 </resources>
