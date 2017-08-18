@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DataBindingActivity"/>
+        <activity android:name=".activity.FitSystemWindowActivity"
+                  android:theme="@style/NoActionBar"
+            />
     </application>
 
 </manifest>

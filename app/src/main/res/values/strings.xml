@@ -2,4 +2,6 @@
     <string name="app_name">Growth Code Lab</string>
 
     <string name="s_data_binding">Data Binding</string>
+    <string name="s_fit_system_window">Fit System Window</string>
+    <string name="s_fit_system_window_tool_bar_title">Fit System Window</string>
 </resources>
