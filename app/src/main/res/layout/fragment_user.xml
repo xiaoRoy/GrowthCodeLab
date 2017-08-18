@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+        <variable
+            name="user"
+            type="com.learn.growthcodelab.databinding.model.User"
+        />
+        <variable
+            name="userClickHandler"
+            type="com.learn.growthcodelab.databinding.Users.UserClickHandler"
+        />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{user.firstName}"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{user.lastName}"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_data_binding_user_say_hello"
+            android:onClick="@{() -> userClickHandler.onShowMessageClicked(user)}"
+            />
+    </LinearLayout>
+</layout>

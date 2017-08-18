@@ -5,15 +5,16 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.databinding.ActivityDataBindingBinding;
-import com.learn.growthcodelab.databinding.model.User;
+import com.learn.growthcodelab.databinding.Users.UserFragment;
 
 
 public class DataBindingActivity extends BaseActivity {
 
-    public static void start(Context context){
+    public static void start(Context context) {
         context.startActivity(new Intent(context, DataBindingActivity.class));
     }
 
@@ -21,7 +22,17 @@ public class DataBindingActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityDataBindingBinding activityDataBindingBinding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
-        User user = new User("Jack", "Smith");
-        activityDataBindingBinding.setUser(user);
+        activityDataBindingBinding.setClickHandler(new ClickHandler());
+
+    }
+
+    public class ClickHandler{
+        public void onUserClick(View view){
+              getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fl_data_binding_container, UserFragment.newInstance())
+                        .addToBackStack("user_replace")
+                        .commit();
+        }
     }
 }
