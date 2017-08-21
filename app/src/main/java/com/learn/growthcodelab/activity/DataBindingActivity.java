@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.databinding.ActivityDataBindingBinding;
-import com.learn.growthcodelab.databinding.Users.UserFragment;
+import com.learn.growthcodelab.databinding.users.UserFragment;
 import com.learn.growthcodelab.databinding.notes.NotesFragment;
 
 

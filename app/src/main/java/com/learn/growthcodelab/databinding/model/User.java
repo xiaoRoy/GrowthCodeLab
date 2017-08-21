@@ -1,6 +1,11 @@
 package com.learn.growthcodelab.databinding.model;
 
-public class User {
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.android.databinding.library.baseAdapters.BR;
+
+public class User extends BaseObservable {
 
     private String firstName;
     private String lastName;
@@ -10,19 +15,23 @@ public class User {
         this.lastName = lastName;
     }
 
+    @Bindable
     public String getFirstName() {
         return firstName;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+        notifyPropertyChanged(BR.firstName);
     }
 
+    @Bindable
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+        notifyPropertyChanged(BR.lastName);
     }
 }

@@ -1,9 +1,10 @@
-package com.learn.growthcodelab.databinding.Users;
+package com.learn.growthcodelab.databinding.users;
 
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,5 +58,11 @@ public class UserFragment extends BaseFragment implements UserClickHandler{
         Toast.makeText(getActivity(),
                        getString(R.string.s_data_binding_user_hello, user.getFirstName(),
                        user.getLastName()), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void changUserName(User user) {
+        user.setFirstName("Ryan");
+        user.setLastName("Tony");
     }
 }

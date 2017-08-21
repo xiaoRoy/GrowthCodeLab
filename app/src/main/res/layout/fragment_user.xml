@@ -11,7 +11,7 @@
         />
         <variable
             name="userClickHandler"
-            type="com.learn.growthcodelab.databinding.Users.UserClickHandler"
+            type="com.learn.growthcodelab.databinding.users.UserClickHandler"
         />
     </data>
 
@@ -40,6 +40,12 @@
             android:layout_height="wrap_content"
             android:text="@string/s_data_binding_user_say_hello"
             android:onClick="@{() -> userClickHandler.onShowMessageClicked(user)}"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_data_binding_user_change_user_name"
+            android:onClick="@{view -> userClickHandler.changUserName(user)}"
             />
     </LinearLayout>
 </layout>
