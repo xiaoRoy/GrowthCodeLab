@@ -4,9 +4,15 @@
     >
 
     <data>
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
         <variable
             name="notesPresenter"
             type="com.learn.growthcodelab.databinding.notes.NotesPresenter"
+            />
+        <variable
+            name="note"
+            type="com.learn.growthcodelab.databinding.model.Note"
             />
     </data>
 
@@ -15,8 +21,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@{context.toString}"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@{note.description}"
+            />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/s_data_bingding_additional_info"
+            android:visibility="@{TextUtils.isEmpty(note.additionalInfo) ? View.GONE : View.VISIBLE}"
+            />
         <Button
-            android:id="@+id/btn_notes_add_new_note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/s_add_new_note"

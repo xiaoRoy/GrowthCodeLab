@@ -6,6 +6,8 @@ public class Note {
 
     private String description;
 
+    private String additionalInfo;
+
     public String getTitle() {
         return title;
     }
@@ -20,5 +22,13 @@ public class Note {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 }
