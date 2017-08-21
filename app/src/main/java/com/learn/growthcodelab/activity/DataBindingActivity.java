@@ -10,6 +10,7 @@ import android.view.View;
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.databinding.ActivityDataBindingBinding;
 import com.learn.growthcodelab.databinding.Users.UserFragment;
+import com.learn.growthcodelab.databinding.notes.NotesFragment;
 
 
 public class DataBindingActivity extends BaseActivity {
@@ -33,6 +34,14 @@ public class DataBindingActivity extends BaseActivity {
                         .replace(R.id.fl_data_binding_container, UserFragment.newInstance())
                         .addToBackStack("user_replace")
                         .commit();
+        }
+
+        public void onNotesClick(View view){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fl_data_binding_container, NotesFragment.newInstance())
+                    .addToBackStack("notes_replace")
+                    .commit();
         }
     }
 }

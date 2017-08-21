@@ -28,11 +28,17 @@
 
         </FrameLayout>
         <Button
-            android:id="@+id/btn_data_binding_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/s_data_binding_user"
             android:onClick="@{clickHandler::onUserClick}"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_data_binding_notes"
+            android:onClick="@{clickHandler::onNotesClick}"
             />
     </LinearLayout>
 </layout>

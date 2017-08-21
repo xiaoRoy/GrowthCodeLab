@@ -6,7 +6,10 @@
     <string name="s_add_new_note">Add New Note</string>
 
     <string name="s_data_binding_user">User</string>
+    <string name="s_data_binding_notes">Notes</string>
+
 
     <string name="s_data_binding_user_hello">Hello I am %1$s %2$s.</string>
     <string name="s_data_binding_user_say_hello">Say Hello</string>
+    <string name="s_data_binding_add_new_note">Add New Note</string>
 </resources>
