@@ -5,15 +5,21 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.databinding.ActivityDataBindingBinding;
+import com.learn.growthcodelab.databinding.login.LoginFragment;
+import com.learn.growthcodelab.databinding.login.LoginPresenter;
+import com.learn.growthcodelab.databinding.login.LoginViewModel;
 import com.learn.growthcodelab.databinding.users.UserFragment;
 import com.learn.growthcodelab.databinding.notes.NotesFragment;
 
 
 public class DataBindingActivity extends BaseActivity {
+
+    private LoginPresenter mLoginPresenter;
 
     public static void start(Context context) {
         context.startActivity(new Intent(context, DataBindingActivity.class));
@@ -42,6 +48,21 @@ public class DataBindingActivity extends BaseActivity {
                     .replace(R.id.fl_data_binding_container, NotesFragment.newInstance())
                     .addToBackStack("notes_replace")
                     .commit();
+        }
+
+        public void onLoginClick(View view){
+            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fl_data_binding_container);
+            if(!(fragment instanceof LoginFragment)){
+                LoginFragment loginFragment = LoginFragment.newInstance();
+                mLoginPresenter = new LoginPresenter(loginFragment);
+                LoginViewModel loginViewModel = new LoginViewModel(mLoginPresenter);
+                loginFragment.setLoginViewModel(loginViewModel);
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fl_data_binding_container, loginFragment)
+                        .addToBackStack("login_replace")
+                        .commit();
+            }
         }
     }
 }
