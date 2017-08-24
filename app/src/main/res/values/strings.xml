@@ -9,7 +9,8 @@
 
     <string name="s_data_binding_user">User</string>
     <string name="s_data_binding_notes">Notes</string>
-    <string name="s_data_bingding_additional_info">Additional Info</string>
+    <string name="s_data_binding_login">Login</string>
+    <string name="s_data_binding_additional_info">Additional Info</string>
 
     <string name="s_data_binding_user_hello">Hello I am %1$s %2$s.</string>
     <string name="s_data_binding_user_say_hello">Say Hello</string>
