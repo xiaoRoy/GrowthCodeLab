@@ -13,4 +13,11 @@
         android:text="@string/s_data_binding"
         />
 
+    <Button
+        android:id="@+id/btn_main_fit_system_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_fit_system_window"
+        />
+
 </LinearLayout>
