@@ -2,6 +2,7 @@
     <string name="app_name">Growth Code Lab</string>
 
     <string name="s_data_binding">Data Binding</string>
+    <string name="s_recycler">Recycler</string>
 
     <string name="s_add_new_note">Add New Note</string>
 
@@ -13,4 +14,5 @@
     <string name="s_data_binding_user_say_hello">Say Hello</string>
     <string name="s_data_binding_user_change_user_name">Change User Name</string>
     <string name="s_data_binding_add_new_note">Add New Note</string>
+    <string name="s_recycler_item_text">Item #%1$d</string>
 </resources>
