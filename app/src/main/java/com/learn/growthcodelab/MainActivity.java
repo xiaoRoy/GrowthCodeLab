@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.learn.growthcodelab.activity.DataBindingActivity;
 import com.learn.growthcodelab.activity.FitSystemWindowActivity;
+import com.learn.growthcodelab.activity.WebViewActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViewById(R.id.btn_main_data_binding).setOnClickListener(this);
         findViewById(R.id.btn_main_fit_system_window).setOnClickListener(this);
+        findViewById(R.id.btn_main_web_view).setOnClickListener(this);
     }
 
     @Override
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_fit_system_window:
                 FitSystemWindowActivity.start(this);
+                break;
+            case R.id.btn_main_web_view:
+                WebViewActivity.start(this);
                 break;
         }
     }
