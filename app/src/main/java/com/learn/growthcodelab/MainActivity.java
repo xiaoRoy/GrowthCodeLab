@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.learn.growthcodelab.activity.DataBindingActivity;
 import com.learn.growthcodelab.activity.FitSystemWindowActivity;
+import com.learn.growthcodelab.activity.MeasurementActivity;
 import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_main_fit_system_window).setOnClickListener(this);
         findViewById(R.id.btn_main_web_view).setOnClickListener(this);
         findViewById(R.id.btn_main_recycler).setOnClickListener(this);
+        findViewById(R.id.btn_main_measurement).setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_recycler:
                 RecyclerActivity.start(this);
+                break;
+            case R.id.btn_main_measurement:
+                MeasurementActivity.start(this);
                 break;
         }
     }

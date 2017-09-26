@@ -2,4 +2,5 @@
 <resources>
     <dimen name="d_text_item_height">48dp</dimen>
     <dimen name="d_divider_height">1dp</dimen>
+    <dimen name="d_fixed_ratio_default_size">50dp</dimen>
 </resources>
