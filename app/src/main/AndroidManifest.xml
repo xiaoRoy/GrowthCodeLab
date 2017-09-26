@@ -23,6 +23,7 @@
                   android:theme="@style/NoActionBar"
             />
         <activity android:name=".activity.RecyclerActivity"/>
+        <activity android:name=".activity.NestedScrollActivity"/>
     </application>
 
 </manifest>
