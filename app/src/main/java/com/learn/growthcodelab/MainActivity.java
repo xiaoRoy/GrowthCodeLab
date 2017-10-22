@@ -7,6 +7,7 @@ import android.view.View;
 import com.learn.growthcodelab.activity.DataBindingActivity;
 import com.learn.growthcodelab.activity.DrawableActivity;
 import com.learn.growthcodelab.activity.FitSystemWindowActivity;
+import com.learn.growthcodelab.activity.LayoutActivity;
 import com.learn.growthcodelab.activity.MeasurementActivity;
 import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_main_recycler).setOnClickListener(this);
         findViewById(R.id.btn_main_measurement).setOnClickListener(this);
         findViewById(R.id.btn_main_drawable).setOnClickListener(this);
+        findViewById(R.id.btn_main_layout).setOnClickListener(this);
     }
 
     @Override
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_drawable:
                 DrawableActivity.start(this);
+                break;
+            case R.id.btn_main_layout:
+                LayoutActivity.start(this);
                 break;
         }
     }

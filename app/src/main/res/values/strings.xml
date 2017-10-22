@@ -8,6 +8,7 @@
     <string name="s_recycler">Recycler</string>
     <string name="s_measurement">Measurement</string>
     <string name="s_drawable">Drawable</string>
+    <string name="s_layout_inflater">Layout Inflater</string>
 
     <string name="s_add_new_note">Add New Note</string>
 
@@ -25,4 +26,5 @@
     <string name="s_recycler_item_text">Item #%1$d</string>
 
     <string name="s_drawable_clip">Clip Drawable</string>
+    <string name="s_footer_content">Suit Yourself</string>
 </resources>

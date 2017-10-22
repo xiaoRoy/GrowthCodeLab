@@ -4,4 +4,6 @@
     <dimen name="d_divider_height">1dp</dimen>
     <dimen name="d_fixed_ratio_default_size">50dp</dimen>
     <dimen name="d_status_bar_height">24dp</dimen>
+    <dimen name="d_layout_footer_height">64dp</dimen>
+    <dimen name="d_layout_footer_content_height">48dp</dimen>
 </resources>
