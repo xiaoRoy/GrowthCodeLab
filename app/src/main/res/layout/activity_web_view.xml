@@ -18,4 +18,11 @@
         android:text="@string/s_web_view_start_loading"
         />
 
+    <Button
+        android:id="@+id/btn_web_view_load_registry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_web_view_load_registry"
+        />
+
 </LinearLayout>

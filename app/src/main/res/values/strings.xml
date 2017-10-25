@@ -24,6 +24,8 @@
     <string name="s_data_binding_add_new_note">Add New Note</string>
 
     <string name="s_web_view_start_loading">Start Loading</string>
+    <string name="s_web_view_load_registry">Load Registry</string>
+    <string name="s_web_view_load_finished">Load Finished!</string>
     <string name="s_recycler_item_text">Item #%1$d</string>
 
     <string name="s_drawable_clip">Clip Drawable</string>
