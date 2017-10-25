@@ -55,4 +55,10 @@
         android:text="@string/s_play_ground"
         />
 
+    <Button
+        android:id="@+id/btn_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_layout_inflater"
+        />
 </LinearLayout>
