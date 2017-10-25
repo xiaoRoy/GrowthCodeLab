@@ -4,4 +4,5 @@
     <dimen name="d_divider_height">1dp</dimen>
     <dimen name="d_fixed_ratio_default_size">50dp</dimen>
     <dimen name="d_status_bar_height">24dp</dimen>
+    <dimen name="d_phone_number">14sp</dimen>
 </resources>

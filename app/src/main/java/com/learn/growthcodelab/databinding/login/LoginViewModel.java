@@ -5,7 +5,7 @@ import android.databinding.Bindable;
 import android.text.TextWatcher;
 
 import com.learn.growthcodelab.BR;
-import com.learn.growthcodelab.widget.SimpelTextWatchter;
+import com.learn.growthcodelab.widget.SimpleTextWatcher;
 
 
 public class LoginViewModel extends BaseObservable {
@@ -43,7 +43,7 @@ public class LoginViewModel extends BaseObservable {
     }
 
     public TextWatcher getTextWatcher(){
-        return new SimpelTextWatchter(){
+        return new SimpleTextWatcher(){
             @Override
             public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
                 setPassword(charSequence.toString());
