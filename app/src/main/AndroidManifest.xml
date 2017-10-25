@@ -25,6 +25,7 @@
         <activity android:name=".activity.RecyclerActivity"/>
         <activity android:name=".activity.MeasurementActivity"/>
         <activity android:name=".activity.DrawableActivity"/>
+        <activity android:name=".activity.PlayGroundActivity"/>
         <activity android:name=".activity.LayoutActivity"/>
     </application>
 
