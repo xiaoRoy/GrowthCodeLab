@@ -7,4 +7,5 @@
     <dimen name="d_phone_number">14sp</dimen>
     <dimen name="d_layout_footer_height">64dp</dimen>
     <dimen name="d_layout_footer_content_height">48dp</dimen>
+    <dimen name="d_suspension_height">48dp</dimen>
 </resources>

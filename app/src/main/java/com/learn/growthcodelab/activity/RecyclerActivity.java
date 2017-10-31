@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.learn.growthcodelab.R;
+import com.learn.growthcodelab.recycler.SuspensionItemDecoration;
 import com.learn.growthcodelab.recycler.TextAdapter;
 
 public class RecyclerActivity extends BaseActivity {
@@ -27,7 +28,10 @@ public class RecyclerActivity extends BaseActivity {
         setContentView(R.layout.activity_recycler);
         mRecyclerText = (RecyclerView) findViewById(R.id.recycler_text);
         mTextAdapter = new TextAdapter();
-        mRecyclerText.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mRecyclerText.setLayoutManager(layoutManager);
+        SuspensionItemDecoration suspensionItemDecoration = new SuspensionItemDecoration();
+        mRecyclerText.addItemDecoration(suspensionItemDecoration);
         mRecyclerText.setAdapter(mTextAdapter);
     }
 }
