@@ -1,70 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
     >
+    
+    <data>
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener"
+            />
+    </data>
 
-    <Button
-        android:id="@+id/btn_main_data_binding"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_data_binding"
-        />
 
-    <Button
-        android:id="@+id/btn_main_fit_system_window"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_fit_system_window"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
-    <Button
-        android:id="@+id/btn_main_web_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_web_view"
-        />
+        <Button
+            android:id="@+id/btn_main_data_binding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_data_binding"
+            android:onClick="@{onClickListener::onClick}"
+            />
 
-    <Button
-        android:id="@+id/btn_main_recycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_recycler"
-        />
+        <Button
+            android:id="@+id/btn_main_fit_system_window"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_fit_system_window"
+            android:onClick="@{onClickListener::onClick}"
+            />
 
-    <Button
-        android:id="@+id/btn_main_measurement"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_measurement"
-        />
+        <Button
+            android:id="@+id/btn_main_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_web_view"
+            android:onClick="@{onClickListener::onClick}"
+            />
 
-    <Button
-        android:id="@+id/btn_main_drawable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_drawable"
-        />
+        <Button
+            android:id="@+id/btn_main_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_recycler"
+            android:onClick="@{onClickListener::onClick}"
+            />
 
-    <Button
-        android:id="@+id/btn_main_play_ground"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_play_ground"
-        />
+        <Button
+            android:id="@+id/btn_main_measurement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_measurement"
+            android:onClick="@{onClickListener::onClick}"
+            />
 
-    <Button
-        android:id="@+id/btn_main_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_layout_inflater"
-        />
-    <Button
-        android:id="@+id/btn_main_view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/s_view_pager"
-        />
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_main_drawable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_drawable"
+            android:onClick="@{onClickListener::onClick}"
+            />
+
+        <Button
+            android:id="@+id/btn_main_play_ground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_play_ground"
+            android:onClick="@{onClickListener::onClick}"
+            />
+
+        <Button
+            android:id="@+id/btn_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_layout_inflater"
+            android:onClick="@{onClickListener::onClick}"
+            />
+
+        <Button
+            android:id="@+id/btn_main_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_view_pager"
+            android:onClick="@{onClickListener::onClick}"
+            />
+    </LinearLayout>
+</layout>
+
