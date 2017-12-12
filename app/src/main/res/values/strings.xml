@@ -10,6 +10,7 @@
     <string name="s_drawable">Drawable</string>
     <string name="s_play_ground">Play Ground</string>
     <string name="s_layout_inflater">Layout Inflater</string>
+    <string name="s_view_pager">View Pager</string>
 
     <string name="s_add_new_note">Add New Note</string>
 

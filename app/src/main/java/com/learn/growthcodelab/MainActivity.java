@@ -10,6 +10,7 @@ import com.learn.growthcodelab.activity.FitSystemWindowActivity;
 import com.learn.growthcodelab.activity.LayoutActivity;
 import com.learn.growthcodelab.activity.MeasurementActivity;
 import com.learn.growthcodelab.activity.PlayGroundActivity;
+import com.learn.growthcodelab.activity.ViewPagerActivity;
 import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_main_drawable).setOnClickListener(this);
         findViewById(R.id.btn_main_play_ground).setOnClickListener(this);
         findViewById(R.id.btn_main_layout).setOnClickListener(this);
+        findViewById(R.id.btn_main_view_pager).setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_layout:
                 LayoutActivity.start(this);
+                break;
+            case R.id.btn_main_view_pager:
+                ViewPagerActivity.start(this);
                 break;
         }
     }
