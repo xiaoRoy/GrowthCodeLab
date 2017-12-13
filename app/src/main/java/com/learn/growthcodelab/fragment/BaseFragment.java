@@ -1,6 +1,7 @@
 package com.learn.growthcodelab.fragment;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -34,6 +35,16 @@ public class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         logLifeCycle("onCreateView");
+        View rootView;
+        if(getLayoutRes() > 0){
+            rootView = bindView(inflater, container, savedInstanceState);
+        } else {
+            rootView = super.onCreateView(inflater, container, savedInstanceState);
+        }
+        return rootView;
+    }
+
+    protected View bindView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         return inflater.inflate(getLayoutRes(), container, false);
     }
 

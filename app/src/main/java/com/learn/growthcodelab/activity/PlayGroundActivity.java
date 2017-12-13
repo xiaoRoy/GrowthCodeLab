@@ -7,7 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.learn.growthcodelab.R;
-import com.learn.growthcodelab.fragment.playground.PhoneNumberFragment;
+import com.learn.growthcodelab.playground.LikeFragment;
+import com.learn.growthcodelab.playground.PhoneNumberFragment;
 
 
 public class PlayGroundActivity extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class PlayGroundActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play_ground);
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fl_play_ground_container, PhoneNumberFragment.newInstance(), "PhoneNumberFragment")
+                .add(R.id.fl_play_ground_container, LikeFragment.newInstance(), "Like")
                 .addToBackStack(null)
                 .commit();
     }

@@ -1,5 +1,6 @@
 package com.learn.growthcodelab;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,22 +14,15 @@ import com.learn.growthcodelab.activity.PlayGroundActivity;
 import com.learn.growthcodelab.activity.ViewPagerActivity;
 import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
+import com.learn.growthcodelab.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        findViewById(R.id.btn_main_data_binding).setOnClickListener(this);
-        findViewById(R.id.btn_main_fit_system_window).setOnClickListener(this);
-        findViewById(R.id.btn_main_web_view).setOnClickListener(this);
-        findViewById(R.id.btn_main_recycler).setOnClickListener(this);
-        findViewById(R.id.btn_main_measurement).setOnClickListener(this);
-        findViewById(R.id.btn_main_drawable).setOnClickListener(this);
-        findViewById(R.id.btn_main_play_ground).setOnClickListener(this);
-        findViewById(R.id.btn_main_layout).setOnClickListener(this);
-        findViewById(R.id.btn_main_view_pager).setOnClickListener(this);
+        ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        activityMainBinding.setOnClickListener(this);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.learn.growthcodelab.fragment.playground;
+package com.learn.growthcodelab.playground;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
