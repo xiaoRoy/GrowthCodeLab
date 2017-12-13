@@ -31,4 +31,8 @@
 
     <string name="s_drawable_clip">Clip Drawable</string>
     <string name="s_footer_content">Suit Yourself</string>
+
+    <string name="s_like">LIKE</string>
+    <string name="s_like_item">Like item %1$d</string>
+    <string name="s_like_item_count">Like %1$d</string>
 </resources>
