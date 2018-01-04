@@ -88,6 +88,14 @@
             android:text="@string/s_view_pager"
             android:onClick="@{onClickListener::onClick}"
             />
+
+        <Button
+            android:id="@+id/btn_main_tab_host"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_tab_host"
+            android:onClick="@{onClickListener::onClick}"
+            />
     </LinearLayout>
 </layout>
 

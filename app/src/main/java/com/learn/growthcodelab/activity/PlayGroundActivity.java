@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.playground.LikeFragment;
 import com.learn.growthcodelab.playground.PhoneNumberFragment;
+import com.learn.growthcodelab.playground.TextFragment;
 
 
 public class PlayGroundActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class PlayGroundActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play_ground);
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fl_play_ground_container, LikeFragment.newInstance(), "Like")
+                .add(R.id.fl_play_ground_container, TextFragment.newInstance(), "Text")
                 .addToBackStack(null)
                 .commit();
     }
