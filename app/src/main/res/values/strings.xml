@@ -11,6 +11,7 @@
     <string name="s_play_ground">Play Ground</string>
     <string name="s_layout_inflater">Layout Inflater</string>
     <string name="s_view_pager">View Pager</string>
+    <string name="s_tab_host">Tab Host</string>
 
     <string name="s_add_new_note">Add New Note</string>
 
@@ -35,4 +36,6 @@
     <string name="s_like">LIKE</string>
     <string name="s_like_item">Like item %1$d</string>
     <string name="s_like_item_count">Like %1$d</string>
+    <string name="s_user_name">User Name</string>
+    <string name="s_password">Password</string>
 </resources>

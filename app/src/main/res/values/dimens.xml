@@ -10,4 +10,5 @@
     <dimen name="d_suspension_height">48dp</dimen>
     <dimen name="d_like_margin">32dp</dimen>
     <dimen name="d_like_height">240dp</dimen>
+    <dimen name="d_user_margin_horizontal">24dp</dimen>
 </resources>

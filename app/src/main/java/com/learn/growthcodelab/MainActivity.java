@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_main_view_pager:
                 ViewPagerActivity.start(this);
                 break;
+            case R.id.btn_main_tab_host:
+                break;
         }
     }
 }

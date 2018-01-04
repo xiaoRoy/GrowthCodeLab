@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener"
+            />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <!-- <android.support.design.widget.TextInputLayout
+             android:id="@+id/text_input_user_name"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/d_text_item_height"
+             android:layout_marginLeft="@dimen/d_user_margin_horizontal"
+             android:layout_marginRight="@dimen/d_user_margin_horizontal"
+             app:hintTextAppearance="@style/TextLabelA"
+             >
+
+             <android.support.design.widget.TextInputEditText
+                 android:hint="@string/s_user_name"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 />
+         </android.support.design.widget.TextInputLayout>
+
+         <android.support.design.widget.TextInputLayout
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/d_text_item_height"
+             android:layout_marginLeft="@dimen/d_user_margin_horizontal"
+             android:layout_marginRight="@dimen/d_user_margin_horizontal"
+             app:hintTextAppearance="@style/TextLabelA"
+
+             >
+
+             <android.support.design.widget.TextInputEditText
+                 android:hint="@string/s_password"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 />
+         </android.support.design.widget.TextInputLayout>
+ -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_password_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:lineSpacingExtra="0sp"
+                android:lineSpacingMultiplier="1.0"
+                android:text="@string/s_password"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_password_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/s_password"
+                android:layout_toRightOf="@+id/tv_password_first"
+                android:layout_marginLeft="@dimen/d_user_margin_horizontal"
+                android:layout_alignBaseline="@+id/tv_password_first"
+                android:lineSpacingMultiplier="1.5"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>
