@@ -28,6 +28,7 @@
         <activity android:name=".activity.PlayGroundActivity"/>
         <activity android:name=".activity.LayoutActivity"/>
         <activity android:name=".activity.ViewPagerActivity"/>
+        <activity android:name=".activity.TransitionActivity"/>
     </application>
 
 </manifest>

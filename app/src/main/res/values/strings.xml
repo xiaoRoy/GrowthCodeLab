@@ -12,6 +12,7 @@
     <string name="s_layout_inflater">Layout Inflater</string>
     <string name="s_view_pager">View Pager</string>
     <string name="s_tab_host">Tab Host</string>
+    <string name="s_scene_transition">Scene Transition</string>
 
     <string name="s_add_new_note">Add New Note</string>
 
@@ -38,4 +39,11 @@
     <string name="s_like_item_count">Like %1$d</string>
     <string name="s_user_name">User Name</string>
     <string name="s_password">Password</string>
+    <string name="s_card_first">First Card</string>
+    <string name="s_card_second">Second Card</string>
+    <string name="s_card_change">Change</string>
+    <string name="s_scene_title">Scenes</string>
+    <string name="s_scene_first_line">First Line</string>
+    <string name="s_scene_second_line">Second Line</string>
+    <string name="s_scene_change">Change Scene</string>
 </resources>
