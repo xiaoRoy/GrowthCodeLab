@@ -5,6 +5,8 @@ import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.transition.AutoTransition;
+import android.support.transition.ChangeBounds;
 import android.support.transition.Fade;
 import android.support.transition.Scene;
 import android.support.transition.Transition;
@@ -46,6 +48,7 @@ public class SceneTransitionFragment extends BaseFragment implements View.OnClic
         view.findViewById(R.id.btn_layout_transition_change).setOnClickListener(this);
         mFirstScene = Scene.getSceneForLayout(mFlCardContainer, R.layout.layout_first_card, getActivity());
         mSecondScene = Scene.getSceneForLayout(mFlCardContainer, R.layout.layout_second_card, getActivity());
+        mViewCardFirst.setVisibility(View.VISIBLE);
     }
 
 
@@ -53,16 +56,18 @@ public class SceneTransitionFragment extends BaseFragment implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_layout_transition_change:
-                TransitionManager.go(mSecondScene, new SlideTransition());
+//                TransitionManager.go(mSecondScene, new SlideTransition());
+                TransitionManager.beginDelayedTransition(mFlCardContainer);
+//                toggleVisibility(mViewCardFirst);
                 break;
         }
     }
 
     private static void toggleVisibility(View view) {
-        if (view.getVisibility() == View.GONE) {
-            view.setVisibility(View.VISIBLE);
+        if (view.getVisibility() == View.VISIBLE) {
+            view.setVisibility(View.INVISIBLE);
         } else {
-            view.setVisibility(View.GONE);
+            view.setVisibility(View.VISIBLE);
         }
     }
 
@@ -74,7 +79,7 @@ public class SceneTransitionFragment extends BaseFragment implements View.OnClic
         public void captureEndValues(@NonNull TransitionValues transitionValues) {
             System.out.println("trail.captureEndValues");
             View view = transitionValues.view;
-            if (view.getId() == R.id.card_second) {
+            if (view.getId() == R.id.card_first) {
                 transitionValues.values.put(PROPERTY_NAME_TRANSLATION_X, 0f);
             }
         }
@@ -83,7 +88,7 @@ public class SceneTransitionFragment extends BaseFragment implements View.OnClic
         public void captureStartValues(@NonNull TransitionValues transitionValues) {
             System.out.println("trail.captureStartValues");
             View view = transitionValues.view;
-            if (view.getId() == R.id.card_second) {
+            if (view.getId() == R.id.card_first) {
                 transitionValues.values.put(PROPERTY_NAME_TRANSLATION_X, view.getWidth() + 0.0f);
             }
         }

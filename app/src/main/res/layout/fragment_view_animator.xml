@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <ViewFlipper
+        android:id="@+id/flipper_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inAnimation="@anim/anim_slide_in"
+        android:outAnimation="@anim/anim_slide_out"
+        android:minHeight="@dimen/d_card_height"
+
+        >
+        <include
+            layout="@layout/layout_tips"
+            />
+        <include
+            layout="@layout/layout_tips_another"
+            />
+        <include
+            layout="@layout/layout_completed"
+            />
+    </ViewFlipper>
+
+    <Button
+        android:id="@+id/btn_view_animator_change_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_view_animator_change_tip"
+        />
+    <Button
+        android:id="@+id/btn_view_animator_change_another"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_view_animator_change_another"
+        />
+    <Button
+        android:id="@+id/btn_view_animator_change_completed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_view_animator_change_completed"
+        />
+</LinearLayout>
