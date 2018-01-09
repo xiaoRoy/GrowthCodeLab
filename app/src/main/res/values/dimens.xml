@@ -11,4 +11,7 @@
     <dimen name="d_like_margin">32dp</dimen>
     <dimen name="d_like_height">240dp</dimen>
     <dimen name="d_user_margin_horizontal">24dp</dimen>
+    <dimen name="d_card_height">252dp</dimen>
+    <dimen name="d_card_margin_top">32dp</dimen>
+    <dimen name="d_card_margin_horizontal">24dp</dimen>
 </resources>

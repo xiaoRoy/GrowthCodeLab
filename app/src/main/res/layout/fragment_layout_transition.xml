@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/c_nobel_gray"
+    >
+
+    <FrameLayout
+        android:id="@+id/fl_card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        >
+
+        <include layout="@layout/layout_first_card"/>
+
+        <!--<include layout="@layout/layout_second_card"/>-->
+    </FrameLayout>
+    <Button
+        android:id="@+id/btn_layout_transition_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_card_change"
+        android:layout_below="@+id/fl_card_container"
+        android:layout_marginTop="@dimen/d_card_margin_top"
+        />
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/tv_scene_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/s_scene_title"
+        />
+
+    <FrameLayout
+        android:id="@+id/fl_scene_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <include
+            layout="@layout/layout_scene_first"
+            />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_scene_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/s_scene_change"
+        />
+</LinearLayout>

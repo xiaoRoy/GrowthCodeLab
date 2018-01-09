@@ -11,6 +11,7 @@ import com.learn.growthcodelab.activity.FitSystemWindowActivity;
 import com.learn.growthcodelab.activity.LayoutActivity;
 import com.learn.growthcodelab.activity.MeasurementActivity;
 import com.learn.growthcodelab.activity.PlayGroundActivity;
+import com.learn.growthcodelab.activity.TransitionActivity;
 import com.learn.growthcodelab.activity.ViewPagerActivity;
 import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ViewPagerActivity.start(this);
                 break;
             case R.id.btn_main_tab_host:
+                break;
+            case R.id.btn_main_scene:
+                TransitionActivity.start(this);
                 break;
         }
     }
