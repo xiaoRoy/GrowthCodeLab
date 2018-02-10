@@ -29,6 +29,9 @@
         <activity android:name=".activity.LayoutActivity"/>
         <activity android:name=".activity.ViewPagerActivity"/>
         <activity android:name=".activity.TransitionActivity"/>
+        <activity android:name=".fullscreen.FullScreenActivity"
+                  android:theme="@style/NoActionBar"
+            />
     </application>
 
 </manifest>
