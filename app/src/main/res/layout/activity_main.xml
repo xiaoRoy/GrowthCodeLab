@@ -38,6 +38,15 @@
                 />
 
             <Button
+                android:id="@+id/btn_main_full_screen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClickListener::onClick}"
+                android:text="@string/s_full_screen"
+                />
+
+
+            <Button
                 android:id="@+id/btn_main_web_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <variable
+            name="navigator"
+            type="com.learn.growthcodelab.fullscreen.FullScreenNavigator"
+            />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_dark"
+        android:fitsSystemWindows="false"
+        android:padding="@dimen/d_status_bar_height"
+        >
+        <!-- when fitSystemWindows true, the padding does not work.-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/s_navigate"
+            android:onClick="@{() -> navigator.navigateToHasStatusBar()}"
+            />
+    </FrameLayout>
+</layout>

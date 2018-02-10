@@ -3,6 +3,7 @@
 
     <string name="s_data_binding">Data Binding</string>
     <string name="s_fit_system_window">Fit System Window</string>
+    <string name="s_full_screen">Full Screen</string>
     <string name="s_web_view">WebView</string>
     <string name="s_fit_system_window_tool_bar_title">Fit System Window</string>
     <string name="s_recycler">Recycler</string>
@@ -15,6 +16,7 @@
     <string name="s_scene_transition">Scene Transition</string>
 
     <string name="s_add_new_note">Add New Note</string>
+    <string name="s_navigate">Navigate</string>
 
     <string name="s_data_binding_user">User</string>
     <string name="s_data_binding_notes">Notes</string>
