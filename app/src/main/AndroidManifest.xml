@@ -32,6 +32,7 @@
         <activity android:name=".fullscreen.FullScreenActivity"
                   android:theme="@style/NoActionBar"
             />
+        <activity android:name=".aboutfragment.FragmentActivity"/>
     </application>
 
 </manifest>
