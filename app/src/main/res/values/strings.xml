@@ -54,4 +54,6 @@
     <string name="s_card_tips">Tips</string>
     <string name="s_card_tips_another">Another Tips</string>
     <string name="s_card_completed">Completed</string>
+    <string name="s_show_error">Show Error</string>
+    <string name="s_password_incorrect">password incorrect</string>
 </resources>
