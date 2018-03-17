@@ -14,16 +14,16 @@ import com.learn.growthcodelab.activity.BaseActivity;
 import com.learn.growthcodelab.databinding.ActivityHandlerBinding;
 
 
-public class HandlerActivity extends BaseActivity
-                implements LooperThread.HandleMessageCallback, View.OnClickListener{
+public class HandlerActivityJ extends BaseActivity
+                implements LooperThreadJ.HandleMessageCallback, View.OnClickListener{
 
-    private static final String TAG = "HandlerActivity";
+    private static final String TAG = "HandlerActivityJ";
 
     public static void start(Context context){
-        context.startActivity(new Intent(context, HandlerActivity.class));
+        context.startActivity(new Intent(context, HandlerActivityJ.class));
     }
 
-    private LooperThread mLooperThread;
+    private LooperThreadJ mLooperThreadJ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,8 +31,8 @@ public class HandlerActivity extends BaseActivity
         ActivityHandlerBinding handlerBinding
                         = DataBindingUtil.setContentView(this, R.layout.activity_handler);
         handlerBinding.setOnClickListener(this);
-        mLooperThread = new LooperThread(this);
-        mLooperThread.start();
+        mLooperThreadJ = new LooperThreadJ(this);
+        mLooperThreadJ.start();
     }
 
     @Override
@@ -43,15 +43,15 @@ public class HandlerActivity extends BaseActivity
 
     @Override
     public void onClick(View view) {
-        if(mLooperThread != null){
-            Message message = mLooperThread.mHandler.obtainMessage(0);
-            mLooperThread.mHandler.sendMessage(message);
+        if(mLooperThreadJ != null){
+            Message message = mLooperThreadJ.mHandler.obtainMessage(0);
+            mLooperThreadJ.mHandler.sendMessage(message);
         }
     }
 
     @Override
     protected void onDestroy() {
-        mLooperThread.mHandler.getLooper().quit();
+        mLooperThreadJ.mHandler.getLooper().quit();
         super.onDestroy();
     }
 }

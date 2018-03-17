@@ -4,13 +4,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-public class LooperThread extends Thread {
+public class LooperThreadJ extends Thread {
 
     public Handler mHandler;
 
     private final HandleMessageCallback mHandleMessageCallback;
 
-    public LooperThread(HandleMessageCallback handleMessageCallback) {
+    public LooperThreadJ(HandleMessageCallback handleMessageCallback) {
         mHandleMessageCallback = handleMessageCallback;
     }
 
