@@ -33,6 +33,8 @@
                   android:theme="@style/NoActionBar"
             />
         <activity android:name=".aboutfragment.FragmentActivity"/>
+        <activity android:name=".handler.HandlerActivityJ"/>
+        <activity android:name=".handler.HandlerActivity"/>
     </application>
 
 </manifest>

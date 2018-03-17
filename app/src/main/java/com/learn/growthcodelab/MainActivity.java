@@ -17,6 +17,8 @@ import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
 import com.learn.growthcodelab.databinding.ActivityMainBinding;
 import com.learn.growthcodelab.fullscreen.FullScreenActivity;
+import com.learn.growthcodelab.handler.HandlerActivity;
+import com.learn.growthcodelab.handler.HandlerActivityJ;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -64,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_full_screen:
                 FullScreenActivity.start(this);
+            case R.id.btn_main_handler:
+                HandlerActivity.Companion.start(this);
+                break;
         }
     }
 }
