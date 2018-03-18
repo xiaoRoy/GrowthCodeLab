@@ -6,14 +6,15 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
-import android.os.PersistableBundle
+import android.os.SystemClock
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.activity.BaseActivity
 import com.learn.growthcodelab.databinding.ActivityHandlerBinding
+import java.util.*
 
 class HandlerActivity : BaseActivity(), Handler.Callback{
 
-    private lateinit var looperThread: LooperThread
+    private lateinit var consumeAndQuitThread: ConsumeAndQuitThread
 
     companion object {
         fun start(context: Context){
@@ -26,18 +27,27 @@ class HandlerActivity : BaseActivity(), Handler.Callback{
         super.onCreate(savedInstanceState)
         val handlerBinding: ActivityHandlerBinding
                 = DataBindingUtil.setContentView(this, R.layout.activity_handler)
-        looperThread = LooperThread(this)
-        looperThread.start()
+        consumeAndQuitThread = ConsumeAndQuitThread(handlerCallback = this)
+        consumeAndQuitThread.start()
         handlerBinding.setOnClickListener{ _ ->
-            val msg = looperThread.handler.obtainMessage(0)
-            looperThread.handler.sendMessage(msg)
+                Thread{
+                    for(i in 1 .. 10){
+                        consumeAndQuitThread.insertMsg(i)
+                    }
+                }.start()
         }
     }
 
     override fun handleMessage(msg: Message?): Boolean {
-        if(msg?.what == 0){
-            println("trail.threadName: ${Thread.currentThread().name}")
+        msg?.let {
+            println("trail.threadName:${Thread.currentThread().name}")
+            println("trail.msg:${it.what}")
         }
         return true
+    }
+
+    override fun onDestroy() {
+        consumeAndQuitThread.consumerHandler.looper.quit()
+        super.onDestroy()
     }
 }
