@@ -3,7 +3,7 @@ package com.learn.growthcodelab.handler
 import android.os.Handler
 import android.os.Looper
 
-class LooperThread(val callback: Handler.Callback) : Thread() {
+class LooperThread(private val callback: Handler.Callback) : Thread() {
 
     lateinit var handler: Handler
 
