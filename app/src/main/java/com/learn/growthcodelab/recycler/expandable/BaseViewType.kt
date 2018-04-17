@@ -28,7 +28,7 @@ abstract class BaseViewType<VH: BaseViewHolder> constructor(val id: Long): BaseG
          }
     }
 
-    override fun getPosition(viewType: BaseViewType<*>) = if(viewType === this) 0 else -1
+    override fun getGroupPosition(viewType: BaseViewType<*>) = if(viewType === this) 0 else -1
 
     override fun registerGroupDataObserver(groupDataObserver: GroupDataObserver) {
         this.groupDataObserver = groupDataObserver

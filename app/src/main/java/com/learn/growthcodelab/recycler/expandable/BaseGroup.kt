@@ -5,7 +5,7 @@ interface BaseGroup {
 
     fun getViewType(position: Int): BaseViewType<*>
 
-    fun getPosition(viewType: BaseViewType<*>): Int
+    fun getGroupPosition(viewType: BaseViewType<*>): Int
 
     fun registerGroupDataObserver(groupDataObserver: GroupDataObserver)
 
