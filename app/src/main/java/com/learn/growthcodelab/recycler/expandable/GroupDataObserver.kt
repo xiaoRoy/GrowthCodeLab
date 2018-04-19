@@ -4,7 +4,7 @@ interface GroupDataObserver {
 
     fun onChanged(group: BaseGroup)
 
-    fun onItemInserted(group: BaseGroup, position: Int, payload: Any? = null)
+    fun onItemInserted(group: BaseGroup, position: Int)
 
     fun onItemChanged(group: BaseGroup, position: Int, payload: Any? = null)
 
