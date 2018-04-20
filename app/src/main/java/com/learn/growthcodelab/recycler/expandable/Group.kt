@@ -96,7 +96,41 @@ abstract class Group : BaseGroup, GroupDataObserver {
         groups.forEach { it.unregisterGroupDataObserver(this) }
     }
 
+    override fun onChanged(group: BaseGroup) {
+        groupDataObservable.onGroupRangeChanged(this, getItemCount(group), group.getItemCount())
+    }
 
+    /*
+    * @param position GroupPosition?
+    * */
+    override fun onItemInserted(group: BaseGroup, position: Int) {
+        groupDataObservable.onGroupInserted(this, getItemCount(group) + position)
+    }
+
+    override fun onItemRangeInserted(group: BaseGroup, positionStart: Int, itemCount: Int) {
+        groupDataObservable.onGroupRangeInserted(this, getItemCount(group) + positionStart, itemCount)
+    }
+
+    override fun onItemChanged(group: BaseGroup, position: Int, payload: Any?) {
+        groupDataObservable.onGroupChanged(this, getItemCount(group) + position, payload)
+    }
+
+    override fun onItemRangeChanged(group: BaseGroup, positionStart: Int, itemCount: Int, payload: Any?) {
+        groupDataObservable.onGroupRangeChanged(this, getItemCount(group) + positionStart, itemCount, payload)
+    }
+
+    override fun onItemRemoved(group: BaseGroup, position: Int) {
+        groupDataObservable.onGroupRemoved(this, getItemCount(group) + position)
+    }
+
+    override fun onItemRangeRemoved(group: BaseGroup, positionStart: Int, itemCount: Int) {
+        groupDataObservable.onGroupRangeRemoved(this, getItemCount(group) + positionStart, itemCount)
+    }
+
+    override fun onItemMoved(group: BaseGroup, fromPosition: Int, toPosition: Int) {
+        val itemCount = getItemCount(group)
+        groupDataObservable.onGroupMoved(this, fromPosition + itemCount, toPosition + itemCount)
+    }
 
     abstract fun getGroup(position: Int): BaseGroup
 
@@ -133,8 +167,12 @@ abstract class Group : BaseGroup, GroupDataObserver {
             observers.reversed().forEach{it.onItemRangeRemoved(group, positionStar, groupCount)}
         }
 
-        fun onGroupMoved(){
+        fun onGroupMoved(group: BaseGroup, fromPosition: Int, toPosition: Int){
+            observers.reversed().forEach { it.onItemMoved(group, fromPosition, toPosition) }
+        }
 
+        fun onChanged(group: BaseGroup){
+            observers.reversed().forEach { it.onChanged(group) }
         }
 
 
