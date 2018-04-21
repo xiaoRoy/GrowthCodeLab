@@ -40,14 +40,14 @@ abstract class Group : BaseGroup, GroupDataObserver {
     }
 
     /*
-    * Get the (first?) position of a ViewType
+    * Get the (first?) position of a ViewType. no!
     * */
-    final override fun getGroupPosition(viewType: BaseViewType<*>): Int{
+    final override fun getItemPosition(item: BaseItem<*>): Int{
         var previousPosition = 0
         var groupPosition = -1
         for(index in 0..getGroupCount()){
             val group = getGroup(index)
-            val position = group.getGroupPosition(viewType)
+            val position = group.getItemPosition(item)
             if(position >= 0){
                 groupPosition = position + previousPosition
                 break
@@ -57,19 +57,19 @@ abstract class Group : BaseGroup, GroupDataObserver {
         return groupPosition
     }
 
-    override fun getViewType(position: Int): BaseViewType<*> {
+    override fun getItem(position: Int): BaseItem<*> {
         var previousPosition = 0
-        var viewType: BaseViewType<*>? = null
+        var item: BaseItem<*>? = null
         for(index in 0..getGroupCount()){
             val group = getGroup(index)
             val groupSize = group.getItemCount()
             if(groupSize + previousPosition > position){
-                viewType = group.getViewType(position - previousPosition)
+                item = group.getItem(position - previousPosition)
                 break
             }
             previousPosition += groupSize
         }
-        return viewType ?: throw IndexOutOfBoundsException()
+        return item ?: throw IndexOutOfBoundsException()
     }
 
     override fun registerGroupDataObserver(groupDataObserver: GroupDataObserver) {
@@ -101,6 +101,8 @@ abstract class Group : BaseGroup, GroupDataObserver {
     }
 
     /*
+    *
+    * @param group ParentGroup?
     * @param position GroupPosition?
     * */
     override fun onItemInserted(group: BaseGroup, position: Int) {
