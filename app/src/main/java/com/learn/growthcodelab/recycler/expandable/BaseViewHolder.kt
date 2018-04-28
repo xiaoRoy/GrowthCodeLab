@@ -4,13 +4,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 
 open class BaseViewHolder constructor(private val item: View) : RecyclerView.ViewHolder(item) {
-    private var viewType: BaseViewType<*>? = null
+    private var Item: BaseItem<*>? = null
 
-    fun bind(viewType: BaseViewType<*>){
-        this.viewType = viewType
+    fun bind(item: BaseItem<*>){
+        this.Item = item
     }
 
     fun unbind(){
-        this.viewType = null
+        this.Item = null
     }
 }
