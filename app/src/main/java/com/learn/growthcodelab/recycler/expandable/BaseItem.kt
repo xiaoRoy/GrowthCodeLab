@@ -4,7 +4,7 @@ import android.support.annotation.LayoutRes
 import android.view.View
 import java.util.concurrent.atomic.AtomicLong
 
-abstract class BaseViewType<VH: BaseViewHolder> constructor(val id: Long): BaseGroup {
+abstract class BaseItem<VH: BaseViewHolder> constructor(val id: Long): BaseGroup {
 
     private companion object {
         val idCounter = AtomicLong(0)
@@ -20,7 +20,7 @@ abstract class BaseViewType<VH: BaseViewHolder> constructor(val id: Long): BaseG
 
     override fun getItemCount() = 1
 
-    override fun getViewType(position: Int): BaseViewType<*> {
+    override fun getItem(position: Int): BaseItem<*> {
          if(position == 0) {
              return this
          } else {
@@ -28,7 +28,7 @@ abstract class BaseViewType<VH: BaseViewHolder> constructor(val id: Long): BaseG
          }
     }
 
-    override fun getPosition(viewType: BaseViewType<*>) = if(viewType === this) 0 else -1
+    override fun getItemPosition(item: BaseItem<*>) = if(item === this) 0 else -1
 
     override fun registerGroupDataObserver(groupDataObserver: GroupDataObserver) {
         this.groupDataObserver = groupDataObserver
@@ -56,7 +56,7 @@ abstract class BaseViewType<VH: BaseViewHolder> constructor(val id: Long): BaseG
     @LayoutRes
     abstract fun getLayoutRes(): Int
 
-    fun isSameAs(another: BaseViewType<*>): Boolean{
+    fun isSameAs(another: BaseItem<*>): Boolean{
         if(getLayoutRes() != another.getLayoutRes()){
             return false
         }

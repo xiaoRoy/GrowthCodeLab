@@ -3,9 +3,9 @@ package com.learn.growthcodelab.recycler.expandable
 interface BaseGroup {
     fun getItemCount(): Int
 
-    fun getViewType(position: Int): BaseViewType<*>
+    fun getItem(position: Int): BaseItem<*>
 
-    fun getPosition(viewType: BaseViewType<*>): Int
+    fun getItemPosition(item: BaseItem<*>): Int
 
     fun registerGroupDataObserver(groupDataObserver: GroupDataObserver)
 
