@@ -57,4 +57,9 @@
     <string name="s_card_completed">Completed</string>
     <string name="s_handler_send_msg">Send Message From Worker</string>
 
+    <string name="discard">Discard</string>
+    <string name="upload">Upload</string>
+    <string name="camera">Camera</string>
+    <string name="camera_value">Leica M Typ 240</string>
+
 </resources>
