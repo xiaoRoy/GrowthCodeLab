@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="81dp">
 
+    <TextView
+        android:id="@+id/tv_camara_label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/camera"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="236dp"/>
+
     <Button
         android:id="@+id/btn_discard"
         android:layout_width="wrap_content"
@@ -28,13 +36,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/tv_camara_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/camera"
-        tools:layout_editor_absoluteY="15dp"/>
-
     <EditText
         android:id="@+id/camera_type"
         android:layout_width="wrap_content"
@@ -43,5 +44,62 @@
         android:inputType="text"
         android:text="@string/camera_value"
         tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="68dp"/>
+        tools:layout_editor_absoluteY="219dp"/>
+
+    <TextView
+        android:id="@+id/tv_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="302dp"/>
+
+    <EditText
+        android:id="@+id/camera_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/camera_settings"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="290dp"/>
+
+    <ImageView
+        android:id="@+id/iv_header"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shape_bg_singapore"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.294"
+        app:srcCompat="@drawable/ic_star"/>
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/singapore"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="179dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="344dp"
+        android:layout_height="95dp"
+        android:text="@string/singapore_description"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="344dp"/>
 </android.support.constraint.ConstraintLayout>
