@@ -7,14 +7,6 @@
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:id="@+id/tv_camara_label2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/camera"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="236dp"/>
-
     <Button
         android:id="@+id/btn_discard"
         android:layout_width="wrap_content"
@@ -36,33 +28,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <EditText
-        android:id="@+id/camera_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="@string/camera_value"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="219dp"/>
-
-    <TextView
-        android:id="@+id/tv_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="302dp"/>
-
-    <EditText
-        android:id="@+id/camera_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="@string/camera_settings"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="290dp"/>
 
     <ImageView
         android:id="@+id/iv_header"
