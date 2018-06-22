@@ -56,6 +56,7 @@
     <string name="s_card_tips_another">Another Tips</string>
     <string name="s_card_completed">Completed</string>
     <string name="s_handler_send_msg">Send Message From Worker</string>
+    <string name="s_open_contact">Open Contacts</string>
 
     <string name="discard">Discard</string>
     <string name="upload">Upload</string>
