@@ -57,7 +57,10 @@
     <string name="s_card_completed">Completed</string>
     <string name="s_handler_send_msg">Send Message From Worker</string>
     <string name="s_open_contact">Open Contacts</string>
-
+    <string name="book_title">Title</string>
+    <string name="book_author">Author</string>
+    <string name="book_show_log">show log</string>
+    <string name="book_change">Change</string>
     <string name="discard">Discard</string>
     <string name="upload">Upload</string>
     <string name="camera">Camera</string>
