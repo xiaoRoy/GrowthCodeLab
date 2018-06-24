@@ -15,6 +15,7 @@
     <string name="s_view_pager">View Pager</string>
     <string name="s_tab_host">Tab Host</string>
     <string name="s_scene_transition">Scene Transition</string>
+    <string name="touch_again">Touch Again</string>
 
     <string name="s_add_new_note">Add New Note</string>
     <string name="s_navigate">Navigate</string>
