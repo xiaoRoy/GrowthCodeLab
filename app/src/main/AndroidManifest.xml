@@ -35,6 +35,7 @@
         <activity android:name=".aboutfragment.FragmentActivity"/>
         <activity android:name=".handler.HandlerActivityJ"/>
         <activity android:name=".handler.HandlerActivity"/>
+        <activity android:name=".touchagain.TouchAgainActivity"/>
     </application>
 
 </manifest>

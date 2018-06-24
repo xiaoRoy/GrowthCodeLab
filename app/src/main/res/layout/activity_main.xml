@@ -125,6 +125,14 @@
                 android:onClick="@{onClickListener::onClick}"
                 android:text="@string/s_scene_transition"
                 />
+
+            <Button
+                android:id="@+id/btn_main_touch_again"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClickListener::onClick}"
+                android:text="@string/touch_again"
+                />
         </LinearLayout>
     </ScrollView>
 </layout>
