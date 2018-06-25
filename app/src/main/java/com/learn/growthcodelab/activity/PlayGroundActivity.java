@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.learn.growthcodelab.R;
+import com.learn.growthcodelab.databinding.layout.RegistryTrackingFragment;
 import com.learn.growthcodelab.databinding.twoway.BookFragment;
 import com.learn.growthcodelab.playground.OpenContactsFragment;
 import com.learn.growthcodelab.playground.SceneTransitionFragment;
@@ -25,7 +26,7 @@ public class PlayGroundActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play_ground);
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fl_play_ground_container, BookFragment.Companion.newInstance(),  "Book")
+                .add(R.id.fl_play_ground_container, RegistryTrackingFragment.Companion.newInstance(),  "Book")
                 .addToBackStack(null)
                 .commit();
     }

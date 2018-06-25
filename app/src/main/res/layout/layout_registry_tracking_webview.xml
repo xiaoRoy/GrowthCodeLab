@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+
+    </data>
+
+    <merge>
+
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_registry_navigation_forward"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_registry_navigation_back"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/navigation_icon_height"
+            android:src="@drawable/ic_registry_navigation_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_registry_navigation_forward"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_registry_navigation_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/navigation_icon_height"
+            android:src="@drawable/ic_registry_navigation_forward"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_registry_navigation_back"
+            app:layout_constraintEnd_toStartOf="@+id/iv_registry_navigation_refresh"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_registry_navigation_back"/>
+
+        <ImageView
+            android:id="@+id/iv_registry_navigation_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/navigation_icon_height"
+            android:src="@drawable/ic_registry_navigation_refresh"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_registry_navigation_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_registry_navigation_forward"/>
+
+    </merge>
+</layout>
