@@ -5,5 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <com.learn.growthcodelab.touchagain.NotConsumeMoveAndUpButton
+        android:id="@+id/btn_touch_not_consume_move_and_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/touch_again_not_consume_move_and_up"
+        />
 
 </FrameLayout>
