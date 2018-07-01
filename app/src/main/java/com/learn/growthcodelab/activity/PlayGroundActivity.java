@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.databinding.layout.RegistryTrackingFragment;
 import com.learn.growthcodelab.databinding.twoway.BookFragment;
+import com.learn.growthcodelab.playground.NotFullDialogFragment;
 import com.learn.growthcodelab.playground.OpenContactsFragment;
 import com.learn.growthcodelab.playground.SceneTransitionFragment;
 import com.learn.growthcodelab.playground.ViewAnimatorFragment;
@@ -24,10 +25,12 @@ public class PlayGroundActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_ground);
-        getSupportFragmentManager()
+   /*     getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fl_play_ground_container, RegistryTrackingFragment.Companion.newInstance(),  "Book")
+                .add(R.id.fl_play_ground_container, NotFullDialogFragment.Companion.newInstance(),  "Not Full")
                 .addToBackStack(null)
-                .commit();
+                .commit();*/
+
+        NotFullDialogFragment.Companion.newInstance().show(getSupportFragmentManager(), "Not Full");
     }
 }
