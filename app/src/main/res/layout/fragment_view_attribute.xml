@@ -36,6 +36,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="32dp"
             android:text="@string/view_attribute_show_log"
+            android:onClick="@{view -> showLogCallback.onShowLogClicked(etLog, String.valueOf(etLog.getText()))}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_log"/>
