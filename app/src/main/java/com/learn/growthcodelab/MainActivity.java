@@ -18,7 +18,6 @@ import com.learn.growthcodelab.activity.RecyclerActivity;
 import com.learn.growthcodelab.databinding.ActivityMainBinding;
 import com.learn.growthcodelab.fullscreen.FullScreenActivity;
 import com.learn.growthcodelab.handler.HandlerActivity;
-import com.learn.growthcodelab.handler.HandlerActivityJ;
 import com.learn.growthcodelab.touchagain.TouchAgainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
