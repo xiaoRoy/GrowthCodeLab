@@ -36,6 +36,7 @@
         <activity android:name=".handler.HandlerActivityJ"/>
         <activity android:name=".handler.HandlerActivity"/>
         <activity android:name=".touchagain.TouchAgainActivity"/>
+        <activity android:name=".window.WindowActivity"/>
     </application>
 
 </manifest>

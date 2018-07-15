@@ -133,6 +133,13 @@
                 android:onClick="@{onClickListener::onClick}"
                 android:text="@string/touch_again"
                 />
+            <Button
+                android:id="@+id/btn_main_window"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClickListener::onClick}"
+                android:text="@string/window"
+                />
         </LinearLayout>
     </ScrollView>
 </layout>
