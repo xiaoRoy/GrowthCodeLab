@@ -74,5 +74,6 @@
     <string name="view_attribute">Access View Attribute in Data Binding</string>
     <string name="view_attribute_show_log">Show Log View Attribute</string>
     <string name="view_reference_show_log">Show Log View Reference</string>
+    <string name="show_dialog">Show Dialog</string>
 
 </resources>
