@@ -17,6 +17,9 @@
     <string name="s_scene_transition">Scene Transition</string>
     <string name="touch_again">Touch Again</string>
     <string name="window">Window</string>
+    <string name="view_showcase">View Showcase</string>
+    <string name="image_view">ImageView</string>
+    <string name="image_view_scale_type">ScaleType</string>
     <string name="touch_again_not_consume_move_and_up">Not Consume Move and Up</string>
 
     <string name="s_add_new_note">Add New Note</string>
