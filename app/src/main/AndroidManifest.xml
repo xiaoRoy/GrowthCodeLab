@@ -37,6 +37,7 @@
         <activity android:name=".handler.HandlerActivity"/>
         <activity android:name=".touchagain.TouchAgainActivity"/>
         <activity android:name=".window.WindowActivity"/>
+        <activity android:name=".viewshowcase.ViewShowcaseActivity"/>
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import com.learn.growthcodelab.databinding.ActivityMainBinding;
 import com.learn.growthcodelab.fullscreen.FullScreenActivity;
 import com.learn.growthcodelab.handler.HandlerActivity;
 import com.learn.growthcodelab.touchagain.TouchAgainActivity;
+import com.learn.growthcodelab.viewshowcase.ViewShowcaseActivity;
 import com.learn.growthcodelab.window.WindowActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -75,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_window:
                 WindowActivity.Companion.start(this);
+                break;
+            case R.id.btn_view_showcase:
+                ViewShowcaseActivity.Companion.start(this);
                 break;
         }
     }
