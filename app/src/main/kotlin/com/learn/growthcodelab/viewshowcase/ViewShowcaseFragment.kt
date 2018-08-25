@@ -1,5 +1,6 @@
 package com.learn.growthcodelab.viewshowcase
 
+import android.content.Context
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +12,17 @@ import com.learn.growthcodelab.fragment.BaseFragment
 
 class ViewShowcaseFragment : BaseFragment(){
 
+    private lateinit var viewShowcaseNavigator: ViewShowcaseNavigator
+
     companion object {
         fun newInstance() = ViewShowcaseFragment()
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        if(context is ViewShowcaseNavigator){
+            viewShowcaseNavigator = context
+        }
     }
 
 
@@ -20,6 +30,7 @@ class ViewShowcaseFragment : BaseFragment(){
 
     override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = DataBindingUtil.inflate<FragmentViewShowcaseBinding>(inflater, layoutRes, container, false)
+        binding.navigator = viewShowcaseNavigator
         return binding.root
     }
 }
