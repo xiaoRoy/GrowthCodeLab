@@ -20,9 +20,8 @@ class ViewShowcaseFragment : BaseFragment(){
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        if(context is ViewShowcaseNavigator){
-            viewShowcaseNavigator = context
-        }
+        viewShowcaseNavigator = if (context is ViewShowcaseNavigator) context
+                                else throw IllegalArgumentException()
     }
 
 
