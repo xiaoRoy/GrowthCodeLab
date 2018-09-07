@@ -18,6 +18,10 @@
     <string name="touch_again">Touch Again</string>
     <string name="search">Search</string>
     <string name="action_search">Search</string>
+    <string name="window">Window</string>
+    <string name="view_showcase">View Showcase</string>
+    <string name="image_view">ImageView</string>
+    <string name="image_view_scale_type">ScaleType</string>
     <string name="touch_again_not_consume_move_and_up">Not Consume Move and Up</string>
 
     <string name="s_add_new_note">Add New Note</string>
@@ -73,5 +77,10 @@
     <string name="camera_settings">ƒ/4 16s ISO 200</string>
     <string name="singapore">Singapore</string>
     <string name="singapore_description">Singapore officially the Republic of Singapore, and often referred to as the Lion City, the Garden City, and the Red Dot, is a global city in Southeast Asia and the world\'s only island city-state. It lies one degree (137 km) north of the equator, at the southernmost tip of continental Asia and peninsular Malaysia, with Indonesia\'s Riau Islands to the south. Singapore\'s territory consists of the diamond-shaped main island and 62 islets.</string>
-
+    <string name="view_attribute">Access View Attribute in Data Binding</string>
+    <string name="view_attribute_show_log">Show Log View Attribute</string>
+    <string name="view_reference_show_log">Show Log View Reference</string>
+    <string name="show_normal_popup">Show Normal Popup</string>
+    <string name="show_full_popup">Show Full Popup</string>
+    <string name="dismiss">Dismiss</string>
 </resources>

@@ -16,6 +16,10 @@ import android.view.ViewGroup;
 public class BaseFragment extends Fragment {
 
 
+    public static <T extends BaseFragment> String getFragmentTag(Class<T> target){
+        return target.getName();
+    }
+
 
     final public String getTransactionTag(){
         return getClass().getSimpleName();

@@ -22,10 +22,15 @@ allprojects {
 }
 
 ext{
-    kotlin_version = project.kotlin_version
-    android_plugin_version = project.android_plugin_version
+    gradleVersion = '4.5.1'
+//    kotlin_version = project.kotlin_version
+//    android_plugin_version = project.android_plugin_version
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+task wrapper(type: Wrapper){
+    distributionUrl = "https://services.gradle.org/distributions/gradle-${project.ext.gradleVersion}-all.zip"
 }

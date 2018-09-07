@@ -39,6 +39,8 @@
         <activity android:name=".search.SearchActivity"
                   android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             />
+        <activity android:name=".window.WindowActivity"/>
+        <activity android:name=".viewshowcase.ViewShowcaseActivity"/>
     </application>
 
 </manifest>
