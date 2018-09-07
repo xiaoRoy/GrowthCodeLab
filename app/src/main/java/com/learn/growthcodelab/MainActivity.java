@@ -18,6 +18,8 @@ import com.learn.growthcodelab.activity.RecyclerActivity;
 import com.learn.growthcodelab.databinding.ActivityMainBinding;
 import com.learn.growthcodelab.fullscreen.FullScreenActivity;
 import com.learn.growthcodelab.handler.HandlerActivity;
+import com.learn.growthcodelab.handler.HandlerActivityJ;
+import com.learn.growthcodelab.search.SearchActivity;
 import com.learn.growthcodelab.touchagain.TouchAgainActivity;
 import com.learn.growthcodelab.viewshowcase.ViewShowcaseActivity;
 import com.learn.growthcodelab.window.WindowActivity;
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_main_touch_again:
                 TouchAgainActivity.Companion.start(this);
                 break;
+            case R.id.btn_main_search:
+                SearchActivity.Companion.start(this);
             case R.id.btn_main_window:
                 WindowActivity.Companion.start(this);
                 break;

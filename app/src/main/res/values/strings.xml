@@ -16,6 +16,8 @@
     <string name="s_tab_host">Tab Host</string>
     <string name="s_scene_transition">Scene Transition</string>
     <string name="touch_again">Touch Again</string>
+    <string name="search">Search</string>
+    <string name="action_search">Search</string>
     <string name="window">Window</string>
     <string name="view_showcase">View Showcase</string>
     <string name="image_view">ImageView</string>

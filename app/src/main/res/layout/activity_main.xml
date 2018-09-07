@@ -140,6 +140,14 @@
                 android:onClick="@{onClickListener::onClick}"
                 android:text="@string/touch_again"
                 />
+<<<<<<< HEAD
+
+            <Button
+                android:id="@+id/btn_main_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClickListener::onClick}"
+                android:text="@string/search"
             <Button
                 android:id="@+id/btn_main_window"
                 android:layout_width="match_parent"
