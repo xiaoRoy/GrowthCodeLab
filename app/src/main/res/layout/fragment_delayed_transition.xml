@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
@@ -8,7 +9,15 @@
 
         <variable
             name="onDelayedTransitionClickListener"
-            type="com.learn.growthcodelab.transition.DelayedTransitionViewModel.OnDelayedTransitionClickListener"/>
+            type="com.learn.growthcodelab.transition.DelayedTransitionViewModel.OnDelayedTransitionClickListener"
+            />
+
+        <variable
+            name="viewModel"
+            type="com.learn.growthcodelab.transition.DelayedTransitionViewModel"
+            />
+
+        <import type="android.view.View"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -22,21 +31,49 @@
             android:layout_height="@dimen/circle_default_size"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_normal"
+            android:visibility="@{viewModel.isCircleVisible ? View.VISIBLE : View.GONE}"
             android:src="@drawable/shape_circle_normal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_delayed_transition_change_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large_x"
+            android:layout_marginBottom="8dp"
             android:gravity="center"
             android:onClick="@{view -> onDelayedTransitionClickListener.onChangSizeClicked()}"
             android:text="@string/change_size"
-            app:layout_constraintStart_toStartOf="@+id/iv_transition_circle"
-            app:layout_constraintTop_toBottomOf="@+id/iv_transition_circle"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_center"
+            app:layout_constraintEnd_toStartOf="@+id/btn_delayed_transition_change_visibility"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_delayed_transition_change_visibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:onClick="@{view -> onDelayedTransitionClickListener.onChangeVisibilityClicked()}"
+            android:text="@string/change_visibility"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_delayed_transition_change_size"
             />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_horizontal_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            />
+
     </android.support.constraint.ConstraintLayout>
 
 </layout>
