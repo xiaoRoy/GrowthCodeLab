@@ -17,6 +17,8 @@ class DelayedTransitionFragment : BaseFragment(), DelayedTransitionViewModel.OnD
 
     private lateinit var binding: FragmentDelayedTransitionBinding
 
+    private val viewModel = DelayedTransitionViewModel()
+
     private var isCircleSizeChanged: Boolean = false
     private var circleSavedSize = 0
 
@@ -26,6 +28,7 @@ class DelayedTransitionFragment : BaseFragment(), DelayedTransitionViewModel.OnD
         inflater?.let {
             binding = FragmentDelayedTransitionBinding.bind(it.inflate(layoutRes, container, false))
             binding.onDelayedTransitionClickListener = this
+            binding.viewModel = viewModel
         }
         return binding.root
     }
@@ -44,5 +47,10 @@ class DelayedTransitionFragment : BaseFragment(), DelayedTransitionViewModel.OnD
         }
         isCircleSizeChanged = !isCircleSizeChanged
         binding.ivTransitionCircle.layoutParams = layoutParams
+    }
+
+    override fun onChangeVisibilityClicked() {
+        TransitionManager.beginDelayedTransition(binding.layoutDelayedTransitionContainer)
+        viewModel.isCircleVisible.set(!viewModel.isCircleVisible.get())
     }
 }
