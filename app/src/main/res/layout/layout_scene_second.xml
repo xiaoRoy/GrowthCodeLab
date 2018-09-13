@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/s_scene_second_line"
+        android:layout_gravity="start"
         />
 
     <TextView
@@ -19,5 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/s_scene_first_line"
+        android:layout_gravity="end"
         />
 </LinearLayout>
