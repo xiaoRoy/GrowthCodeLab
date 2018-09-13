@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.learn.growthcodelab.R;
-import com.learn.growthcodelab.scenetransition.ScenesFragment;
-import com.learn.growthcodelab.transition.DelayedTransitionFragment;
+import com.learn.growthcodelab.transition.ScenesFragment;
 
 public class TransitionActivity extends BaseActivity {
 
@@ -21,7 +20,7 @@ public class TransitionActivity extends BaseActivity {
         setContentView(R.layout.activity_transition);
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fl_transition_container, DelayedTransitionFragment.Companion.newInstance())
+                .add(R.id.fl_transition_container, ScenesFragment.newInstance())
                 .commit();
     }
 }
