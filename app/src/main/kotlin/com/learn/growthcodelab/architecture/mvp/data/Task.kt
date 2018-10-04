@@ -8,6 +8,8 @@ data class Task (
         val description: String = UUID.randomUUID().toString(),
         val isCompleted: Boolean = false) {
 
+    val isActive: Boolean
+    get() = !isCompleted
 
     override fun toString() = "Task with title $title"
 }
