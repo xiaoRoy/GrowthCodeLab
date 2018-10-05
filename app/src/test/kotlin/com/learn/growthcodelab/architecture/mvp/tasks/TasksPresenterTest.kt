@@ -1,13 +1,21 @@
 package com.learn.growthcodelab.architecture.mvp.tasks
 
+import com.learn.growthcodelab.architecture.mvp.data.Task
 import com.learn.growthcodelab.architecture.mvp.data.source.TasksDataSource
 import com.learn.growthcodelab.architecture.mvp.data.source.TasksRepository
+import com.learn.growthcodelab.argumentCaptor
+import com.learn.growthcodelab.capture
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.mockito.*
 
 //@RunWith(MockitoJUnitRunner.StrictStubs::class)
 class TasksPresenterTest {
+
+    companion object {
+        val TASKS = mutableListOf<Task>()
+    }
 
     @Mock
     private lateinit var view: TasksContract.View
@@ -20,19 +28,44 @@ class TasksPresenterTest {
 
     private lateinit var presenter: TasksPresenter
 
-    @Before fun setup(){
+    @Before
+    fun setup() {
         MockitoAnnotations.initMocks(this);
 
         presenter = TasksPresenter(repository, view)
 
         Mockito.`when`(view.isActive()).thenReturn(true)
+
+        TASKS.clear()
+        TASKS.add(Task("Title1", "Description1"))
+        TASKS.add(Task("Title2", "Description2"))
+        TASKS.add(Task("Title3", "Description3"))
     }
 
     @Test
-    fun test_create_presenter(){
+    fun test_create_presenter() {
         presenter = TasksPresenter(repository, view)
 
         Mockito.verify(view).setPresenter(presenter)
+    }
+
+    @Test
+    fun test_show_all_tasks() {
+        with(presenter) {
+            currentFilterType = TasksFilterType.ALL_TASKS
+            loadTasks(true)
+        }
+
+        Mockito.verify(repository).loadAllTasks(capture(loadAllTasksCallbackCaptor))
+        loadAllTasksCallbackCaptor.value.onAllTasksLoaded(TASKS)
+
+        val inorder = Mockito.inOrder(view)
+        inorder.verify(view).showLoadingIndicator(true)
+        inorder.verify(view).showLoadingIndicator(false)
+
+        val tasksCaptor = argumentCaptor<List<Task>>()
+        Mockito.verify(view).showTasks(capture(tasksCaptor))
+        Assert.assertTrue(tasksCaptor.value.size == 3)
     }
 
 
