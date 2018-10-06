@@ -38,8 +38,8 @@ class TasksPresenterTest {
 
         TASKS.clear()
         TASKS.add(Task("Title1", "Description1"))
-        TASKS.add(Task("Title2", "Description2"))
-        TASKS.add(Task("Title3", "Description3"))
+        TASKS.add(Task("Title2", "Description2").apply { isCompleted = true })
+        TASKS.add(Task("Title3", "Description3").apply { isCompleted = true })
     }
 
     @Test
@@ -66,6 +66,39 @@ class TasksPresenterTest {
         val tasksCaptor = argumentCaptor<List<Task>>()
         Mockito.verify(view).showTasks(capture(tasksCaptor))
         Assert.assertTrue(tasksCaptor.value.size == 3)
+    }
+
+    @Test
+    fun test_show_active_tasks() {
+        with(presenter) {
+            currentFilterType = TasksFilterType.ACTIVE_TASKS
+            loadTasks(true)
+        }
+
+        Mockito.verify(repository).loadAllTasks(capture(loadAllTasksCallbackCaptor))
+        loadAllTasksCallbackCaptor.value.onAllTasksLoaded(TASKS)
+        Mockito.verify(view).showLoadingIndicator(false)
+
+        val tasksCaptor = argumentCaptor<List<Task>>()
+        Mockito.verify(view).showTasks(capture(tasksCaptor))
+        Assert.assertTrue(tasksCaptor.value.size == 1)
+    }
+
+    @Test
+    fun test_show_completed_tasks() {
+        with(presenter) {
+            currentFilterType = TasksFilterType.COMPLETED_TASKS
+            loadTasks(true)
+        }
+
+        Mockito.verify(repository).loadAllTasks(capture(loadAllTasksCallbackCaptor))
+        loadAllTasksCallbackCaptor.value.onAllTasksLoaded(TASKS)
+        Mockito.verify(view).showLoadingIndicator(false)
+
+        val tasksCaptor = argumentCaptor<List<Task>>()
+        Mockito.verify(view).showTasks(capture(tasksCaptor))
+        Assert.assertTrue(tasksCaptor.value.size == 2)
+
     }
 
 
