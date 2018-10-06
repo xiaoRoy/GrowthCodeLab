@@ -3,9 +3,9 @@ package com.learn.growthcodelab.architecture.mvp.data
 import java.util.UUID
 
 data class Task (
-        val id: String,
+        val description: String,
         val title: String,
-        val description: String = UUID.randomUUID().toString(),
+        val id: String = UUID.randomUUID().toString(),
         var isCompleted: Boolean = false) {
 
     val isActive: Boolean
