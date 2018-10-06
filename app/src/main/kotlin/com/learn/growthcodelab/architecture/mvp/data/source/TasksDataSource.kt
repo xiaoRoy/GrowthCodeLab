@@ -18,4 +18,8 @@ interface TasksDataSource {
     fun refreshTasks()
 
     fun loadAllTasks(callback: LoadAllTasksCallback)
+
+    fun deleteAllTasks()
+
+    fun saveTask(task: Task)
 }
