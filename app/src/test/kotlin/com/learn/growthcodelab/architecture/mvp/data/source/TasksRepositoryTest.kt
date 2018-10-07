@@ -10,7 +10,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.*
-import org.mockito.Mockito.verify
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner.StrictStubs::class)
@@ -61,13 +61,71 @@ class TasksRepositoryTest {
         tasksRepository.loadAllTasks(loadAllTasksCallback)
     }
 
+    private fun setTaskAvailable(tasksDataSource: TasksDataSource, tasks: List<Task>) {
+        verify(tasksDataSource).loadAllTasks(capture(loadAllTasksCallbackCaptor))
+        loadAllTasksCallbackCaptor.value.onAllTasksLoaded(tasks)
+    }
+
+    private fun setTaskNotAvailable(tasksDataSource: TasksDataSource) {
+        verify(tasksDataSource).loadAllTasks(capture(loadAllTasksCallbackCaptor))
+        loadAllTasksCallbackCaptor.value.onAllTasksNotAvailable()
+    }
+
     @Test
-    fun test_load_all_tasks_cache_after_first_api_call(){
+    fun test_load_all_tasks_cache_after_first_api_call() {
         twoTasksLoadCallToRepository(loadAllTasksCallback)
 
         //only called one time
         verify(tasksRemoteDataSource).loadAllTasks(any())
     }
+
+    @Test
+    fun test_load_all_tasks_from_local() {
+        tasksRepository.loadAllTasks(loadAllTasksCallback)
+
+        verify(tasksLocalDataSource).loadAllTasks(any())
+    }
+
+    @Test
+    fun test_load_all_tasks_with_dirty_cache_from_remote() {
+        tasksRepository.refreshTasks()
+        tasksRepository.loadAllTasks(loadAllTasksCallback)
+
+        setTaskAvailable(tasksRemoteDataSource, TASKS)
+        verify(tasksLocalDataSource, never()).loadAllTasks(loadAllTasksCallback)
+        verify(loadAllTasksCallback).onAllTasksLoaded(TASKS)
+    }
+
+    @Test
+    fun test_load_all_tasks_with_local_data_not_available_from_remote() {
+        tasksRepository.loadAllTasks(loadAllTasksCallback)
+
+        setTaskNotAvailable(tasksLocalDataSource)
+        setTaskAvailable(tasksRemoteDataSource, TASKS)
+
+        verify(loadAllTasksCallback).onAllTasksLoaded(TASKS)
+    }
+
+    @Test
+    fun test_load_all_tasks_both_data_source_not_available() {
+        tasksRepository.loadAllTasks(loadAllTasksCallback)
+
+        setTaskNotAvailable(tasksLocalDataSource)
+        setTaskNotAvailable(tasksRemoteDataSource)
+
+        verify(loadAllTasksCallback).onAllTasksNotAvailable()
+    }
+
+    @Test
+    fun test_load_all_tasks_refresh_local_data_source() {
+        tasksRepository.refreshTasks()
+        tasksRepository.loadAllTasks(loadAllTasksCallback)
+
+        setTaskAvailable(tasksRemoteDataSource, TASKS)
+        verify(tasksLocalDataSource, times(TASKS.size)).saveTask(any())
+    }
+
+
 
 
 }
