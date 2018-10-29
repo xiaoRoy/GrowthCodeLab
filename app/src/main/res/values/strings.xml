@@ -22,6 +22,8 @@
     <string name="view_showcase">View Showcase</string>
     <string name="image_view">ImageView</string>
     <string name="image_view_scale_type">ScaleType</string>
+    <string name="tab_layout">TabHost</string>
+    <string name="build_tab_layout">Build Tab Host</string>
     <string name="touch_again_not_consume_move_and_up">Not Consume Move and Up</string>
 
     <string name="s_add_new_note">Add New Note</string>
