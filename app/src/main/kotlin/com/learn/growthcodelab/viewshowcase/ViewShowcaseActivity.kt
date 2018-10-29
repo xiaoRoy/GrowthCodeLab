@@ -6,8 +6,10 @@ import android.os.Bundle
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.activity.BaseActivity
 import com.learn.growthcodelab.fragment.BaseFragment
+import com.learn.growthcodelab.viewshowcase.tabhost.TabHostFragment
 
 class ViewShowcaseActivity : BaseActivity(), ViewShowcaseNavigator{
+
 
     companion object {
         fun start(context: Context){
@@ -29,6 +31,13 @@ class ViewShowcaseActivity : BaseActivity(), ViewShowcaseNavigator{
     }
 
     override fun navigateToImageViewPage() {
+    }
+
+    override fun navigateToTabHostPage() {
+         supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.fl_view_showcase_container, TabHostFragment.newInstance(), "tab_host")
+                    .commit()
     }
 
 }
