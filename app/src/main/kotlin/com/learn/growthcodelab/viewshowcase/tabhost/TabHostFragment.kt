@@ -33,24 +33,22 @@ class TabHostFragment : BaseFragment() {
             tabWidget = findViewById(android.R.id.tabs) as TabWidget
             tabContent = findViewById(android.R.id.tabcontent) as FrameLayout
         }
-        val tabA = tabHost.newTabSpec("Tab A")
-        val tabB = tabHost.newTabSpec("Tab B")
-        val tabC = tabHost.newTabSpec("Tab C")
+        initTab()
+    }
 
-        val xx = TabHost.TabContentFactory { tag ->
-            val textView = LayoutInflater.from(view.context).inflate(R.layout.layout_tab_content, tabContent, false) as TextView
+    private fun initTab() {
+        val tabNames = listOf("Tab A", "Tab B", "Tab C")
+        val tabContentFactory = TabHost.TabContentFactory { tag ->
+            val textView = LayoutInflater.from(context).inflate(R.layout.layout_tab_content, tabContent, false) as TextView
             textView.text = tag
             textView
         }
-
-        tabA.setIndicator("Tab A")
-        tabB.setIndicator("Tab B")
-        tabC.setIndicator("Tab C")
-        tabA.setContent(xx)
-        tabB.setContent(xx)
-        tabC.setContent(xx)
-        tabHost.addTab(tabA)
-        tabHost.addTab(tabB)
-        tabHost.addTab(tabC)
+        tabNames.forEach {
+            val tab = tabHost.newTabSpec(it).apply {
+                setIndicator(it)
+                setContent(tabContentFactory)
+            }
+            tabHost.addTab(tab)
+        }
     }
 }
