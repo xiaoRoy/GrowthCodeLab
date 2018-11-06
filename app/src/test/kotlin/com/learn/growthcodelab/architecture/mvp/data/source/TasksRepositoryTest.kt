@@ -1,9 +1,11 @@
 package com.learn.growthcodelab.architecture.mvp.data.source
 
 import com.learn.growthcodelab.any
-import com.learn.growthcodelab.architecture.mvp.data.Task
-import com.learn.growthcodelab.architecture.mvp.data.source.local.TasksLocalDataSource
-import com.learn.growthcodelab.architecture.mvp.data.source.remote.TasksRemoteDataSource
+import com.learn.growthcodelab.architecture.data.Task
+import com.learn.growthcodelab.architecture.data.source.TasksDataSource
+import com.learn.growthcodelab.architecture.data.source.TasksRepository
+import com.learn.growthcodelab.architecture.data.source.local.TasksLocalDataSource
+import com.learn.growthcodelab.architecture.data.source.remote.TasksRemoteDataSource
 import com.learn.growthcodelab.capture
 import org.junit.After
 import org.junit.Before

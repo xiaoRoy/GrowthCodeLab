@@ -1,6 +1,6 @@
-package com.learn.growthcodelab.architecture.mvp.data.source
+package com.learn.growthcodelab.architecture.data.source
 
-import com.learn.growthcodelab.architecture.mvp.data.Task
+import com.learn.growthcodelab.architecture.data.Task
 
 interface TasksDataSource {
 

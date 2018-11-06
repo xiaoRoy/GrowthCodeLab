@@ -1,8 +1,9 @@
 package com.learn.growthcodelab.architecture.mvp.tasks
 
-import com.learn.growthcodelab.architecture.mvp.data.Task
-import com.learn.growthcodelab.architecture.mvp.data.source.TasksDataSource
-import com.learn.growthcodelab.architecture.mvp.data.source.TasksRepository
+import com.learn.growthcodelab.architecture.data.Task
+import com.learn.growthcodelab.architecture.data.TasksFilterType
+import com.learn.growthcodelab.architecture.data.source.TasksDataSource
+import com.learn.growthcodelab.architecture.data.source.TasksRepository
 
 class TasksPresenter constructor(tasksRepository: TasksRepository,
                                  view: TasksContract.View) : TasksContract.Presenter {
