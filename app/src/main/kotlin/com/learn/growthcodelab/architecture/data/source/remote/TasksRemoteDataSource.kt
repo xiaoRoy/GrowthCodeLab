@@ -1,9 +1,9 @@
-package com.learn.growthcodelab.architecture.mvp.data.source.remote
+package com.learn.growthcodelab.architecture.data.source.remote
 
-import com.learn.growthcodelab.architecture.mvp.data.Task
-import com.learn.growthcodelab.architecture.mvp.data.source.TasksDataSource
+import com.learn.growthcodelab.architecture.data.Task
+import com.learn.growthcodelab.architecture.data.source.TasksDataSource
 
-object TasksRemoteDataSource : TasksDataSource{
+object TasksRemoteDataSource : TasksDataSource {
 
 
     override fun loadAllTasks(callback: TasksDataSource.LoadAllTasksCallback) {

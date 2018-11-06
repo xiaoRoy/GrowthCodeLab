@@ -2,7 +2,7 @@ package com.learn.growthcodelab.architecture.mvp.tasks
 
 import com.learn.growthcodelab.architecture.mvp.BasePresenter
 import com.learn.growthcodelab.architecture.mvp.BaseView
-import com.learn.growthcodelab.architecture.mvp.data.Task
+import com.learn.growthcodelab.architecture.data.Task
 
 interface TasksContract {
 

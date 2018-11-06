@@ -1,9 +1,9 @@
-package com.learn.growthcodelab.architecture.mvp.data.source.local
+package com.learn.growthcodelab.architecture.data.source.local
 
-import com.learn.growthcodelab.architecture.mvp.data.Task
-import com.learn.growthcodelab.architecture.mvp.data.source.TasksDataSource
+import com.learn.growthcodelab.architecture.data.Task
+import com.learn.growthcodelab.architecture.data.source.TasksDataSource
 
-class TasksLocalDataSource : TasksDataSource{
+class TasksLocalDataSource : TasksDataSource {
     override fun refreshTasks() {
         TODO("not implemented")
     }

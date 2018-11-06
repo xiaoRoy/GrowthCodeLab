@@ -1,8 +1,8 @@
-package com.learn.growthcodelab.architecture.mvp.data.source
+package com.learn.growthcodelab.architecture.data.source
 
-import com.learn.growthcodelab.architecture.mvp.data.Task
-import com.learn.growthcodelab.architecture.mvp.data.source.local.TasksLocalDataSource
-import com.learn.growthcodelab.architecture.mvp.data.source.remote.TasksRemoteDataSource
+import com.learn.growthcodelab.architecture.data.Task
+import com.learn.growthcodelab.architecture.data.source.local.TasksLocalDataSource
+import com.learn.growthcodelab.architecture.data.source.remote.TasksRemoteDataSource
 
 class TasksRepository
 constructor(private val tasksLocalDataSource: TasksLocalDataSource,

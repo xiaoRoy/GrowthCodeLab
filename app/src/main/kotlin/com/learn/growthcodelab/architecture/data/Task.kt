@@ -1,4 +1,4 @@
-package com.learn.growthcodelab.architecture.mvp.data
+package com.learn.growthcodelab.architecture.data
 
 import java.util.UUID
 
