@@ -1,25 +1,25 @@
 package com.learn.growthcodelab.architecture.mvvm.tasks
 
 import android.content.Context
-import android.databinding.BaseObservable
-import android.databinding.ObservableArrayList
-import android.databinding.ObservableField
+import android.databinding.*
 import android.graphics.drawable.Drawable
 import android.support.v4.content.ContextCompat
+import com.learn.growthcodelab.BR
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.architecture.data.Task
 import com.learn.growthcodelab.architecture.data.TasksFilterType
+import com.learn.growthcodelab.architecture.data.source.TasksDataSource
 import com.learn.growthcodelab.architecture.data.source.TasksRepository
 
 /*
 * a view directly binds to properties on the view model to send and receive updates.
 * https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 * */
-class TaskViewModel(val taskRepository: TasksRepository, context: Context) : BaseObservable() {
+class TaskViewModel(val tasksRepository: TasksRepository, context: Context) : BaseObservable() {
 
-    private val context: Context = context.applicationContext
+    private val context: Context
 
-    private var currentFiltering: TasksFilterType = TasksFilterType.ALL_TASKS
+    private var currentFiltering: TasksFilterType
 
     val tasks: ObservableArrayList<Task> = ObservableArrayList()
 
@@ -29,7 +29,66 @@ class TaskViewModel(val taskRepository: TasksRepository, context: Context) : Bas
 
     val noTaskIcon: ObservableField<Drawable> = ObservableField()
 
+    val isDataLoading: ObservableBoolean = ObservableBoolean(false)
 
+    val hasDataLoadingError: ObservableBoolean = ObservableBoolean(false)
+
+    @get:Bindable
+    var isEmpty: Boolean = tasks.isEmpty()
+
+
+    init {
+        this.context = context.applicationContext
+        currentFiltering = TasksFilterType.ALL_TASKS
+        setFiltering(TasksFilterType.ALL_TASKS)
+    }
+
+    fun loadTasks(forceUpdate: Boolean) {
+        loadTasks(forceUpdate, showLoadingUI = true)
+    }
+
+    private fun loadTasks(forceUpdate: Boolean, showLoadingUI: Boolean) {
+        if (showLoadingUI) {
+            isDataLoading.set(showLoadingUI)
+        }
+
+        if (forceUpdate) {
+            tasksRepository.refreshTasks()
+        }
+
+        tasksRepository.loadAllTasks(object : TasksDataSource.LoadAllTasksCallback {
+            override fun onAllTasksLoaded(allTasks: List<Task>) {
+                val tasksToShow = mutableListOf<Task>()
+                allTasks.forEach {
+                    when (currentFiltering) {
+                        TasksFilterType.ALL_TASKS -> tasksToShow.add(it)
+                        TasksFilterType.ACTIVE_TASKS -> {
+                            if (it.isActive) {
+                                tasksToShow.add(it)
+                            }
+                        }
+                        TasksFilterType.COMPLETED_TASKS -> {
+                            if (it.isCompleted) {
+                                tasksToShow.add(it)
+                            }
+                        }
+                    }
+                }
+                if(showLoadingUI){
+                    isDataLoading.set(false)
+                }
+                hasDataLoadingError.set(false)
+                tasks.clear()
+                tasks.addAll(tasksToShow)
+                notifyPropertyChanged(BR.empty)
+            }
+
+            override fun onAllTasksNotAvailable() {
+                hasDataLoadingError.set(true)
+            }
+        })
+
+    }
 
     fun setFiltering(requestFilterType: TasksFilterType) {
         currentFiltering = requestFilterType
