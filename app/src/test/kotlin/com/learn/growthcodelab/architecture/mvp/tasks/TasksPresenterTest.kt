@@ -14,7 +14,7 @@ import org.mockito.*
 //@RunWith(MockitoJUnitRunner.StrictStubs::class)
 class TasksPresenterTest {
 
-    companion object {
+    private companion object {
         val TASKS = mutableListOf<Task>()
     }
 
@@ -31,7 +31,7 @@ class TasksPresenterTest {
 
     @Before
     fun setup() {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.initMocks(this)
 
         presenter = TasksPresenter(repository, view)
 
