@@ -3,13 +3,14 @@ package com.learn.growthcodelab.architecture.mvvm.tasks
 import android.content.Context
 import android.content.res.Resources
 import com.learn.growthcodelab.architecture.data.Task
+import com.learn.growthcodelab.architecture.data.TasksFilterType
 import com.learn.growthcodelab.architecture.data.source.TasksDataSource
 import com.learn.growthcodelab.architecture.data.source.TasksRepository
+import com.learn.growthcodelab.capture
+import org.junit.Assert
 import org.junit.Before
-import org.mockito.ArgumentCaptor
-import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.MockitoAnnotations
+import org.junit.Test
+import org.mockito.*
 
 class TaskViewModelTest {
 
@@ -23,7 +24,7 @@ class TaskViewModelTest {
     @Mock
     private lateinit var tasksRepository: TasksRepository
 
-    @Mock
+    @Captor
     private lateinit var loadAllTasksCallbackCaptor: ArgumentCaptor<TasksDataSource.LoadAllTasksCallback>
 
 
@@ -48,5 +49,17 @@ class TaskViewModelTest {
     private fun setupContext() {
         Mockito.`when`(context.applicationContext).thenReturn(context)
         Mockito.`when`(context.resources).thenReturn(Mockito.mock(Resources::class.java))
+    }
+
+    @Test
+    fun test_loadAllTasksFromRepository_tasksLoaded() {
+        taskViewModel.setFiltering(TasksFilterType.ALL_TASKS)
+        taskViewModel.loadTasks(forceUpdate = true)
+        Mockito.verify(tasksRepository).loadAllTasks(capture(loadAllTasksCallbackCaptor))
+        Assert.assertTrue(taskViewModel.isDataLoading.get())
+        loadAllTasksCallbackCaptor.value.onAllTasksLoaded(TASKS)
+        Assert.assertFalse(taskViewModel.isDataLoading.get())
+        Assert.assertFalse(taskViewModel.tasks.isEmpty())
+        Assert.assertEquals(3, taskViewModel.tasks.size)
     }
 }

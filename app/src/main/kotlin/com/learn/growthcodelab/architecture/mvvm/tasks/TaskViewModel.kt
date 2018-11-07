@@ -80,7 +80,7 @@ class TaskViewModel(val tasksRepository: TasksRepository, context: Context) : Ba
                 hasDataLoadingError.set(false)
                 tasks.clear()
                 tasks.addAll(tasksToShow)
-                notifyPropertyChanged(BR.isEmpty)
+                notifyPropertyChanged(BR.empty)
             }
 
             override fun onAllTasksNotAvailable() {
