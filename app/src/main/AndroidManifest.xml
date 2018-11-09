@@ -41,6 +41,7 @@
             />
         <activity android:name=".window.WindowActivity"/>
         <activity android:name=".viewshowcase.ViewShowcaseActivity"/>
+        <activity android:name=".architecture.guide.ui.UserProfileActivity"/>
     </application>
 
 </manifest>
