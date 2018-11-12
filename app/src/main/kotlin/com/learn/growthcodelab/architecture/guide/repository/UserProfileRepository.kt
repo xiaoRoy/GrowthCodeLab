@@ -13,7 +13,7 @@ class UserProfileRepository {
     /*
     * Mock fetch the user from the remote
     * */
-    fun getUser() : LiveData<User> {
+    fun getUser(userId: String) : LiveData<User> {
         val user = MutableLiveData<User>()
         user.value = userMock
         return user

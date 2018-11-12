@@ -29,7 +29,7 @@ class UserProfileFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         userProfileViewModel = ViewModelProviders.of(this).get(UserProfileViewModel::class.java)
-        userProfileViewModel.getUser().observe(this, Observer<User> {
+        userProfileViewModel.user.observe(this, Observer<User> {
             TODO("update UI")
         })
     }
