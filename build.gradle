@@ -2,22 +2,14 @@
 
 buildscript {
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$project.android_plugin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$project.kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
     }
 }
 
@@ -29,6 +21,60 @@ ext {
     support_library_version = "26.1.0"
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+subprojects {
+    subProject ->
+        if (subProject.name == 'jetpack') {
+            apply plugin: 'com.android.library'
+        } else {
+            apply plugin: 'com.android.application'
+        }
+        apply plugin: 'kotlin-android'
+        apply plugin: 'kotlin-android-extensions'
+        apply plugin: 'kotlin-kapt'
+
+        android {
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            sourceSets {
+                main.java.srcDirs += 'src/main/kotlin'
+                test.java.srcDirs += 'src/test/kotlin'
+            }
+            dataBinding {
+                enabled = true
+            }
+        }
+
+        dependencies {
+            implementation "com.android.support:appcompat-v7:$rootProject.ext.support_library_version"
+            implementation "com.android.support:recyclerview-v7:$rootProject.ext.support_library_version"
+            implementation "com.android.support:design:$rootProject.ext.support_library_version"
+            implementation "com.android.support:cardview-v7:$rootProject.ext.support_library_version"
+            implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+            implementation "io.reactivex.rxjava2:rxjava:2.1.8"
+            implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+            kapt "com.android.databinding:compiler:$android_plugin_version"
+            implementation "android.arch.lifecycle:extensions:$rootProject.ext.lifecycle_version"
+
+            androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+                exclude group: 'com.android.support', module: 'support-annotations'
+            })
+
+
+            testImplementation "junit:junit:$rootProject.ext.jUnitVersion"
+            testImplementation "org.mockito:mockito-inline:$rootProject.ext.mockitoVersion"
+        }
 }
 
 task clean(type: Delete) {
