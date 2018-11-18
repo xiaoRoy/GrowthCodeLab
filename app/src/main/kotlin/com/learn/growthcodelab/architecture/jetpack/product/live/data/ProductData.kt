@@ -1,4 +1,4 @@
-package com.learn.growthcodelab.architecture.jetpack.product.data
+package com.learn.growthcodelab.architecture.jetpack.product.live.data
 
 import android.arch.lifecycle.LiveData
 import com.learn.growthcodelab.architecture.jetpack.product.model.Comment

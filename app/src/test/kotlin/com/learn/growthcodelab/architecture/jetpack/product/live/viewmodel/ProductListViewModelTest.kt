@@ -1,12 +1,14 @@
-package com.learn.growthcodelab.architecture.jetpack.product.viewmodel
+package com.learn.growthcodelab.architecture.jetpack.product.live.viewmodel
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Observer
-import com.learn.growthcodelab.architecture.jetpack.product.data.ProductDataSource
+import com.learn.growthcodelab.architecture.jetpack.product.live.data.ProductDataSource
+import com.learn.growthcodelab.architecture.jetpack.product.live.viewmodel.ProductListViewModel
 import com.learn.growthcodelab.architecture.jetpack.product.model.Product
 import com.learn.growthcodelab.capture
 import com.learn.growthcodelab.mock
+import junit.framework.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -30,7 +32,6 @@ class ProductListViewModelTest {
     fun setup(){
         MockitoAnnotations.initMocks(this)
         productListViewModel = ProductListViewModel(productDataSource)
-
     }
 
     @Test
@@ -41,5 +42,6 @@ class ProductListViewModelTest {
         val observer = mock<Observer<List<Product>>>()
         productListViewModel.loadAllProducts().observeForever(observer)
         Mockito.verify(observer).onChanged(capture(allProductsCaptor))
+        Assert.assertTrue(allProductsCaptor.value.isEmpty())
     }
 }

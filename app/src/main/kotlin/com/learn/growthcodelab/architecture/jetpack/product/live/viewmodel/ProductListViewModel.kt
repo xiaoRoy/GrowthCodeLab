@@ -1,14 +1,14 @@
-package com.learn.growthcodelab.architecture.jetpack.product.viewmodel
+package com.learn.growthcodelab.architecture.jetpack.product.live.viewmodel
 
 import android.arch.lifecycle.*
-import com.learn.growthcodelab.architecture.jetpack.product.data.ProductDataSource
+import com.learn.growthcodelab.architecture.jetpack.product.live.data.ProductDataSource
 import com.learn.growthcodelab.architecture.jetpack.product.model.Product
 
-class ProductListViewModel(val productDataSource: ProductDataSource) : ViewModel(){
+class ProductListViewModel(private val productDataSource: ProductDataSource) : ViewModel(){
 
 //    val productList: MediatorLiveData<List<Product>> = MediatorLiveData()
 
-    lateinit var allProducts: LiveData<List<Product>>
+//    lateinit var allProducts: LiveData<List<Product>>
 
     init {
 //        productList.addSource(productDataSource.loadAllProducts(), productList::setValue)
