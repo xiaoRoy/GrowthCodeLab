@@ -1,6 +1,6 @@
-package com.learn.growthcodelab.architecture.jetpack.words.data
+package com.learn.growthcodelab.architecture.jetpack.word.data
 
-import com.learn.jetpack.words.model.Word
+import com.learn.growthcodelab.architecture.jetpack.word.model.Word
 import io.reactivex.Completable
 import io.reactivex.Single
 

@@ -1,9 +1,9 @@
-package com.learn.growthcodelab.architecture.jetpack.words.viewmodel
+package com.learn.growthcodelab.architecture.jetpack.word.viewmodel
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.learn.growthcodelab.architecture.jetpack.words.data.WordDataSource
-import com.learn.growthcodelab.architecture.jetpack.words.model.Word
+import com.learn.growthcodelab.architecture.jetpack.word.data.WordDataSource
+import com.learn.growthcodelab.architecture.jetpack.word.model.Word
 import io.reactivex.SingleObserver
 import io.reactivex.disposables.Disposable
 

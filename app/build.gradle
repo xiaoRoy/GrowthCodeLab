@@ -19,4 +19,5 @@ android {
 
 dependencies {
     implementation project(path:':jetpack')
+    testImplementation "android.arch.core:core-testing:$rootProject.ext.lifecycle_version"
 }
