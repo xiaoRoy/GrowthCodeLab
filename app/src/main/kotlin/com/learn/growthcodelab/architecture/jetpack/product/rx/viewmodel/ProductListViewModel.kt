@@ -16,7 +16,6 @@ class ProductListViewModel(private val productDataSource: ProductDataSource) : V
         productDataSource
                 .loadAllProducts().subscribe(object : SingleObserver<List<Product>> {
                     override fun onSuccess(productList: List<Product>) {
-                        //do some logic here
                         allProducts.value = productList
                     }
 

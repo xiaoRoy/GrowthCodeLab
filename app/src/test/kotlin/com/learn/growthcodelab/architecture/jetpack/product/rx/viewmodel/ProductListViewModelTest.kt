@@ -2,6 +2,7 @@ package com.learn.growthcodelab.architecture.jetpack.product.rx.viewmodel
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
 import android.arch.lifecycle.Observer
+import com.learn.growthcodelab.any
 import com.learn.growthcodelab.architecture.jetpack.product.ProductTestFactory
 import com.learn.growthcodelab.architecture.jetpack.product.model.Product
 import com.learn.growthcodelab.architecture.jetpack.product.rx.data.ProductDataSource
@@ -14,6 +15,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.*
+import java.io.IOException
 
 class ProductListViewModelTest {
 
@@ -47,13 +49,23 @@ class ProductListViewModelTest {
     }
 
     @Test
-    fun tst_loadAllProducts() {
-         val allProducts = Single.just(ProductTestFactory.createProducts())
+    fun test_loadAllProducts() {
+        val allProducts = Single.just(ProductTestFactory.createProducts())
         Mockito.`when`(productDataSource.loadAllProducts()).thenReturn(allProducts)
         productListViewModel.loadAllProducts()
         val observer = mock<Observer<List<Product>>>()
         productListViewModel.allProducts.observeForever(observer)
         Mockito.verify(observer).onChanged(capture(allProductsCaptor))
         Assert.assertEquals(3, allProductsCaptor.value.size)
+    }
+
+    @Test
+    fun test_loadAllProducts_error() {
+        val allProducts = Single.error<List<Product>>(IOException())
+        Mockito.`when`(productDataSource.loadAllProducts()).thenReturn(allProducts)
+        productListViewModel.loadAllProducts()
+        val observer = mock<Observer<List<Product>>>()
+        productListViewModel.allProducts.observeForever(observer)
+        Mockito.verify(observer, Mockito.never()).onChanged(any())
     }
 }
