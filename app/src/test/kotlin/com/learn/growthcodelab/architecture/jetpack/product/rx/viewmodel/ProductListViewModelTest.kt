@@ -9,7 +9,6 @@ import com.learn.growthcodelab.architecture.jetpack.product.rx.data.ProductDataS
 import com.learn.growthcodelab.capture
 import com.learn.growthcodelab.mock
 import io.reactivex.Single
-import io.reactivex.SingleObserver
 import junit.framework.Assert
 import org.junit.Before
 import org.junit.Rule
@@ -29,7 +28,7 @@ class ProductListViewModelTest {
     private lateinit var productDataSource: ProductDataSource
 
     @Captor
-    private lateinit var allProductsCaptor: ArgumentCaptor<List<Product>>
+    private lateinit var productsCaptor: ArgumentCaptor<List<Product>>
 
     @Before
     fun setup() {
@@ -44,8 +43,8 @@ class ProductListViewModelTest {
         productListViewModel.loadAllProducts()
         val observer = mock<Observer<List<Product>>>()
         productListViewModel.allProducts.observeForever(observer)
-        Mockito.verify(observer).onChanged(capture(allProductsCaptor))
-        Assert.assertTrue(allProductsCaptor.value.isEmpty())
+        Mockito.verify(observer).onChanged(capture(productsCaptor))
+        Assert.assertTrue(productsCaptor.value.isEmpty())
     }
 
     @Test
@@ -55,8 +54,8 @@ class ProductListViewModelTest {
         productListViewModel.loadAllProducts()
         val observer = mock<Observer<List<Product>>>()
         productListViewModel.allProducts.observeForever(observer)
-        Mockito.verify(observer).onChanged(capture(allProductsCaptor))
-        Assert.assertEquals(3, allProductsCaptor.value.size)
+        Mockito.verify(observer).onChanged(capture(productsCaptor))
+        Assert.assertEquals(3, productsCaptor.value.size)
     }
 
     @Test
@@ -67,5 +66,16 @@ class ProductListViewModelTest {
         val observer = mock<Observer<List<Product>>>()
         productListViewModel.allProducts.observeForever(observer)
         Mockito.verify(observer, Mockito.never()).onChanged(any())
+    }
+
+    @Test
+    fun test_loadProductWithComments () {
+        val allProducts = Single.just(ProductTestFactory.createProducts())
+        Mockito.`when`(productDataSource.loadAllProducts()).thenReturn(allProducts)
+        productListViewModel.loadProductsWithDescription()
+        val observer = mock<Observer<List<Product>>>()
+        productListViewModel.productsWithDescription.observeForever(observer)
+        Mockito.verify(observer).onChanged(capture(productsCaptor))
+        Assert.assertEquals(2, productsCaptor.value.size)
     }
 }
