@@ -62,7 +62,7 @@ class ProductListViewModelTest {
         allProducts.value = ProductTestFactory.createProducts()
         Mockito.`when`(productDataSource.loadAllProducts()).thenReturn(allProducts)
         val observer = mock<Observer<List<Product>>>()
-        productListViewModel.loadProductWithDescrition().observeForever(observer)
+        productListViewModel.loadProductWithDescription().observeForever(observer)
         Mockito.verify(observer).onChanged(capture(productsCaptor))
         Assert.assertEquals(2, productsCaptor.value.size)
     }
