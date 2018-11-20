@@ -1,3 +1,8 @@
 package com.learn.growthcodelab.architecture.jetpack.word.model
 
-data class Word (val word: Word)
+import android.arch.persistence.room.ColumnInfo
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
+
+@Entity(tableName = "word")
+class Word (@PrimaryKey @ColumnInfo(name = "word") val word: Word)
