@@ -7,7 +7,9 @@ data class Product(
         val name: String,
         val description: String,
         val price: Double
-)
+) {
+    val comments: MutableList<Comment> = mutableListOf()
+}
 
 data class Comment(
         val id: Int,
@@ -15,3 +17,7 @@ data class Comment(
         val content: String,
         val postAt: Date
 )
+
+interface Test {
+    val name: String
+}
