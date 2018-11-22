@@ -12,7 +12,7 @@ class WordsViewModel(val wordDataSource: WordDataSource) : ViewModel() {
     val allWordList = MutableLiveData<List<Word>>()
 
     fun loadAllWords() {
-        wordDataSource.getAllWords().subscribe(
+       /* wordDataSource.getAllWords().subscribe(
                 object : SingleObserver<List<Word>>{
                     override fun onSuccess(allWords: List<Word>) {
                         allWordList.value = allWords
@@ -26,6 +26,6 @@ class WordsViewModel(val wordDataSource: WordDataSource) : ViewModel() {
                         TODO("not implemented")
                     }
                 }
-        )
+        )*/
     }
 }
