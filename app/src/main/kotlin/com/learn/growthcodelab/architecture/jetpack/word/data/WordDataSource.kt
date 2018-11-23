@@ -11,5 +11,5 @@ interface WordDataSource {
 
     fun getAllWordsList(): List<Word>
 
-    fun addWord(word: Word): Completable
+    fun addWord(word: Word)
 }
