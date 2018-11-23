@@ -18,4 +18,5 @@ class WordRepository(private val wordDao: WordDao) : WordDataSource {
     override fun addWord(word: Word) {
         wordDao.insert(word)
     }
+
 }
