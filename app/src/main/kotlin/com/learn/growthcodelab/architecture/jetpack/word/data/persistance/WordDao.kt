@@ -1,4 +1,4 @@
-package com.learn.growthcodelab.architecture.jetpack.word.data
+package com.learn.growthcodelab.architecture.jetpack.word.data.persistance
 
 import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.Dao

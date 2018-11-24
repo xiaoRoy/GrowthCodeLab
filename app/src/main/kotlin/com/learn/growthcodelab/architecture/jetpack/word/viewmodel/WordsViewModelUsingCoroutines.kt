@@ -4,12 +4,16 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
 import com.learn.growthcodelab.architecture.jetpack.word.data.WordRepository
-import com.learn.growthcodelab.architecture.jetpack.word.data.WordRoomDatabase
+import com.learn.growthcodelab.architecture.jetpack.word.data.persistance.WordRoomDatabase
 import com.learn.growthcodelab.architecture.jetpack.word.model.Word
 import kotlinx.coroutines.experimental.*
 import kotlinx.coroutines.experimental.android.Main
 import kotlin.coroutines.experimental.CoroutineContext
 
+
+/*
+* Is it OK to put the Coroutine in the ViewModel?
+* */
 class WordsViewModelUsingCoroutines(application: Application) : AndroidViewModel(application) {
 
     private var parentJob = Job()

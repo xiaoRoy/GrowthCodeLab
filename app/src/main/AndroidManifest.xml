@@ -42,6 +42,7 @@
         <activity android:name=".window.WindowActivity"/>
         <activity android:name=".viewshowcase.ViewShowcaseActivity"/>
         <activity android:name=".architecture.guide.ui.UserProfileActivity"/>
+        <activity android:name=".architecture.jetpack.word.ui.WordsActivity"/>
     </application>
 
 </manifest>
