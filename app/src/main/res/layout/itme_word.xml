@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.AppCompatTextView
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/word_height"
-    android:textSize="@dimen/word_size"
-    android:textStyle="bold"
-    android:layout_marginBottom="6dp"
-    android:paddingStart="8dp"
-    android:paddingEnd="8dp"
-    android:textColor="@android:color/holo_orange_light"
-    />
+    >
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.learn.growthcodelab.architecture.jetpack.word.model.Word"
+            />
+        <variable
+            name="position"
+            type="Integer"
+            />
+    </data>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/word_height"
+        android:layout_marginBottom="6dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="@dimen/word_size"
+        android:textStyle="bold"
+        />
+
+</layout>
+
