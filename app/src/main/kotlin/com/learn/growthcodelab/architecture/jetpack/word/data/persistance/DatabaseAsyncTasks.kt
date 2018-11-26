@@ -11,3 +11,12 @@ class AddWordAsyncTask(private val wordDao: WordDao) : AsyncTask<Word, Unit, Uni
         }
     }
 }
+
+class PopulateDatabaseAsyncTask(private val wordDao: WordDao) : AsyncTask<Unit, Unit, Unit>() {
+
+    override fun doInBackground(vararg params: Unit?) {
+        wordDao.deleteAll()
+        wordDao.insert(Word("Hello"))
+        wordDao.insert(Word("World"))
+    }
+}

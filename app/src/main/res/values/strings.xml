@@ -19,6 +19,7 @@
     <string name="search">Search</string>
     <string name="action_search">Search</string>
     <string name="window">Window</string>
+    <string name="words">Words</string>
     <string name="view_showcase">View Showcase</string>
     <string name="image_view">ImageView</string>
     <string name="image_view_scale_type">ScaleType</string>

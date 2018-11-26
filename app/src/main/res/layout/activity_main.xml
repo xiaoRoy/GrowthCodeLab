@@ -28,6 +28,14 @@
                 android:onClick="@{onClickListener::onClick}"
                 android:text="@string/view_showcase"
                 />
+
+            <Button
+                android:id="@+id/btn_main_words"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClickListener::onClick}"
+                android:text="@string/words"
+                />
             <Button
                 android:id="@+id/btn_main_data_binding"
                 android:layout_width="match_parent"
