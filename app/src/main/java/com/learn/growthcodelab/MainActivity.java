@@ -15,6 +15,7 @@ import com.learn.growthcodelab.activity.TransitionActivity;
 import com.learn.growthcodelab.activity.ViewPagerActivity;
 import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
+import com.learn.growthcodelab.architecture.jetpack.word.ui.WordsActivity;
 import com.learn.growthcodelab.databinding.ActivityMainBinding;
 import com.learn.growthcodelab.fullscreen.FullScreenActivity;
 import com.learn.growthcodelab.handler.HandlerActivity;
@@ -83,6 +84,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_view_showcase:
                 ViewShowcaseActivity.Companion.start(this);
+                break;
+            case R.id.btn_main_words:
+                WordsActivity.Companion.start(this);
                 break;
         }
     }

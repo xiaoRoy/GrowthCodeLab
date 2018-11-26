@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
-        />
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_words"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/float_action_button_add_word"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/float_action_button_margin"
-        android:src="@drawable/ic_add_black_24dp"
-        />
-</FrameLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/float_action_button_add_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/float_action_button_margin"
+            android:src="@drawable/ic_add_black_24dp"
+            />
+    </FrameLayout>
+
+</layout>

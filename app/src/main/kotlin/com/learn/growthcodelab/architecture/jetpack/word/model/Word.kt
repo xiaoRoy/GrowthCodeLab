@@ -5,4 +5,4 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "word")
-class Word (@PrimaryKey @ColumnInfo(name = "word") val word: Word)
+class Word (@PrimaryKey @ColumnInfo(name = "word") val word: String)
