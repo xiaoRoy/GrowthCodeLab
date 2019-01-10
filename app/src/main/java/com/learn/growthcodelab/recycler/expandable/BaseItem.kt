@@ -4,10 +4,16 @@ import android.support.annotation.LayoutRes
 import android.view.View
 import java.util.concurrent.atomic.AtomicLong
 
+
+/*
+* BaseItem is a group only contains one item.
+* */
 abstract class BaseItem<VH: BaseViewHolder> constructor(val id: Long): BaseGroup {
 
     private companion object {
         val idCounter = AtomicLong(0)
+
+        const val INDIVIDUAL_POSITION = 0
     }
 
     protected var groupDataObserver: GroupDataObserver? = null
@@ -21,14 +27,14 @@ abstract class BaseItem<VH: BaseViewHolder> constructor(val id: Long): BaseGroup
     override fun getItemCount() = 1
 
     override fun getItem(position: Int): BaseItem<*> {
-         if(position == 0) {
+         if(position == INDIVIDUAL_POSITION) {
              return this
          } else {
              throw IndexOutOfBoundsException()
          }
     }
 
-    override fun getItemPosition(item: BaseItem<*>) = if(item === this) 0 else -1
+    override fun getItemPosition(item: BaseItem<*>) = if(item === this) INDIVIDUAL_POSITION else -1
 
     override fun registerGroupDataObserver(groupDataObserver: GroupDataObserver) {
         this.groupDataObserver = groupDataObserver
@@ -50,7 +56,7 @@ abstract class BaseItem<VH: BaseViewHolder> constructor(val id: Long): BaseGroup
     }
 
     fun notifyChanged(payload: Any? = null){
-        groupDataObserver?.onItemChanged(this, 0, payload)
+        groupDataObserver?.onItemChanged(this, INDIVIDUAL_POSITION, payload)
     }
 
     @LayoutRes
