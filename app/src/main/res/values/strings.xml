@@ -100,4 +100,5 @@
 
     <string name="like_index">Index:%1$d</string>
     <string name="like_amount">Amount:%1$d</string>
+    <string name="like_show_tip">Show Tip</string>
 </resources>
