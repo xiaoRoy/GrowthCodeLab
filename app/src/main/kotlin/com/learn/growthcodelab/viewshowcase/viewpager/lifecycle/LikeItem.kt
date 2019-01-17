@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class LikeItem(
-        val index: Int, val amount: Int
+        val index: Int, var amount: Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
