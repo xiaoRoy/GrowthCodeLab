@@ -20,7 +20,7 @@
     <dimen name="margin_large_x">48dp</dimen>
     <dimen name="circle_default_size">60dp</dimen>
     <dimen name="circle_larger_size">90dp</dimen>
-    <dimen name="product_height">141dp</dimen>
+    <dimen name="product_height">240dp</dimen>
 
     <dimen name="word_size">24sp</dimen>
     <dimen name="word_height">26dp</dimen>
