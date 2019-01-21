@@ -97,4 +97,8 @@
     <string name="no_tasks_all">You have no TO-DOs!</string>
     <string name="no_tasks_active">You have no active TO-DOs!</string>
     <string name="no_tasks_completed">You have no completed TO-DOs!</string>
+
+    <string name="like_index">Index:%1$d</string>
+    <string name="like_amount">Amount:%1$d</string>
+    <string name="like_show_tip">Show Tip</string>
 </resources>

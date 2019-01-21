@@ -22,9 +22,9 @@ abstract class Group : BaseGroup, GroupDataObserver {
     /*
     * get item count before group with given group index
     * */
-    protected fun getItemCount(groupIndex: Int): Int{
+    protected fun getItemCount(groupIndex: Int): Int {
         var count = 0
-        for(index in 0..groupIndex){
+        for (index in 0..groupIndex) {
             val baseGroup = getGroup(index)
             count += baseGroup.getItemCount()
         }
@@ -34,7 +34,7 @@ abstract class Group : BaseGroup, GroupDataObserver {
     /*
     * get item count before the given group
     * */
-    protected fun getItemCount(baseGroup: BaseGroup): Int{
+    protected fun getItemCount(baseGroup: BaseGroup): Int {
         val groupIndex = getGroupPosition(baseGroup)
         return getItemCount(groupIndex)
     }
@@ -42,13 +42,13 @@ abstract class Group : BaseGroup, GroupDataObserver {
     /*
     * Get the (first?) position of a ViewType. no!
     * */
-    final override fun getItemPosition(item: BaseItem<*>): Int{
+    final override fun getItemPosition(item: BaseItem<*>): Int {
         var previousPosition = 0
         var groupPosition = -1
-        for(index in 0..getGroupCount()){
+        for (index in 0..getGroupCount()) {
             val group = getGroup(index)
             val position = group.getItemPosition(item)
-            if(position >= 0){
+            if (position >= 0) {
                 groupPosition = position + previousPosition
                 break
             }
@@ -60,10 +60,10 @@ abstract class Group : BaseGroup, GroupDataObserver {
     override fun getItem(position: Int): BaseItem<*> {
         var previousPosition = 0
         var item: BaseItem<*>? = null
-        for(index in 0..getGroupCount()){
+        for (index in 0..getGroupCount()) {
             val group = getGroup(index)
             val groupSize = group.getItemCount()
-            if(groupSize + previousPosition > position){
+            if (groupSize + previousPosition > position) {
                 item = group.getItem(position - previousPosition)
                 break
             }
@@ -80,19 +80,23 @@ abstract class Group : BaseGroup, GroupDataObserver {
         groupDataObservable.unregisterObserver(groupDataObserver)
     }
 
-    @CallSuper open fun addGroup(position: Int = -1, baseGroup: BaseGroup){
+    @CallSuper
+    open fun addGroup(position: Int = -1, baseGroup: BaseGroup) {
         baseGroup.registerGroupDataObserver(this)
     }
 
-    @CallSuper open fun <T: BaseGroup> addAllGroups(position: Int = -1, groups: Collection<T>){
+    @CallSuper
+    open fun <T : BaseGroup> addAllGroups(position: Int = -1, groups: Collection<T>) {
         groups.forEach { it.registerGroupDataObserver(this) }
     }
 
-    @CallSuper open fun removeGroup(group: BaseGroup){
+    @CallSuper
+    open fun removeGroup(group: BaseGroup) {
         group.unregisterGroupDataObserver(this)
     }
 
-    @CallSuper open fun <T: BaseGroup> removeAllGroups(groups: Collection<T>){
+    @CallSuper
+    open fun <T : BaseGroup> removeAllGroups(groups: Collection<T>) {
         groups.forEach { it.unregisterGroupDataObserver(this) }
     }
 
@@ -143,52 +147,52 @@ abstract class Group : BaseGroup, GroupDataObserver {
 
     class GroupDataObservable {
 
-        private val observers: ArrayList<GroupDataObserver> = ArrayList()
+        private val observers: MutableList<GroupDataObserver> = mutableListOf()
 
-        fun onGroupChanged(baseGroup: BaseGroup, position: Int, payload: Any? = null){
-            observers.reversed().forEach{it.onItemChanged(baseGroup, position, payload)}
+        fun onGroupChanged(baseGroup: BaseGroup, position: Int, payload: Any? = null) {
+            observers.reversed().forEach { it.onItemChanged(baseGroup, position, payload) }
         }
 
-        fun onGroupRangeChanged(group: BaseGroup, positionStar: Int, groupCount: Int, payload: Any? = null){
-            observers.reversed().forEach{it.onItemRangeChanged(group, positionStar, groupCount, payload)}
+        fun onGroupRangeChanged(group: BaseGroup, positionStar: Int, groupCount: Int, payload: Any? = null) {
+            observers.reversed().forEach { it.onItemRangeChanged(group, positionStar, groupCount, payload) }
         }
 
-        fun onGroupInserted(group: BaseGroup, position: Int){
-            observers.reversed().forEach{it.onItemInserted(group, position)}
+        fun onGroupInserted(group: BaseGroup, position: Int) {
+            observers.reversed().forEach { it.onItemInserted(group, position) }
         }
 
-        fun onGroupRangeInserted(group: BaseGroup, positionStar: Int, groupCount: Int){
-            observers.reversed().forEach{it.onItemRangeInserted(group, positionStar, groupCount)}
+        fun onGroupRangeInserted(group: BaseGroup, positionStar: Int, groupCount: Int) {
+            observers.reversed().forEach { it.onItemRangeInserted(group, positionStar, groupCount) }
         }
 
-        fun onGroupRemoved(baseGroup: BaseGroup, position: Int){
-            observers.reversed().forEach{it.onItemRemoved(baseGroup, position)}
+        fun onGroupRemoved(baseGroup: BaseGroup, position: Int) {
+            observers.reversed().forEach { it.onItemRemoved(baseGroup, position) }
         }
 
-        fun onGroupRangeRemoved(group: BaseGroup, positionStar: Int, groupCount: Int){
-            observers.reversed().forEach{it.onItemRangeRemoved(group, positionStar, groupCount)}
+        fun onGroupRangeRemoved(group: BaseGroup, positionStar: Int, groupCount: Int) {
+            observers.reversed().forEach { it.onItemRangeRemoved(group, positionStar, groupCount) }
         }
 
-        fun onGroupMoved(group: BaseGroup, fromPosition: Int, toPosition: Int){
+        fun onGroupMoved(group: BaseGroup, fromPosition: Int, toPosition: Int) {
             observers.reversed().forEach { it.onItemMoved(group, fromPosition, toPosition) }
         }
 
-        fun onChanged(group: BaseGroup){
+        fun onChanged(group: BaseGroup) {
             observers.reversed().forEach { it.onChanged(group) }
         }
 
 
-        fun registerObserver(groupDataObserver: GroupDataObserver){
-            synchronized(observers){
-                if(observers.contains(groupDataObserver)){
+        fun registerObserver(groupDataObserver: GroupDataObserver) {
+            synchronized(observers) {
+                if (observers.contains(groupDataObserver)) {
                     throw IllegalStateException("$groupDataObserver is already registered.")
                 }
                 observers.add(groupDataObserver)
             }
         }
 
-        fun unregisterObserver(groupDataObserver: GroupDataObserver){
-            synchronized(observers){
+        fun unregisterObserver(groupDataObserver: GroupDataObserver) {
+            synchronized(observers) {
                 val index = observers.indexOf(groupDataObserver)
                 observers.removeAt(index)
             }

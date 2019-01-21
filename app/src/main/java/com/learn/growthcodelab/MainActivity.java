@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_search:
                 SearchActivity.Companion.start(this);
+                break;
             case R.id.btn_main_window:
                 WindowActivity.Companion.start(this);
                 break;
