@@ -19,6 +19,7 @@
     <string name="search">Search</string>
     <string name="action_search">Search</string>
     <string name="window">Window</string>
+    <string name="fragment_play_ground">Fragment Play Ground</string>
     <string name="words">Words</string>
     <string name="view_showcase">View Showcase</string>
     <string name="image_view">ImageView</string>
@@ -101,4 +102,6 @@
     <string name="like_index">Index:%1$d</string>
     <string name="like_amount">Amount:%1$d</string>
     <string name="like_show_tip">Show Tip</string>
+    <string name="show_detail">Show Detail</string>
+    <string name="find">Find</string>
 </resources>

@@ -161,6 +161,14 @@
                 android:onClick="@{onClickListener::onClick}"
                 android:text="@string/window"
                 />
+
+            <Button
+                android:id="@+id/btn_fragment_play_ground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClickListener::onClick}"
+                android:text="@string/fragment_play_ground"
+                />
         </LinearLayout>
     </ScrollView>
 </layout>
