@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.activity.BaseActivity
 import com.learn.growthcodelab.fragment.transaction.FirstFragment
@@ -22,10 +23,29 @@ class FragmentPlayGroundActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment_play_ground)
-        if(savedInstanceState == null) {
+        initOperation()
+    }
+
+    private fun initOperation() {
+        findViewById<View>(R.id.btn_play_ground_op).setOnClickListener { removeFirstOne()  }
+    }
+
+    private fun addFirstFragment(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                     .add(R.id.fl_fragment_play_ground_container, FirstFragment.newInstance(), "First")
                     .commit()
+        }
+    }
+    /*
+    * Try to remove the fragment in xml
+    *
+    * */
+    private fun removeFirstOne() {
+        val fragment = supportFragmentManager.findFragmentByTag("First")
+        fragment?.run {
+            supportFragmentManager.beginTransaction().remove(this).commit()
+            Log.d("trail", "Removed")
         }
     }
 
