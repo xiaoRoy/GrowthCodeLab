@@ -2,6 +2,7 @@ package com.learn.growthcodelab.viewshowcase.viewpager.lifecycle
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +38,12 @@ class LifeCycleInViewPageItemFragment : BaseFragment() {
         }*/
     }
 
-    override fun enableLifeCycleLog() = false
+    override fun enableLifeCycleLog() = true
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Log.d("trail", "onActivityCreated.index:${likeItem.index}")
+    }
 
     fun showTip(isTipVisible: Boolean) {
         viewModel.isTipVisible.set(isTipVisible)

@@ -105,4 +105,7 @@
     <string name="show_detail">Show Detail</string>
     <string name="find">Find</string>
     <string name="operation">Operation</string>
+    <string name="section_a">Section A</string>
+    <string name="section_b">Section B</string>
+    <string name="section_details">Section Details</string>
 </resources>

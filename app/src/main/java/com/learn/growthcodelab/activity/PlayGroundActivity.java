@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.recycler.loadmore.ProductListFragment;
+import com.learn.growthcodelab.viewshowcase.viewpager.lifecycle.LifeCycleInViewPageFragment;
 
 
 public class PlayGroundActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class PlayGroundActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fl_play_ground_container,
-                        ProductListFragment.Companion.newInstance(),
+                        LifeCycleInViewPageFragment.Companion.newInstance(),
                         "Product List")
                 .addToBackStack(null)
                 .commit();
