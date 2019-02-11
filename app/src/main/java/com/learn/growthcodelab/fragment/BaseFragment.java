@@ -58,7 +58,7 @@ public class BaseFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        logLifeCycle("onCreateView");
+        logLifeCycle("onViewCreated");
         super.onViewCreated(view, savedInstanceState);
     }
 
@@ -83,7 +83,7 @@ public class BaseFragment extends Fragment {
 
     @Override
     public void onPause() {
-        logLifeCycle("onStop");
+        logLifeCycle("onPause");
         super.onPause();
     }
 
@@ -95,7 +95,7 @@ public class BaseFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        logLifeCycle("onStop");
+        logLifeCycle("onDestroyView");
         super.onDestroyView();
     }
 
@@ -109,6 +109,12 @@ public class BaseFragment extends Fragment {
     public void onDetach() {
         logLifeCycle("onDetach");
         super.onDetach();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        logLifeCycle("onSaveInstanceState");
+        super.onSaveInstanceState(outState);
     }
 
     @LayoutRes
