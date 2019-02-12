@@ -41,7 +41,9 @@ class FragmentPlayGroundActivity
     private fun showStateDashboard(savedInstanceState: Bundle?) {
         if(savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .add(R.id.fl_fragment_play_ground_container, StateDashboardFragment.newInstance(), "state_dashboard")
+                    .add(R.id.fl_fragment_play_ground_container,
+                            StateDashboardFragment.newInstance(),
+                            "state_dashboard")
 //                    .addToBackStack("add_state_dashboard")
                     .commit()
         }
