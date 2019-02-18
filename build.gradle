@@ -19,7 +19,7 @@ ext {
     mockitoVersion = '2.22.0'
     lifecycle_version = "1.1.1"
     room_version = '1.1.1'
-    support_library_version = '26.1.0'
+    support_library_version = '28.0.0'
     coroutines_version = '0.26.1'
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
@@ -27,8 +27,8 @@ ext {
 
 allprojects {
     repositories {
-//        mavenCentral()
-//        google()
+        mavenCentral()
+        google()
         jcenter()
     }
 }
