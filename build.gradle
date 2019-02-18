@@ -27,8 +27,8 @@ ext {
 
 allprojects {
     repositories {
-        mavenCentral()
-        google()
+//        mavenCentral()
+//        google()
         jcenter()
     }
 }
