@@ -19,16 +19,16 @@ ext {
     mockitoVersion = '2.22.0'
     lifecycle_version = "1.1.1"
     room_version = '1.1.1'
-    support_library_version = '26.1.0'
-    coroutines_version = '0.26.1'
+    support_library_version = '28.0.0'
+    coroutines_version = '1.0.0'
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
 }
 
 allprojects {
     repositories {
-//        mavenCentral()
-//        google()
+        google()
+        mavenCentral()
         jcenter()
     }
 }
@@ -66,7 +66,7 @@ subprojects {
             implementation 'com.android.support.constraint:constraint-layout:1.1.0'
             implementation "io.reactivex.rxjava2:rxjava:2.1.8"
             implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-            kapt "com.android.databinding:compiler:$android_plugin_version"
+//            kapt "com.android.databinding:compiler:$android_plugin_version"
             implementation "android.arch.lifecycle:extensions:$rootProject.ext.lifecycle_version"
 
             androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
