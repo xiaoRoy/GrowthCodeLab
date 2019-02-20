@@ -18,7 +18,7 @@ class PopupFragment : BaseFragment(), View.OnClickListener{
         fun newInstance() = PopupFragment()
     }
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding: FragmentPopupBinding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         binding.onClickListener = this
         return binding.root

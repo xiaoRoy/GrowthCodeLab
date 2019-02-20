@@ -2,8 +2,8 @@ package com.learn.growthcodelab.databinding.model;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.library.baseAdapters.BR;
 
-import com.android.databinding.library.baseAdapters.BR;
 
 public class User extends BaseObservable {
 

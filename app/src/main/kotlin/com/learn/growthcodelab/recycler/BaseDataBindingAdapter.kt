@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
-abstract class BaseDataBindingAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<DataBindingViewHolder>() {
+abstract class BaseDataBindingAdapter : RecyclerView.Adapter<DataBindingViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): DataBindingViewHolder {
-        val layoutInflater = LayoutInflater.from(parent?.context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBindingViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
         val viewDataBinding = DataBindingUtil
                 .inflate<ViewDataBinding>(layoutInflater, viewType, parent, false)
         return DataBindingViewHolder(viewDataBinding)
     }
 
-    override fun onBindViewHolder(holder: DataBindingViewHolder?, position: Int) {
-        holder?.bind(getItemByPosition(position))
+    override fun onBindViewHolder(holder: DataBindingViewHolder, position: Int) {
+        holder.bind(getItemByPosition(position))
     }
 
     override fun getItemViewType(position: Int) = getLayoutIdByPosition(position)

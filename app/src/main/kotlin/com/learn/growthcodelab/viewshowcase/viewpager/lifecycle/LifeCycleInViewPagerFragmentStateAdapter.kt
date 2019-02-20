@@ -18,17 +18,17 @@ class LifeCycleInViewPagerFragmentStateAdapter(
 
     override fun getCount() = items.size
 
-    override fun instantiateItem(container: ViewGroup?, position: Int): Any {
+    override fun instantiateItem(container: ViewGroup, position: Int): Any {
         Log.d("trail", "instantiateItem:position:$position")
         return super.instantiateItem(container, position)
     }
 
-    override fun destroyItem(container: ViewGroup?, position: Int, `object`: Any?) {
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         Log.d("trail", "destroyItem:position:$position")
         super.destroyItem(container, position, `object`)
     }
 
-    override fun getItemPosition(`object`: Any?): Int {
+    override fun getItemPosition(`object`: Any): Int {
         return super.getItemPosition(`object`)
     }
 

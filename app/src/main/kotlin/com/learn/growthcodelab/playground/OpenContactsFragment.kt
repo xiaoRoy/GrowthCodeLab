@@ -20,14 +20,16 @@ class OpenContactsFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(view: View?) {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = ContactsContract.Contacts.CONTENT_TYPE
-        intent.resolveActivity(activity.packageManager)?.let {
-            _-> startActivityForResult(intent, 1)
+        activity?.run {
+            intent.resolveActivity(this.packageManager)?.let {
+                _-> startActivityForResult(intent, 1)
+            }
         }
     }
 
     override fun getLayoutRes() = R.layout.fragment_open_contacts
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding: FragmentOpenContactsBinding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         binding.onClickedListener = this
         return binding.root

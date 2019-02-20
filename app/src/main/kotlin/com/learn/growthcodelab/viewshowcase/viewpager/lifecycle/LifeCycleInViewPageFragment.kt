@@ -19,12 +19,12 @@ class LifeCycleInViewPageFragment : BaseFragment(),
 
     override fun getLayoutRes() = R.layout.fragment_lifecycle_in_view_pager
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pagerAdapter = LifeCycleInViewPagerFragmentStateAdapter(childFragmentManager, LikeItem.generateLikeItems())
         binding.listener = this

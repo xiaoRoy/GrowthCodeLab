@@ -2,6 +2,7 @@ package com.learn.growthcodelab.fragment;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import androidx.annotation.LayoutRes;
@@ -39,7 +40,8 @@ public class BaseFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         logLifeCycle("onCreateView");
         View rootView;
         if(getLayoutRes() != 0){
@@ -57,7 +59,7 @@ public class BaseFragment extends Fragment {
 
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         logLifeCycle("onViewCreated");
         super.onViewCreated(view, savedInstanceState);
     }
@@ -112,7 +114,7 @@ public class BaseFragment extends Fragment {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@NonNull Bundle outState) {
         logLifeCycle("onSaveInstanceState");
         super.onSaveInstanceState(outState);
     }

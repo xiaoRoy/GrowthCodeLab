@@ -8,7 +8,7 @@ import android.content.Context
 import com.learn.growthcodelab.architecture.jetpack.word.model.Word
 
 
-@Database(entities = [Word::class], version = 1)
+@Database(entities = [Word::class], version = 1, exportSchema = false)
 abstract class WordRoomDatabase : RoomDatabase() {
     companion object {
         @Volatile

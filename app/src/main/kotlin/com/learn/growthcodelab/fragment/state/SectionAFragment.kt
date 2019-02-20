@@ -24,7 +24,7 @@ class SectionAFragment : BaseFragment(), SectionAContract.ViewRenderer {
 
     override fun getLayoutRes() = R.layout.fragment_section_a
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         viewModel = SectionAViewModel()
         binding.viewModel = viewModel

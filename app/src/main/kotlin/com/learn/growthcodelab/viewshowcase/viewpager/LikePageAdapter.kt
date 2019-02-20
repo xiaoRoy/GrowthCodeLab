@@ -10,7 +10,7 @@ import com.learn.growthcodelab.databinding.LayoutViewPagerItemLikeBinding
 
 class LikePageAdapter(
         private val likeList: MutableList<Int>
-) : androidx.viewpager.widget.PagerAdapter() {
+) : PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val binding = DataBindingUtil.inflate<LayoutViewPagerItemLikeBinding>(
@@ -24,7 +24,7 @@ class LikePageAdapter(
         return itemView
     }
 
-    override fun isViewFromObject(view: View?, `object`: Any?) = (view === `object`)
+    override fun isViewFromObject(view: View, `object`: Any) = (view === `object`)
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         super.destroyItem(container, position, `object`)

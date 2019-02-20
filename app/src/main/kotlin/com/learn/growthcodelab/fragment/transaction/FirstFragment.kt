@@ -19,7 +19,7 @@ class FirstFragment : PlayGroundAbstractFragment() {
 
     override fun getLayoutRes() = R.layout.fragment_first
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         binding.listener = View.OnClickListener { navigator.navigateToSecondPage() }
         return binding.root

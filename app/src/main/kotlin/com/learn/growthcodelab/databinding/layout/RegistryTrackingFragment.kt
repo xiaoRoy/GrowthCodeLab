@@ -17,7 +17,7 @@ class RegistryTrackingFragment : BaseFragment(){
 
     override fun getLayoutRes() = R.layout.fragment_registry_tracking
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = DataBindingUtil.inflate<FragmentRegistryTrackingBinding>(inflater, layoutRes, container,false)
         return binding.root
     }

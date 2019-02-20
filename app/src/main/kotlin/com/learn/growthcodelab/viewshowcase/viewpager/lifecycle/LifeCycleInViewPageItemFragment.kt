@@ -27,11 +27,9 @@ class LifeCycleInViewPageItemFragment : BaseFragment() {
             likeItem = arguments.getParcelable(BUNDLE_KEY_LIKE) as LikeItem
         }*/
 
-        if(arguments != null) {
-            val likeItem = arguments.getParcelable(BUNDLE_KEY_LIKE) as? LikeItem
-            if(likeItem != null) {
-                this.likeItem = likeItem
-            }
+        val likeItem = arguments?.getParcelable(BUNDLE_KEY_LIKE) as? LikeItem
+        if (likeItem != null) {
+            this.likeItem = likeItem
         }
         /*likeItem = arguments?.let { bundle:Bundle ->
             bundle.getParcelable(BUNDLE_KEY_LIKE) as? LikeItem

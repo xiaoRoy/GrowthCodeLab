@@ -23,7 +23,7 @@ class ProductListFragment : BaseFragment() {
 
     override fun getLayoutRes() = R.layout.fragment_product_list
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
     }

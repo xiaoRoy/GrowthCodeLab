@@ -27,7 +27,7 @@ class ViewShowcaseFragment : BaseFragment(){
 
     override fun getLayoutRes() = R.layout.fragment_view_showcase
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = DataBindingUtil.inflate<FragmentViewShowcaseBinding>(inflater, layoutRes, container, false)
         binding.navigator = viewShowcaseNavigator
         return binding.root
