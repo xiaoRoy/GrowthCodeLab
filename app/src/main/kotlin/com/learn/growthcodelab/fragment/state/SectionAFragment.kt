@@ -1,8 +1,8 @@
 package com.learn.growthcodelab.fragment.state
 
-import android.databinding.BaseObservable
-import android.databinding.Bindable
-import android.databinding.DataBindingUtil
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

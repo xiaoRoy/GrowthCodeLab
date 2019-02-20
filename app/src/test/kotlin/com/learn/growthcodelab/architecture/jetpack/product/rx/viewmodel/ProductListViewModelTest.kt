@@ -1,7 +1,7 @@
 package com.learn.growthcodelab.architecture.jetpack.product.rx.viewmodel
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule
-import android.arch.lifecycle.Observer
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.Observer
 import com.learn.growthcodelab.any
 import com.learn.growthcodelab.architecture.jetpack.product.ProductTestFactory
 import com.learn.growthcodelab.architecture.jetpack.product.model.Product

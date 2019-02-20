@@ -1,7 +1,7 @@
 package com.learn.growthcodelab.view.viewpager;
 
-import android.databinding.DataBindingUtil;
-import android.support.v4.view.PagerAdapter;
+import androidx.databinding.DataBindingUtil;
+import androidx.viewpager.widget.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +10,6 @@ import com.learn.growthcodelab.BR;
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.databinding.LayoutViewPagerItemLikeBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

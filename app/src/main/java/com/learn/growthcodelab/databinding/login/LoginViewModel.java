@@ -1,7 +1,7 @@
 package com.learn.growthcodelab.databinding.login;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import android.text.TextWatcher;
 
 import com.learn.growthcodelab.BR;

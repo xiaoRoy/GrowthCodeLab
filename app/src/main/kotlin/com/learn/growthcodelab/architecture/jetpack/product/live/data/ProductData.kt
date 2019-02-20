@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.architecture.jetpack.product.live.data
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.learn.growthcodelab.architecture.jetpack.product.model.Comment
 import com.learn.growthcodelab.architecture.jetpack.product.model.Product
 

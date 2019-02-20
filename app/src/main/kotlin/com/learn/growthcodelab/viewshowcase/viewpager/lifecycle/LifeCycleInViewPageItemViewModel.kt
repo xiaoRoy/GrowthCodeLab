@@ -1,8 +1,8 @@
 package com.learn.growthcodelab.viewshowcase.viewpager.lifecycle
 
-import android.databinding.BaseObservable
-import android.databinding.Bindable
-import android.databinding.ObservableBoolean
+import androidx.databinding.BaseObservable
+import androidx.databinding.Bindable
+import androidx.databinding.ObservableBoolean
 import com.learn.growthcodelab.BR
 
 class LifeCycleInViewPageItemViewModel(likeItem: LikeItem) : BaseObservable() {

@@ -1,11 +1,11 @@
 package com.learn.growthcodelab.architecture.jetpack.word.ui
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.LinearLayoutManager.VERTICAL
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,7 +44,7 @@ class WordsFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.recyclerWords.layoutManager = LinearLayoutManager(activity, VERTICAL, false)
+        binding.recyclerWords.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity, VERTICAL, false)
         binding.recyclerWords.adapter = wordsAdapter
         wordsViewModel.allWords.observe(this,
                 Observer { allWords ->

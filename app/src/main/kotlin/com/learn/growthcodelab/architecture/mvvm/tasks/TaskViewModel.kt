@@ -1,9 +1,9 @@
 package com.learn.growthcodelab.architecture.mvvm.tasks
 
 import android.content.Context
-import android.databinding.*
+import androidx.databinding.*
 import android.graphics.drawable.Drawable
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import com.learn.growthcodelab.BR
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.architecture.data.Task

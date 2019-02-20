@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.recycler.expandable
 
-import android.support.annotation.LayoutRes
+import androidx.annotation.LayoutRes
 import android.view.View
 import java.util.concurrent.atomic.AtomicLong
 

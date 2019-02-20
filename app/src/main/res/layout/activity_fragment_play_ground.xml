@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@android:color/white"
     >
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_play_ground_op"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

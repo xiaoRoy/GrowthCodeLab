@@ -1,10 +1,10 @@
 package com.learn.growthcodelab.recycler
 
-import android.databinding.ViewDataBinding
-import android.support.v7.widget.RecyclerView
+import androidx.databinding.ViewDataBinding
+import androidx.recyclerview.widget.RecyclerView
 import com.learn.growthcodelab.BR
 
-class DataBindingViewHolder(val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
+class DataBindingViewHolder(val binding: ViewDataBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item : Any){
         binding.setVariable(BR.item, item)

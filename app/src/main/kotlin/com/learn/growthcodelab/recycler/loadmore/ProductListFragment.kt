@@ -1,9 +1,9 @@
 package com.learn.growthcodelab.recycler.loadmore
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +31,7 @@ class ProductListFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         productAdapter = ProductAdapter(Product.generateProducts(0).toMutableList())
-        binding.recyclerProduct.layoutManager = GridLayoutManager(activity, 2)
+        binding.recyclerProduct.layoutManager = androidx.recyclerview.widget.GridLayoutManager(activity, 2)
         binding.recyclerProduct.adapter = productAdapter
     }
 }

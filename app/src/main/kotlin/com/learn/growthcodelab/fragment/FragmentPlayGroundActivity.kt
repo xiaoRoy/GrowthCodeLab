@@ -3,7 +3,7 @@ package com.learn.growthcodelab.fragment
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.View
 import com.learn.growthcodelab.R
@@ -24,7 +24,7 @@ class FragmentPlayGroundActivity
         }
     }
 
-    private val fragmentSates: MutableList<Fragment.SavedState> = mutableListOf()
+    private val fragmentSates: MutableList<androidx.fragment.app.Fragment.SavedState> = mutableListOf()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +63,7 @@ class FragmentPlayGroundActivity
     }
 
     private fun removeStateDashboard() {
-        val fragment: Fragment? = supportFragmentManager.findFragmentByTag("state_dashboard")
+        val fragment: androidx.fragment.app.Fragment? = supportFragmentManager.findFragmentByTag("state_dashboard")
         if (fragment != null && fragment.isAdded) {
             supportFragmentManager
                     .beginTransaction()

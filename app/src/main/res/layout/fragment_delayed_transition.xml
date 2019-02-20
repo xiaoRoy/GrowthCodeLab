@@ -20,12 +20,12 @@
         <import type="android.view.View"/>
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_delayed_transition_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_transition_circle"
             android:layout_width="@dimen/circle_default_size"
             android:layout_height="@dimen/circle_default_size"
@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_delayed_transition_change_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_delayed_transition_change_visibility"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
             />
 
 
-        <android.support.constraint.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_horizontal_center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,6 +74,6 @@
             app:layout_constraintGuide_percent="0.5"
             />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

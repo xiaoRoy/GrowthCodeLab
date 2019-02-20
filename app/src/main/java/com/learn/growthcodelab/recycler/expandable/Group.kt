@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.recycler.expandable
 
-import android.support.annotation.CallSuper
+import androidx.annotation.CallSuper
 
 abstract class Group : BaseGroup, GroupDataObserver {
 

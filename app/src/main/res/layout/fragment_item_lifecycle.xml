@@ -12,13 +12,13 @@
             />
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
         >
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_lifecycle_index"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:text="@{@string/like_index(viewModel.likeIndex)}"
             />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_lifecycle_like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,12 +40,12 @@
             android:text="@{@string/like_amount(viewModel.likeAmount)}"
             />
 
-        <android.support.constraint.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_lifecycle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.5"
             />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

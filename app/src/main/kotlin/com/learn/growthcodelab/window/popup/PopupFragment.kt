@@ -1,8 +1,8 @@
 package com.learn.growthcodelab.window.popup
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.widget.PopupWindowCompat
+import androidx.core.widget.PopupWindowCompat
 import android.view.*
 import android.widget.PopupWindow
 import com.learn.growthcodelab.R

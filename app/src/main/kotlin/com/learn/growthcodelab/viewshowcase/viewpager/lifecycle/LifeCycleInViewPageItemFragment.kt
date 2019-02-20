@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.viewshowcase.viewpager.lifecycle
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater

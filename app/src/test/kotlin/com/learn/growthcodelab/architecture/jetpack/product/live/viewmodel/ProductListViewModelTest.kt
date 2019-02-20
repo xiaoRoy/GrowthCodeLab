@@ -1,8 +1,8 @@
 package com.learn.growthcodelab.architecture.jetpack.product.live.viewmodel
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.Observer
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.learn.growthcodelab.architecture.jetpack.product.ProductTestFactory
 import com.learn.growthcodelab.architecture.jetpack.product.live.data.ProductDataSource
 import com.learn.growthcodelab.architecture.jetpack.product.model.Product

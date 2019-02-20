@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.architecture.mvvm
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 
 class SingleLiveEvent<T> : MutableLiveData<T>() {
 }

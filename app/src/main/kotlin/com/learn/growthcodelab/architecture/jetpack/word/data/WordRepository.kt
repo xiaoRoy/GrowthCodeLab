@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.architecture.jetpack.word.data
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.learn.growthcodelab.architecture.jetpack.word.data.persistance.AddWordAsyncTask
 import com.learn.growthcodelab.architecture.jetpack.word.data.persistance.WordDao
 import com.learn.growthcodelab.architecture.jetpack.word.model.Word

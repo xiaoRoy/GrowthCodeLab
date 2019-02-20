@@ -1,14 +1,14 @@
 package com.learn.growthcodelab.viewshowcase.viewpager.lifecycle
 
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
 import android.util.Log
 import android.view.ViewGroup
 
 class LifeCycleInViewPagerFragmentStateAdapter(
-        fragmentManager: FragmentManager,
+        fragmentManager: androidx.fragment.app.FragmentManager,
         private val likeItems: List<LikeItem>
-): FragmentStatePagerAdapter(fragmentManager){
+): androidx.fragment.app.FragmentStatePagerAdapter(fragmentManager){
 
     private val items: List<LifeCycleInViewPageItemFragment> = likeItems.map {
         LifeCycleInViewPageItemFragment.newInstance(it)

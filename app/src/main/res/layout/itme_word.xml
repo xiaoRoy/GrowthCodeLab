@@ -15,7 +15,7 @@
             />
     </data>
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/word_height"
         android:layout_marginBottom="6dp"

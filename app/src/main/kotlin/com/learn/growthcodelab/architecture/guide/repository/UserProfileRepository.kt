@@ -1,7 +1,7 @@
 package com.learn.growthcodelab.architecture.guide.repository
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.learn.growthcodelab.architecture.guide.model.User
 
 class UserProfileRepository(private val userCache: UserCache) {

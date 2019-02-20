@@ -1,8 +1,8 @@
 package com.learn.growthcodelab.viewshowcase.viewpager.lifecycle
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,7 +36,7 @@ class LifeCycleInViewPageFragment : BaseFragment(),
         binding.viewPagerLifecycle.adapter = pagerAdapter
     }
 
-    override fun onAttachFragment(childFragment: Fragment) {
+    override fun onAttachFragment(childFragment: androidx.fragment.app.Fragment) {
         (childFragment as LifeCycleInViewPageItemFragment).callback = this
     }
 

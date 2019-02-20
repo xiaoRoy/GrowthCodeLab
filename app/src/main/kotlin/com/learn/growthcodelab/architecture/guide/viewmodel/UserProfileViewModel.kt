@@ -1,7 +1,7 @@
 package com.learn.growthcodelab.architecture.guide.viewmodel
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import com.learn.growthcodelab.architecture.guide.model.User
 import com.learn.growthcodelab.architecture.guide.repository.UserProfileRepository
 
