@@ -30,6 +30,13 @@ class ViewShowcaseActivity : BaseActivity(), ViewShowcaseNavigator{
         }
     }
 
+    override fun navigateToSpanPage() {
+        supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.fl_view_showcase_container, SpanFragment.newInstance(), "span")
+                    .commit()
+    }
+
     override fun navigateToImageViewPage() {
     }
 

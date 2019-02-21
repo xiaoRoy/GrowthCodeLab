@@ -16,8 +16,8 @@ class ViewAttributeFragment : BaseFragment() , ShowLogCallback{
         fun newInstance() = ViewAttributeFragment()
     }
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val binding: FragmentViewAttributeBinding? = inflater?.inflate(layoutRes, container, false)?.let { FragmentViewAttributeBinding.bind(it) }
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val binding: FragmentViewAttributeBinding? = inflater.inflate(layoutRes, container, false)?.let { FragmentViewAttributeBinding.bind(it) }
         //Automatic conversion of lambdas to objects implementing Kotlin interfaces isn't sup- ported.
         //val showLogCallback: ShowLogCallback  = {view: View, log: String -> print("")}
         binding?.showLogCallback = this

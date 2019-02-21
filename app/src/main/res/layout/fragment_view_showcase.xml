@@ -19,7 +19,7 @@
         >
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_horizontal_center"
+            android:id="@+id/guideline_view_showcase_horizontal_center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -27,13 +27,14 @@
             />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_showcase_image_view"
             android:layout_width="0dp"
             android:layout_height="@dimen/view_showcase_card_height"
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_normal"
             android:onClick="@{view -> navigator.navigateToImageViewPage()}"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_horizontal_center"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_view_showcase_horizontal_center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             >
@@ -70,7 +71,7 @@
             android:layout_marginTop="@dimen/margin_normal"
             android:onClick="@{view -> navigator.navigateToTabHostPage()}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline_horizontal_center"
+            app:layout_constraintStart_toStartOf="@+id/guideline_view_showcase_horizontal_center"
             app:layout_constraintTop_toTopOf="parent"
             >
             <LinearLayout
@@ -96,6 +97,42 @@
                     />
             </LinearLayout>
 
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/view_showcase_card_height"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:onClick="@{view -> navigator.navigateToSpanPage()}"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_view_showcase_horizontal_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_showcase_image_view"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/span"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@string/span"
+                    />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
