@@ -52,7 +52,7 @@ public class BaseFragment extends Fragment {
         return rootView;
     }
 
-    protected View bindView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
+    protected View bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         return inflater.inflate(getLayoutRes(), container, false);
     }
 

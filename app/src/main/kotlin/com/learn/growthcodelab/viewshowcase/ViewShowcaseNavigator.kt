@@ -5,4 +5,6 @@ interface ViewShowcaseNavigator {
     fun navigateToImageViewPage()
 
     fun navigateToTabHostPage()
+
+    fun navigateToSpanPage()
 }

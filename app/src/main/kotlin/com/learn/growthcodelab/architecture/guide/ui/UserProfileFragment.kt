@@ -21,7 +21,7 @@ class UserProfileFragment : BaseFragment() {
     private lateinit var userProfileViewModel: UserProfileViewModel
 
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding: FragmentUserProfileBinding = DataBindingUtil.inflate(layoutInflater, layoutRes, container, false)
         return binding.root
     }

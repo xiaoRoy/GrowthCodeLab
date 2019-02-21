@@ -23,6 +23,9 @@
     <string name="words">Words</string>
     <string name="view_showcase">View Showcase</string>
     <string name="image_view">ImageView</string>
+    <string name="span">Span</string>
+    <string name="format_by_text_style">Format by text style</string>
+    <string name="format_by_span">Format by span</string>
     <string name="image_view_scale_type">ScaleType</string>
     <string name="tab_layout">TabHost</string>
     <string name="build_tab_layout">Build Tab Host</string>
