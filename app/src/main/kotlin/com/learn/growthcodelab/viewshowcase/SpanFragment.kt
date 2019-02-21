@@ -9,10 +9,7 @@ import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
-import com.commonsware.cwac.richedit.RichEditText
-import com.commonsware.cwac.richedit.StyleEffect
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.databinding.FragmentSpanBinding
 import com.learn.growthcodelab.fragment.BaseFragment
