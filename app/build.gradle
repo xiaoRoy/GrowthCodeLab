@@ -25,4 +25,5 @@ dependencies {
     kapt "androidx.room:room-compiler:$rootProject.room_version"
     androidTestImplementation "androidx.room:room-testing:$rootProject.room_version"
     testImplementation "androidx.arch.core:core-testing:$rootProject.ext.lifecycle_version"
+    api ('com.github.wordpress-mobile.WordPress-Aztec-Android:aztec:v1.3.19')
 }
