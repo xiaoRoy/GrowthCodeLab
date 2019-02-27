@@ -44,6 +44,7 @@
         <activity android:name=".architecture.guide.ui.UserProfileActivity"/>
         <activity android:name=".architecture.jetpack.word.ui.WordsActivity"/>
         <activity android:name=".fragment.FragmentPlayGroundActivity"/>
+        <activity android:name=".window.WindowInsetActivity"/>
     </application>
 
 </manifest>

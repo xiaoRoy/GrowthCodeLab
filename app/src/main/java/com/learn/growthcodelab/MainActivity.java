@@ -24,6 +24,7 @@ import com.learn.growthcodelab.search.SearchActivity;
 import com.learn.growthcodelab.touchagain.TouchAgainActivity;
 import com.learn.growthcodelab.viewshowcase.ViewShowcaseActivity;
 import com.learn.growthcodelab.window.WindowActivity;
+import com.learn.growthcodelab.window.WindowInsetActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 DataBindingActivity.start(this);
                 break;
             case R.id.btn_main_fit_system_window:
-                FitSystemWindowActivity.start(this);
+                WindowInsetActivity.Companion.start(this);
                 break;
             case R.id.btn_main_web_view:
                 WebViewActivity.start(this);
