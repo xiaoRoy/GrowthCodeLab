@@ -44,7 +44,9 @@
         <activity android:name=".architecture.guide.ui.UserProfileActivity"/>
         <activity android:name=".architecture.jetpack.word.ui.WordsActivity"/>
         <activity android:name=".fragment.FragmentPlayGroundActivity"/>
-        <activity android:name=".window.WindowInsetActivity"/>
+        <activity android:name=".window.WindowInsetActivity"
+                  android:theme="@style/FullScreen"
+            />
     </application>
 
 </manifest>
