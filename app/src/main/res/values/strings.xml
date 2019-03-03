@@ -24,6 +24,7 @@
     <string name="view_showcase">View Showcase</string>
     <string name="image_view">ImageView</string>
     <string name="span">Span</string>
+    <string name="constraint_layout">Constraint Layout</string>
     <string name="format_by_text_style">Format by text style</string>
     <string name="format_by_span">Format by span</string>
     <string name="image_view_scale_type">ScaleType</string>
@@ -103,4 +104,11 @@
     <string name="section_a">Section A</string>
     <string name="section_b">Section B</string>
     <string name="section_details">Section Details</string>
+
+
+    <string name="gone_margin">Gone Margin</string>
+    <string name="toggle_visibility">Toggle Visibility</string>
+    <string name="with_gone_margin">With Gone Margin</string>
+    <string name="without_gone_margin">Without Gone Margin</string>
+    <string name="who_am_i">Who am i</string>
 </resources>
