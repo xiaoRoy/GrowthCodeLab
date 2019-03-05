@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.learn.growthcodelab.R;
+import com.learn.growthcodelab.playground.OverdrawFragment;
 import com.learn.growthcodelab.viewshowcase.viewpager.lifecycle.LifeCycleInViewPageFragment;
 
 
@@ -23,8 +24,8 @@ public class PlayGroundActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fl_play_ground_container,
-                        LifeCycleInViewPageFragment.Companion.newInstance(),
-                        "Product List")
+                        OverdrawFragment.Companion.newInstance(),
+                        "Overdraw")
                 .addToBackStack(null)
                 .commit();
     }
