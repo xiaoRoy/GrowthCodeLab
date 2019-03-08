@@ -111,4 +111,6 @@
     <string name="with_gone_margin">With Gone Margin</string>
     <string name="without_gone_margin">Without Gone Margin</string>
     <string name="who_am_i">Who am i</string>
+
+    <string name="add_view_to_constraint">Add View to Constraint</string>
 </resources>
