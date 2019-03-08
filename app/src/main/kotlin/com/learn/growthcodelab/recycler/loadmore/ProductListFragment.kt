@@ -30,7 +30,7 @@ class ProductListFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        productAdapter = ProductAdapter(Product.generateProducts(0).toMutableList())
+        productAdapter = ProductAdapter(Product.generateProducts(0, amount = 100).toMutableList())
         binding.recyclerProduct.layoutManager = androidx.recyclerview.widget.GridLayoutManager(activity, 2)
         binding.recyclerProduct.adapter = productAdapter
     }
