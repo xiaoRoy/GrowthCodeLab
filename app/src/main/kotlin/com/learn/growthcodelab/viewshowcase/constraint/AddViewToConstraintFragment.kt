@@ -30,7 +30,7 @@ class AddViewToConstraintFragment : BaseFragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = super.onCreateView(inflater, container, savedInstanceState)
-        addViewByLayoutParams(inflater)
+        addViewByConstraintSet(inflater)
         return root
     }
 
@@ -42,15 +42,22 @@ class AddViewToConstraintFragment : BaseFragment(){
         constraintSet.connect(R.id.fl_constraint_view_to_add, ConstraintSet.TOP, R.id.tv_constraint, ConstraintSet.BOTTOM)
         constraintSet.connect(R.id.fl_constraint_view_to_add, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START)
         constraintSet.connect(R.id.fl_constraint_view_to_add, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END)
+        constraintSet.connect(R.id.fl_constraint_view_to_add, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
+        constraintSet.constrainWidth(R.id.fl_constraint_view_to_add, 0)
+        constraintSet.constrainHeight(R.id.fl_constraint_view_to_add, 0)
         constraintSet.applyTo(binding.constraintAddView)
     }
 
     private fun addViewByLayoutParams(inflater: LayoutInflater) {
         val viewToAdd = inflater.inflate(R.layout.layout_constraint_constent, binding.constraintAddView, false)
         val layoutParams = viewToAdd.layoutParams as ConstraintLayout.LayoutParams
-        layoutParams.startToStart = binding.constraintAddView.id
-        layoutParams.endToEnd = binding.constraintAddView.id
+        val parentId = binding.constraintAddView.id
+        layoutParams.startToStart = parentId
+        layoutParams.endToEnd = parentId
         layoutParams.topToBottom = R.id.tv_constraint
+        layoutParams.bottomToBottom = parentId
+        layoutParams.width = 0
+        layoutParams.height = 0
         binding.constraintAddView.addView(viewToAdd, layoutParams)
     }
 
