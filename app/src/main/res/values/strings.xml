@@ -104,6 +104,7 @@
     <string name="section_a">Section A</string>
     <string name="section_b">Section B</string>
     <string name="section_details">Section Details</string>
+    <string name="window_inset">Window Inset</string>
 
 
     <string name="gone_margin">Gone Margin</string>
