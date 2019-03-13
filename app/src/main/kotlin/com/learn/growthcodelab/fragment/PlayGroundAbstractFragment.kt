@@ -8,7 +8,7 @@ abstract class PlayGroundAbstractFragment : BaseFragment() {
 
     protected lateinit var navigator: FragmentPlayGroundNavigator
 
-    override fun onAttach(context: Context) {
+    override fun onAttach(context: Context?) {
         super.onAttach(context)
         navigator = try {
             context as FragmentPlayGroundNavigator
