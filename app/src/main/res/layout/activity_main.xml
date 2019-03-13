@@ -30,6 +30,14 @@
                 />
 
             <Button
+                android:id="@+id/btn_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClickListener::onClick}"
+                android:text="@string/drawer"
+                />
+
+            <Button
                 android:id="@+id/btn_main_words"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

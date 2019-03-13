@@ -7,7 +7,6 @@ import android.view.View;
 
 import com.learn.growthcodelab.activity.DataBindingActivity;
 import com.learn.growthcodelab.activity.DrawableActivity;
-import com.learn.growthcodelab.activity.FitSystemWindowActivity;
 import com.learn.growthcodelab.activity.LayoutActivity;
 import com.learn.growthcodelab.activity.MeasurementActivity;
 import com.learn.growthcodelab.activity.PlayGroundActivity;
@@ -23,6 +22,7 @@ import com.learn.growthcodelab.handler.HandlerActivity;
 import com.learn.growthcodelab.search.SearchActivity;
 import com.learn.growthcodelab.touchagain.TouchAgainActivity;
 import com.learn.growthcodelab.viewshowcase.ViewShowcaseActivity;
+import com.learn.growthcodelab.window.drawer.DrawerActivity;
 import com.learn.growthcodelab.window.WindowActivity;
 import com.learn.growthcodelab.window.WindowInsetActivity;
 
@@ -92,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_fragment_play_ground:
                 FragmentPlayGroundActivity.Companion.start(this);
+                break;
+            case R.id.btn_drawer:
+                DrawerActivity.Companion.start(this);
                 break;
         }
     }
