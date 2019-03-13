@@ -119,4 +119,6 @@
 
     <string name="add_view_to_constraint">Add View to Constraint</string>
     <string name="fit_system_window">Fit system window</string>
+    <string name="navigate_to_drawer_b">Navigate to Drawer B</string>
+    <string name="back_to_drawer_a">Back to Drawer A</string>
 </resources>
