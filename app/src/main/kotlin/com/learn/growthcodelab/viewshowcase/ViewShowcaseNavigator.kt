@@ -7,4 +7,6 @@ interface ViewShowcaseNavigator {
     fun navigateToTabHostPage()
 
     fun navigateToSpanPage()
+
+    fun navigateToConstraintLayoutPage()
 }

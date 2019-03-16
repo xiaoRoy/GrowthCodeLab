@@ -30,6 +30,10 @@ class ViewShowcaseActivity : BaseActivity(), ViewShowcaseNavigator{
         }
     }
 
+    override fun navigateToConstraintLayoutPage() {
+        TODO("not implemented")
+    }
+
     override fun navigateToSpanPage() {
         supportFragmentManager
                     .beginTransaction()

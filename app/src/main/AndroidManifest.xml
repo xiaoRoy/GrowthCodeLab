@@ -58,6 +58,9 @@
                 android:resource="@xml/searchable"
                 />
         </activity>
+        <activity android:name=".window.drawer.DrawerActivity"
+                  android:theme="@style/FullScreen"
+            />
     </application>
 
 </manifest>
