@@ -61,6 +61,12 @@
         <activity android:name=".window.drawer.DrawerActivity"
                   android:theme="@style/FullScreen"
             />
+        <activity android:name=".search.DictionaryActivity">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".search.SearchableActivity"
+                />
+        </activity>
     </application>
 
 </manifest>
