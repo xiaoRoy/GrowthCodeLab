@@ -105,6 +105,8 @@
     <string name="section_a">Section A</string>
     <string name="section_b">Section B</string>
     <string name="section_details">Section Details</string>
+
+    <string name="search_hint">I am a search hint.</string>
     <string name="window_inset">Window Inset</string>
     <string name="camera">Camera</string>
     <string name="photo">Photo</string>

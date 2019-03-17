@@ -7,10 +7,10 @@ import android.database.MatrixCursor
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import android.provider.BaseColumns
-import androidx.cursoradapter.widget.CursorAdapter
-import androidx.cursoradapter.widget.SimpleCursorAdapter
 import androidx.appcompat.widget.SearchView
 import android.view.Menu
+import androidx.cursoradapter.widget.CursorAdapter
+import androidx.cursoradapter.widget.SimpleCursorAdapter
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.activity.BaseActivity
 import com.learn.growthcodelab.databinding.ActivitySearchBinding
@@ -33,13 +33,13 @@ class SearchActivity : BaseActivity() {
         menuInflater.inflate(R.menu.menu_search, menu)
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         val searchView = menu.findItem(R.id.action_search).actionView as SearchView
-        suggestionsAdapter = androidx.cursoradapter.widget.SimpleCursorAdapter(
+        suggestionsAdapter = SimpleCursorAdapter(
                 this,
                 R.layout.item_city_suggestion,
                 null,
                 arrayOf(COLUMN_NAME_CITY),
                 arrayOf(android.R.id.text1).toIntArray(),
-                androidx.cursoradapter.widget.CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER)
+                CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER)
         searchView.suggestionsAdapter = suggestionsAdapter
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
