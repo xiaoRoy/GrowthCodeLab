@@ -23,7 +23,8 @@ class DrawerActivity : BaseActivity(), DrawerNavigator {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_drawer)
-        binding.flDrawerContent.setOnApplyWindowInsetsListener { view, insets ->
+        binding.flDrawerContent.setOnApplyWindowInsetsListener{view, inset -> view.onApplyWindowInsets(inset)}
+       /* binding.flDrawerContent.setOnApplyWindowInsetsListener { view, insets ->
             var consumed = false
             (view as ViewGroup).run {
                 for (index in 0 until childCount) {
@@ -43,7 +44,7 @@ class DrawerActivity : BaseActivity(), DrawerNavigator {
              Log.d("trail", "drawer a, right:${insets.systemWindowInsetRight}")
              Log.d("trail", "drawer a, bottom:${insets.stableInsetBottom}")
             if (consumed) insets.consumeSystemWindowInsets() else insets
-        }
+        }*/
         if(savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
