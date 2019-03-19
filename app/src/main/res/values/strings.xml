@@ -23,7 +23,9 @@
     <string name="words">Words</string>
     <string name="view_showcase">View Showcase</string>
     <string name="image_view">ImageView</string>
+    <string name="drawer">Drawer</string>
     <string name="span">Span</string>
+    <string name="constraint_layout">Constraint Layout</string>
     <string name="format_by_text_style">Format by text style</string>
     <string name="format_by_span">Format by span</string>
     <string name="image_view_scale_type">ScaleType</string>
@@ -76,14 +78,6 @@
     <string name="book_author">Author</string>
     <string name="book_show_log">show log</string>
     <string name="book_change">Change</string>
-    <string name="discard">Discard</string>
-    <string name="upload">Upload</string>
-    <string name="camera">Camera</string>
-    <string name="settings">Settings</string>
-    <string name="camera_value">Leica M Typ 240</string>
-    <string name="camera_settings">ƒ/4 16s ISO 200</string>
-    <string name="singapore">Singapore</string>
-    <string name="singapore_description">Singapore officially the Republic of Singapore, and often referred to as the Lion City, the Garden City, and the Red Dot, is a global city in Southeast Asia and the world\'s only island city-state. It lies one degree (137 km) north of the equator, at the southernmost tip of continental Asia and peninsular Malaysia, with Indonesia\'s Riau Islands to the south. Singapore\'s territory consists of the diamond-shaped main island and 62 islets.</string>
     <string name="view_attribute">Access View Attribute in Data Binding</string>
     <string name="view_attribute_show_log">Show Log View Attribute</string>
     <string name="view_reference_show_log">Show Log View Reference</string>
@@ -111,4 +105,20 @@
     <string name="section_a">Section A</string>
     <string name="section_b">Section B</string>
     <string name="section_details">Section Details</string>
+    <string name="window_inset">Window Inset</string>
+    <string name="camera">Camera</string>
+    <string name="photo">Photo</string>
+    <string name="slideshow">Slideshow</string>
+    <string name="settings">Settings</string>
+
+    <string name="gone_margin">Gone Margin</string>
+    <string name="toggle_visibility">Toggle Visibility</string>
+    <string name="with_gone_margin">With Gone Margin</string>
+    <string name="without_gone_margin">Without Gone Margin</string>
+    <string name="who_am_i">Who am i</string>
+
+    <string name="add_view_to_constraint">Add View to Constraint</string>
+    <string name="fit_system_window">Fit system window</string>
+    <string name="navigate_to_drawer_b">Navigate to Drawer B</string>
+    <string name="back_to_drawer_a">Back to Drawer A</string>
 </resources>

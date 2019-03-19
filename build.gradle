@@ -19,8 +19,9 @@ ext {
     mockitoVersion = '2.22.0'
     lifecycle_version = '2.0.0-beta01'
     room_version = '2.0.0-beta01'
-    support_library_version = '1.0.0-beta01'
+    android_x_version = '1.0.0-beta01'
     coroutines_version = '1.0.0'
+    android_material_version = '1.1.0-alpha01'
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
 }
@@ -59,13 +60,14 @@ subprojects {
         }
 
         dependencies {
-            implementation "androidx.appcompat:appcompat:$rootProject.ext.support_library_version"
-            implementation "androidx.recyclerview:recyclerview:$rootProject.ext.support_library_version"
-            implementation "com.google.android.material:material:$rootProject.ext.support_library_version"
-            implementation "androidx.cardview:cardview:$rootProject.ext.support_library_version"
+            implementation "androidx.appcompat:appcompat:$rootProject.ext.android_x_version"
+            implementation "androidx.recyclerview:recyclerview:$rootProject.ext.android_x_version"
+            implementation "com.google.android.material:material:$rootProject.ext.android_x_version"
+            implementation "androidx.cardview:cardview:$rootProject.ext.android_x_version"
             implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
             implementation "io.reactivex.rxjava2:rxjava:2.1.8"
             implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+            implementation "com.google.android.material:material:$android_material_version"
 //            kapt "com.android.databinding:compiler:$android_plugin_version"
             implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.lifecycle_version"
 
