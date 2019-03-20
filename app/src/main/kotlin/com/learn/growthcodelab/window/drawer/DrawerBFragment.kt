@@ -27,6 +27,6 @@ class DrawerBFragment : BaseDrawerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ViewCompat.requestApplyInsets(view)
+//        ViewCompat.requestApplyInsets(view)
     }
 }

@@ -9,7 +9,6 @@
         android:layout_height="match_parent"
         android:background="@android:color/holo_red_light"
         android:orientation="vertical"
-        android:fitsSystemWindows="true"
         >
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
