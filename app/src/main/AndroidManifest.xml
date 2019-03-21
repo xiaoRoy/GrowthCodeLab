@@ -49,9 +49,24 @@
         <activity android:name=".window.WindowInsetActivity"
                   android:theme="@style/FullScreen"
             />
+        <activity android:name=".search.SearchableActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"
+                />
+        </activity>
         <activity android:name=".window.drawer.DrawerActivity"
                   android:theme="@style/FullScreen"
             />
+        <activity android:name=".search.DictionaryActivity">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".search.SearchableActivity"
+                />
+        </activity>
     </application>
 
 </manifest>
