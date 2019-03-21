@@ -43,8 +43,8 @@ class AddViewToConstraintFragment : BaseFragment(){
         constraintSet.connect(R.id.fl_constraint_view_to_add, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START)
         constraintSet.connect(R.id.fl_constraint_view_to_add, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END)
         constraintSet.connect(R.id.fl_constraint_view_to_add, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
-        constraintSet.constrainWidth(R.id.fl_constraint_view_to_add, 0)
-        constraintSet.constrainHeight(R.id.fl_constraint_view_to_add, 0)
+        constraintSet.constrainWidth(R.id.fl_constraint_view_to_add, ConstraintSet.MATCH_CONSTRAINT)
+        constraintSet.constrainHeight(R.id.fl_constraint_view_to_add, ConstraintSet.MATCH_CONSTRAINT)
         constraintSet.applyTo(binding.constraintAddView)
     }
 
@@ -56,8 +56,8 @@ class AddViewToConstraintFragment : BaseFragment(){
         layoutParams.endToEnd = parentId
         layoutParams.topToBottom = R.id.tv_constraint
         layoutParams.bottomToBottom = parentId
-        layoutParams.width = 0
-        layoutParams.height = 0
+        layoutParams.width = ConstraintLayout.LayoutParams.MATCH_CONSTRAINT
+        layoutParams.height = ConstraintLayout.LayoutParams.MATCH_CONSTRAINT
         binding.constraintAddView.addView(viewToAdd, layoutParams)
     }
 
