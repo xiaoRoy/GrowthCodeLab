@@ -10,7 +10,7 @@
         android:fitsSystemWindows="true"
         >
 
-        <com.learn.growthcodelab.window.drawer.WindowInsetFrameLayout
+        <FrameLayout
             android:id="@+id/fl_drawer_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

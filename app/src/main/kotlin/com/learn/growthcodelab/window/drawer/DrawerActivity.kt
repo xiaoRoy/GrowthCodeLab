@@ -2,9 +2,12 @@ package com.learn.growthcodelab.window.drawer
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
+import android.view.WindowInsets
 import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
 import com.learn.growthcodelab.R
@@ -14,9 +17,13 @@ import com.learn.growthcodelab.databinding.ActivityDrawerBinding
 class DrawerActivity : BaseActivity(), DrawerNavigator {
 
     companion object {
+        private const val TAG = "Trail"
+
         fun start(context: Context) {
             context.startActivity(Intent(context, DrawerActivity::class.java))
         }
+
+        private fun isLollipopOrHigher(): Boolean = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
     }
 
     private lateinit var binding: ActivityDrawerBinding
@@ -24,7 +31,7 @@ class DrawerActivity : BaseActivity(), DrawerNavigator {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_drawer)
-//        binding.flDrawerContent.setOnApplyWindowInsetsListener{view, inset -> view.onApplyWindowInsets(inset)}
+        binding.flDrawerContent.setOnApplyWindowInsetsListener (ApplyWindowInsetsListenerA)
         /* binding.flDrawerContent.setOnApplyWindowInsetsListener { view, insets ->
              var consumed = false
              (view as ViewGroup).run {
@@ -57,7 +64,7 @@ class DrawerActivity : BaseActivity(), DrawerNavigator {
     override fun navigateToDrawerB() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fl_drawer_content, DrawerBFragment.newInstance(), "drawer B")
+                .add(R.id.fl_drawer_content, DrawerBFragment.newInstance(), "drawer B")
                 .addToBackStack("add to B")
                 .commit()
 //        ViewCompat.requestApplyInsets(binding.drawer)
@@ -65,5 +72,44 @@ class DrawerActivity : BaseActivity(), DrawerNavigator {
 
     override fun backToDrawerA() {
         supportFragmentManager.popBackStack()
+
+    }
+
+    object ApplyWindowInsetsListenerA : View.OnApplyWindowInsetsListener {
+        override fun onApplyWindowInsets(view: View, insets: WindowInsets): WindowInsets {
+            val container = view as ViewGroup
+            var result = insets
+            if (isLollipopOrHigher() && container.childCount > 0) {
+                val lastChild = container.getChildAt(container.childCount - 1)
+                if(ViewCompat.getFitsSystemWindows(lastChild)) {
+                    result = lastChild.dispatchApplyWindowInsets(insets)
+                } else {
+                    result = view.onApplyWindowInsets(insets)
+                }
+            } else {
+                result = view.onApplyWindowInsets(insets)
+            }
+            return result
+        }
+    }
+
+    object ApplyWindowInsetsListenerB : View.OnApplyWindowInsetsListener {
+        override fun onApplyWindowInsets(view: View, insets: WindowInsets): WindowInsets {
+            val container = view as ViewGroup
+            container.run {
+                for(index in 0 until childCount) {
+                    getChildAt(index).dispatchApplyWindowInsets(insets)
+                }
+            }
+            return insets
+        }
+    }
+
+    object ApplyWindowInsetsListenerC : View.OnApplyWindowInsetsListener {
+        override fun onApplyWindowInsets(view: View, insets: WindowInsets): WindowInsets {
+            val result = insets.consumeSystemWindowInsets()
+            Log.d(TAG, "inset.isConsume:${result.isConsumed}")
+            return result
+        }
     }
 }

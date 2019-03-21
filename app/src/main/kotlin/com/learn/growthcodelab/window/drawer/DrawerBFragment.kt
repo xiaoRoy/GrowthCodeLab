@@ -27,6 +27,7 @@ class DrawerBFragment : BaseDrawerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.flContainerDrawerB.setOnApplyWindowInsetsListener { view, insets -> insets.consumeSystemWindowInsets()}
 //        ViewCompat.requestApplyInsets(view)
     }
 }
