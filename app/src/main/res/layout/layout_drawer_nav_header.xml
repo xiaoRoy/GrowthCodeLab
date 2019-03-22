@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="?attr/colorPrimaryDark"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_normal"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fit_system_window"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        />
+
+</LinearLayout>
