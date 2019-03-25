@@ -123,4 +123,6 @@
     <string name="fit_system_window">Fit system window</string>
     <string name="navigate_to_drawer_b">Navigate to Drawer B</string>
     <string name="back_to_drawer_a">Back to Drawer A</string>
+    <string name="team_a">Team A</string>
+    <string name="team_b">Team B</string>
 </resources>
