@@ -1,7 +1,7 @@
 package com.learn.growthcodelab.viewshowcase
 
 import android.content.Context
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +27,7 @@ class ViewShowcaseFragment : BaseFragment(){
 
     override fun getLayoutRes() = R.layout.fragment_view_showcase
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = DataBindingUtil.inflate<FragmentViewShowcaseBinding>(inflater, layoutRes, container, false)
         binding.navigator = viewShowcaseNavigator
         return binding.root

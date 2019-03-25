@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.transition
 
-import android.databinding.ObservableBoolean
+import androidx.databinding.ObservableBoolean
 
 class DelayedTransitionViewModel {
 

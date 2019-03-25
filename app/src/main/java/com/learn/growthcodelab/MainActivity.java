@@ -1,13 +1,12 @@
 package com.learn.growthcodelab;
 
-import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.learn.growthcodelab.activity.DataBindingActivity;
 import com.learn.growthcodelab.activity.DrawableActivity;
-import com.learn.growthcodelab.activity.FitSystemWindowActivity;
 import com.learn.growthcodelab.activity.LayoutActivity;
 import com.learn.growthcodelab.activity.MeasurementActivity;
 import com.learn.growthcodelab.activity.PlayGroundActivity;
@@ -17,13 +16,15 @@ import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
 import com.learn.growthcodelab.architecture.jetpack.word.ui.WordsActivity;
 import com.learn.growthcodelab.databinding.ActivityMainBinding;
+import com.learn.growthcodelab.fragment.FragmentPlayGroundActivity;
 import com.learn.growthcodelab.fullscreen.FullScreenActivity;
 import com.learn.growthcodelab.handler.HandlerActivity;
-import com.learn.growthcodelab.handler.HandlerActivityJ;
 import com.learn.growthcodelab.search.SearchActivity;
 import com.learn.growthcodelab.touchagain.TouchAgainActivity;
 import com.learn.growthcodelab.viewshowcase.ViewShowcaseActivity;
+import com.learn.growthcodelab.window.drawer.DrawerActivity;
 import com.learn.growthcodelab.window.WindowActivity;
+import com.learn.growthcodelab.window.WindowInsetActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 DataBindingActivity.start(this);
                 break;
             case R.id.btn_main_fit_system_window:
-                FitSystemWindowActivity.start(this);
+                WindowInsetActivity.Companion.start(this);
                 break;
             case R.id.btn_main_web_view:
                 WebViewActivity.start(this);
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_search:
                 SearchActivity.Companion.start(this);
+                break;
             case R.id.btn_main_window:
                 WindowActivity.Companion.start(this);
                 break;
@@ -87,6 +89,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_main_words:
                 WordsActivity.Companion.start(this);
+                break;
+            case R.id.btn_fragment_play_ground:
+                FragmentPlayGroundActivity.Companion.start(this);
+                break;
+            case R.id.btn_drawer:
+                DrawerActivity.Companion.start(this);
                 break;
         }
     }

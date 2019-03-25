@@ -1,13 +1,14 @@
 package com.learn.growthcodelab.fragment;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.databinding.DataBindingUtil;
+
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewCompat;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.core.view.ViewCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +40,8 @@ public class BaseFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         logLifeCycle("onCreateView");
         View rootView;
         if(getLayoutRes() != 0){
@@ -50,15 +52,15 @@ public class BaseFragment extends Fragment {
         return rootView;
     }
 
-    protected View bindView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
+    protected View bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         return inflater.inflate(getLayoutRes(), container, false);
     }
 
 
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        logLifeCycle("onCreateView");
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        logLifeCycle("onViewCreated");
         super.onViewCreated(view, savedInstanceState);
     }
 
@@ -83,7 +85,7 @@ public class BaseFragment extends Fragment {
 
     @Override
     public void onPause() {
-        logLifeCycle("onStop");
+        logLifeCycle("onPause");
         super.onPause();
     }
 
@@ -95,7 +97,7 @@ public class BaseFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        logLifeCycle("onStop");
+        logLifeCycle("onDestroyView");
         super.onDestroyView();
     }
 
@@ -109,6 +111,12 @@ public class BaseFragment extends Fragment {
     public void onDetach() {
         logLifeCycle("onDetach");
         super.onDetach();
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        logLifeCycle("onSaveInstanceState");
+        super.onSaveInstanceState(outState);
     }
 
     @LayoutRes

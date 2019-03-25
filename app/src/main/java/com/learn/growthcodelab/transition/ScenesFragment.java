@@ -1,9 +1,9 @@
 package com.learn.growthcodelab.transition;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.transition.Scene;
-import android.support.transition.TransitionManager;
+import androidx.annotation.Nullable;
+import androidx.transition.Scene;
+import androidx.transition.TransitionManager;
 import android.view.View;
 import android.widget.FrameLayout;
 

@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.architecture.guide.ui
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.activity.BaseActivity

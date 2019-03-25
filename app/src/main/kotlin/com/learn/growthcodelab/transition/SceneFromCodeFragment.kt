@@ -9,7 +9,7 @@ import com.learn.growthcodelab.fragment.BaseFragment
 
 class SceneFromCodeFragment : BaseFragment() {
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
 }

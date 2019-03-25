@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/cb_constraint_toggle_visibility_with_gone_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/toggle_visibility"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_constraint_with_gone_margin"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_with_gone_margin"
+                    android:layout_width="@dimen/button_size_larger"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/with_gone_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_constraint_toggle_visibility_with_gone_margin"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_constraint_with_gone_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/gone_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/button_size_larger"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    app:layout_constraintStart_toEndOf="@+id/btn_with_gone_margin"
+                    android:text="@string/who_am_i"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_constraint_toggle_visibility_with_gone_margin"
+                    />
+
+                <Space
+                    android:id="@+id/divider_constraint_gone_margin"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/line_height"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_with_gone_margin"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/cb_constraint_toggle_visibility_no_gone_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/toggle_visibility"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider_constraint_gone_margin"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_without_gone_margin"
+                    android:layout_width="@dimen/button_size_larger"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/without_gone_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_constraint_toggle_visibility_no_gone_margin"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/button_size_larger"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    app:layout_constraintStart_toEndOf="@+id/btn_with_gone_margin"
+                    android:text="@string/who_am_i"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_constraint_toggle_visibility_no_gone_margin"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

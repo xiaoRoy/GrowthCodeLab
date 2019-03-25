@@ -1,14 +1,15 @@
 package com.learn.growthcodelab.architecture.jetpack.word.ui
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.LinearLayoutManager.VERTICAL
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.architecture.jetpack.word.viewmodel.WordsViewModel
 import com.learn.growthcodelab.databinding.FragmentWordsBinding
@@ -30,13 +31,13 @@ class WordsFragment : BaseFragment() {
         return R.layout.fragment_words
     }
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?,
                           savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate<FragmentWordsBinding>(inflater, layoutRes, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         wordsAdapter = WordsAdapter()
         wordsViewModel = ViewModelProviders.of(this).get(WordsViewModel::class.java)
@@ -44,7 +45,7 @@ class WordsFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.recyclerWords.layoutManager = LinearLayoutManager(activity, VERTICAL, false)
+        binding.recyclerWords.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         binding.recyclerWords.adapter = wordsAdapter
         wordsViewModel.allWords.observe(this,
                 Observer { allWords ->

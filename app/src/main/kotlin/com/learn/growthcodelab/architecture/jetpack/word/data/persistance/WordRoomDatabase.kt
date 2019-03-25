@@ -1,14 +1,14 @@
 package com.learn.growthcodelab.architecture.jetpack.word.data.persistance
 
-import android.arch.persistence.db.SupportSQLiteDatabase
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import android.content.Context
 import com.learn.growthcodelab.architecture.jetpack.word.model.Word
 
 
-@Database(entities = [Word::class], version = 1)
+@Database(entities = [Word::class], version = 1, exportSchema = false)
 abstract class WordRoomDatabase : RoomDatabase() {
     companion object {
         @Volatile

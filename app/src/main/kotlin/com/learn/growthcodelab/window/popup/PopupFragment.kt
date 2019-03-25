@@ -1,8 +1,8 @@
 package com.learn.growthcodelab.window.popup
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.widget.PopupWindowCompat
+import androidx.core.widget.PopupWindowCompat
 import android.view.*
 import android.widget.PopupWindow
 import com.learn.growthcodelab.R
@@ -18,7 +18,7 @@ class PopupFragment : BaseFragment(), View.OnClickListener{
         fun newInstance() = PopupFragment()
     }
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding: FragmentPopupBinding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         binding.onClickListener = this
         return binding.root

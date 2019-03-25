@@ -1,14 +1,16 @@
 package com.learn.growthcodelab.architecture.jetpack.word.viewmodel
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import com.learn.growthcodelab.architecture.jetpack.word.data.WordRepository
 import com.learn.growthcodelab.architecture.jetpack.word.data.persistance.WordRoomDatabase
 import com.learn.growthcodelab.architecture.jetpack.word.model.Word
-import kotlinx.coroutines.experimental.*
-import kotlinx.coroutines.experimental.android.Main
-import kotlin.coroutines.experimental.CoroutineContext
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
 
 /*

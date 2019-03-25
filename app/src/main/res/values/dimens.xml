@@ -16,12 +16,18 @@
     <dimen name="d_card_margin_horizontal">24dp</dimen>
     <dimen name="navigation_icon_height">47dp</dimen>
     <dimen name="view_showcase_card_height">120dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
     <dimen name="margin_large_x">48dp</dimen>
     <dimen name="circle_default_size">60dp</dimen>
     <dimen name="circle_larger_size">90dp</dimen>
+    <dimen name="product_height">240dp</dimen>
+    <dimen name="nav_header_height">192dp</dimen>
 
     <dimen name="word_size">24sp</dimen>
     <dimen name="word_height">26dp</dimen>
     <dimen name="float_action_button_margin">16dp</dimen>
+    <dimen name="button_size_larger">160dp</dimen>
+    <dimen name="line_height">1dp</dimen>
 </resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="navigator"
+            type="com.learn.growthcodelab.window.drawer.DrawerNavigator"/>
+    </data>
+
+    <FrameLayout
+        android:id="@+id/fl_container_drawer_b"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_bright"
+        android:fitsSystemWindows="true"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="@{view -> navigator.backToDrawerA()}"
+            android:text="@string/back_to_drawer_a"
+            />
+    </FrameLayout>
+
+</layout>

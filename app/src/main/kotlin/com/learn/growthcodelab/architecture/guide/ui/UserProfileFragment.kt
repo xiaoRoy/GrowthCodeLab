@@ -1,8 +1,8 @@
 package com.learn.growthcodelab.architecture.guide.ui
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +21,7 @@ class UserProfileFragment : BaseFragment() {
     private lateinit var userProfileViewModel: UserProfileViewModel
 
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding: FragmentUserProfileBinding = DataBindingUtil.inflate(layoutInflater, layoutRes, container, false)
         return binding.root
     }

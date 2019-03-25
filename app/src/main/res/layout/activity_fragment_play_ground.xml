@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    >
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_play_ground_op"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/operation"
+        />
+
+    <FrameLayout
+        android:id="@+id/fl_fragment_play_ground_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+   <!-- <fragment
+        android:tag="First"
+        android:name="com.learn.growthcodelab.fragment.transaction.FirstFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />-->
+</LinearLayout>

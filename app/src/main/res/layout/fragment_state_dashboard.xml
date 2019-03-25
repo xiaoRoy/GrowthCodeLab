@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_state_dashboard_container"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <fragment
+            android:name="com.learn.growthcodelab.fragment.state.SectionAFragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_card_height"
+            android:tag="@string/section_a"
+            />
+
+        <fragment
+            android:name="com.learn.growthcodelab.fragment.state.SectionBFragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_card_height"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:tag="@string/section_b"
+            />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

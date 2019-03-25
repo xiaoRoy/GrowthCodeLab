@@ -1,6 +1,6 @@
 package com.learn.growthcodelab.databinding.twoway
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +24,7 @@ class BookFragment : BaseFragment(), View.OnClickListener {
 
     override fun getLayoutRes() = R.layout.fragment_book
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         fragmentBookBinding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         fragmentBookBinding.onClickedListener = this
         return fragmentBookBinding.root

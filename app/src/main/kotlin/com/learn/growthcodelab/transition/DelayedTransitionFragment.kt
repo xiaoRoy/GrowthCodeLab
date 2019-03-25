@@ -24,8 +24,8 @@ class DelayedTransitionFragment : BaseFragment(), DelayedTransitionViewModel.OnD
 
     override fun getLayoutRes() = R.layout.fragment_delayed_transition
 
-    override fun bindView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        inflater?.let {
+    override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        inflater.let {
             binding = FragmentDelayedTransitionBinding.bind(it.inflate(layoutRes, container, false))
             binding.onDelayedTransitionClickListener = this
             binding.viewModel = viewModel
