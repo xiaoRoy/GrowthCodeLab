@@ -67,6 +67,9 @@
                 android:value=".search.SearchableActivity"
                 />
         </activity>
+        <activity android:name=".architecture.jetpack.courtcounter.CourtCounterActivity"
+                  android:theme="@style/CourtCounter"
+            />
     </application>
 
 </manifest>

@@ -6,4 +6,6 @@
 
     <color name="c_nobel_gray">#999999</color>
 
+    <color name="court_count_primary">#FF9800</color>
+    <color name="court_count_primary_dark">#FB8C00</color>
 </resources>
