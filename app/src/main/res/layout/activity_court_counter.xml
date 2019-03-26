@@ -28,14 +28,52 @@
         />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_team_a_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/initial_point"
         android:textColor="@android:color/black"
         android:textSize="@dimen/text_size_large_x"
         app:layout_constraintEnd_toEndOf="@+id/tv_court_team_a"
         app:layout_constraintStart_toStartOf="@+id/tv_court_team_a"
         app:layout_constraintTop_toBottomOf="@id/tv_court_team_a"
         />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_team_a_three_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/three_points"
+        app:layout_constraintBottom_toTopOf="@+id/btn_team_a_two_points"
+        app:layout_constraintEnd_toEndOf="@+id/tv_court_team_a"
+        app:layout_constraintStart_toStartOf="@+id/tv_court_team_a"
+        app:layout_constraintTop_toBottomOf="@+id/tv_team_a_point"
+        app:layout_constraintVertical_chainStyle="spread"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_team_a_two_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/two_points"
+        app:layout_constraintBottom_toTopOf="@id/btn_team_a_free_throw"
+        app:layout_constraintEnd_toEndOf="@+id/btn_team_a_three_points"
+        app:layout_constraintStart_toStartOf="@+id/btn_team_a_three_points"
+        app:layout_constraintTop_toBottomOf="@+id/btn_team_a_three_points"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_team_a_free_throw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/free_throw"
+        app:layout_constraintBottom_toBottomOf="@+id/view_court_counter_divider"
+        app:layout_constraintEnd_toEndOf="@+id/btn_team_a_two_points"
+        app:layout_constraintStart_toStartOf="@+id/btn_team_a_two_points"
+        app:layout_constraintTop_toBottomOf="@+id/btn_team_a_two_points"
+        />
+
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_court_team_b"
@@ -46,38 +84,71 @@
         android:textSize="@dimen/text_size_normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_team_b_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/initial_point"
         android:textColor="@android:color/black"
         android:textSize="@dimen/text_size_large_x"
         app:layout_constraintEnd_toEndOf="@+id/tv_court_team_b"
         app:layout_constraintStart_toStartOf="@+id/tv_court_team_b"
         app:layout_constraintTop_toBottomOf="@id/tv_court_team_b"
         />
+    <Button
+        android:id="@+id/btn_team_b_three_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/three_points"
+        android:layout_marginTop="@dimen/margin_normal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_team_b_two_points"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_team_b_point"
+        app:layout_constraintVertical_chainStyle="spread"/>
+
+    <Button
+        android:id="@+id/btn_team_b_two_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/two_points"
+        app:layout_constraintBottom_toTopOf="@+id/btn_team_b_free_throw"
+        app:layout_constraintEnd_toEndOf="@+id/btn_team_b_three_points"
+        app:layout_constraintStart_toStartOf="@+id/btn_team_b_three_points"
+        app:layout_constraintTop_toBottomOf="@+id/btn_team_b_three_points"/>
+
+    <Button
+        android:id="@+id/btn_team_b_free_throw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/free_throw"
+        app:layout_constraintBottom_toBottomOf="@+id/view_court_counter_divider"
+        app:layout_constraintEnd_toEndOf="@+id/btn_team_b_two_points"
+        app:layout_constraintStart_toStartOf="@+id/btn_team_b_two_points"
+        app:layout_constraintTop_toBottomOf="@+id/btn_team_b_two_points"/>
 
     <View
         android:id="@+id/view_court_counter_divider"
         android:layout_width="@dimen/line_width"
         android:layout_height="@dimen/court_count_divider_height"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:background="@color/c_nobel_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/margin_normal"
-        android:background="@color/c_nobel_gray"
         />
+
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reset"
-        app:layout_constraintTop_toBottomOf="@+id/view_court_counter_divider"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_court_counter_divider"
         app:layout_constraintVertical_bias="0.1"
         />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
