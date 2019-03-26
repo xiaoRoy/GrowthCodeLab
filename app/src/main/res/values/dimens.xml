@@ -30,6 +30,9 @@
     <dimen name="float_action_button_margin">16dp</dimen>
     <dimen name="button_size_larger">160dp</dimen>
     <dimen name="line_height">1dp</dimen>
+    <dimen name="line_width">1dp</dimen>
+    <dimen name="court_count_divider_height">330dp</dimen>
 
     <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_large_x">56sp</dimen>
 </resources>
