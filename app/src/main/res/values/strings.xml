@@ -126,4 +126,8 @@
     <string name="team_a">Team A</string>
     <string name="team_b">Team B</string>
     <string name="reset">reset</string>
+    <string name="initial_point">0</string>
+    <string name="three_points">+3 POINTS</string>
+    <string name="two_points">+2 POINTS</string>
+    <string name="free_throw">FREe THROW</string>
 </resources>
