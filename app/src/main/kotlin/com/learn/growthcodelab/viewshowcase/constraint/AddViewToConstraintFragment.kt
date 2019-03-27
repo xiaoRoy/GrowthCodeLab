@@ -30,11 +30,12 @@ class AddViewToConstraintFragment : BaseFragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = super.onCreateView(inflater, container, savedInstanceState)
-        addViewByConstraintSet(inflater)
+        addViewByConstraintSetUsingGuideLine(inflater)
         return root
     }
 
     private fun addViewByConstraintSet(inflater: LayoutInflater) {
+        removeTheAddedView()
         val constraintSet = ConstraintSet()
         val viewToAdd = inflater.inflate(R.layout.layout_constraint_constent, binding.constraintAddView, false)
         binding.constraintAddView.addView(viewToAdd)
@@ -48,6 +49,32 @@ class AddViewToConstraintFragment : BaseFragment(){
         constraintSet.applyTo(binding.constraintAddView)
     }
 
+    private fun removeTheAddedView() {
+        val addedView = binding.constraintAddView.findViewById<View>(R.id.fl_constraint_view_to_add)
+        if(addedView != null) {
+            binding.constraintAddView.removeView(addedView)
+        }
+    }
+
+    private fun addViewByConstraintSetUsingGuideLine(inflater: LayoutInflater) {
+        removeTheAddedView()
+        val constraintSet = ConstraintSet()
+        val viewToAdd = inflater.inflate(R.layout.layout_constraint_constent, binding.constraintAddView, false)
+        binding.constraintAddView.addView(viewToAdd)
+        constraintSet.apply {
+            clone(binding.constraintAddView)
+            create(R.id.guide_line_add_view_to_constraint, ConstraintSet.HORIZONTAL)
+            setGuidelinePercent(R.id.guide_line_add_view_to_constraint, 0.5f)
+            connect(R.id.fl_constraint_view_to_add, ConstraintSet.TOP, R.id.guide_line_add_view_to_constraint, ConstraintSet.BOTTOM)
+            connect(R.id.fl_constraint_view_to_add, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM)
+            connect(R.id.fl_constraint_view_to_add, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START)
+            connect(R.id.fl_constraint_view_to_add, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END)
+            constrainWidth(R.id.fl_constraint_view_to_add, ConstraintSet.MATCH_CONSTRAINT)
+            constrainHeight(R.id.fl_constraint_view_to_add, ConstraintSet.MATCH_CONSTRAINT)
+            applyTo(binding.constraintAddView)
+        }
+    }
+
     private fun addViewByLayoutParams(inflater: LayoutInflater) {
         val viewToAdd = inflater.inflate(R.layout.layout_constraint_constent, binding.constraintAddView, false)
         val layoutParams = viewToAdd.layoutParams as ConstraintLayout.LayoutParams
@@ -56,6 +83,7 @@ class AddViewToConstraintFragment : BaseFragment(){
         layoutParams.endToEnd = parentId
         layoutParams.topToBottom = R.id.tv_constraint
         layoutParams.bottomToBottom = parentId
+        layoutParams.guideBegin
         layoutParams.width = ConstraintLayout.LayoutParams.MATCH_CONSTRAINT
         layoutParams.height = ConstraintLayout.LayoutParams.MATCH_CONSTRAINT
         binding.constraintAddView.addView(viewToAdd, layoutParams)

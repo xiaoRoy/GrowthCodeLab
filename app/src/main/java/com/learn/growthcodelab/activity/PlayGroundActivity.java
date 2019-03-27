@@ -24,7 +24,7 @@ public class PlayGroundActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fl_play_ground_container,
-                        ConstraintSetFragment.Companion.newInstance(),
+                        AddViewToConstraintFragment.Companion.newInstance(),
                         "constraint set")
                 .addToBackStack(null)
                 .commit();
