@@ -3,8 +3,15 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <com.learn.growthcodelab.viewshowcase.constraint.LogConstraintLayout
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_add_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,18 +33,20 @@
             android:id="@+id/btn_constraint_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:onClick="@{onClickListener::onClick}"
+            android:text="@string/first"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_constraint_second"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <Button
             android:id="@+id/btn_constraint_second"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:onClick="@{onClickListener::onClick}"
+            android:text="@string/second"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_constraint_third"
             app:layout_constraintHorizontal_bias="0.5"
@@ -48,13 +57,26 @@
             android:id="@+id/btn_constraint_third"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:onClick="@{onClickListener::onClick}"
+            android:text="@string/third"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_constraint_fourth"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btn_constraint_second"
             />
 
-    </com.learn.growthcodelab.viewshowcase.constraint.LogConstraintLayout>
+        <Button
+            android:id="@+id/btn_constraint_fourth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{onClickListener::onClick}"
+            android:text="@string/fourth"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_constraint_third"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

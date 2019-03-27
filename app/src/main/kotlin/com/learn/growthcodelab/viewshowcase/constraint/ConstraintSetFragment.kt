@@ -56,16 +56,16 @@ class ConstraintSetFragment : BaseFragment() {
         } else {
             constraintSetExpanded
         }
+        isExpanded = !isExpanded
         val transitionFade = Fade()
         val transitionChangeBounds = ChangeBounds()
         val transitions = TransitionSet()
         transitions.addTransition(transitionFade)
         transitions.addTransition(transitionChangeBounds)
-        transitions.interpolator = AnticipateInterpolator(1.0f);
+        transitions.interpolator = AnticipateInterpolator(1.0f)
         transitions.duration = DURATION
-        constraintSet.applyTo(binding.constraintHobbitRoot)
-        isExpanded = !isExpanded
         TransitionManager.beginDelayedTransition(binding.constraintHobbitRoot, transitions)
+        constraintSet.applyTo(binding.constraintHobbitRoot)
 
     }
 }

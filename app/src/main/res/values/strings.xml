@@ -128,4 +128,8 @@
     <string name="more">More</string>
     <string name="hobbit_description">Hobbits are a diminutive, humanoid race inhabiting lands of Middle-earth in the work of J. R. R. Tolkien. They are also referred to as Halflings. Hobbits first appeared in the novel The Hobbit, whose titular hobbit is the protagonist Bilbo Baggins.</string>
     <string name="constraint_set">Constraint Set</string>
+    <string name="first">First</string>
+    <string name="second">Second</string>
+    <string name="third">Third</string>
+    <string name="fourth">Fourth</string>
 </resources>
