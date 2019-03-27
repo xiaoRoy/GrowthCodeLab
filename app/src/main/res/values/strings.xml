@@ -132,4 +132,8 @@
     <string name="second">Second</string>
     <string name="third">Third</string>
     <string name="fourth">Fourth</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="log_in">LOG IN</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
 </resources>

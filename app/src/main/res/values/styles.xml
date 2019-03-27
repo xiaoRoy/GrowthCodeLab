@@ -19,15 +19,20 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColorHint">@android:color/holo_purple</item>
     </style>
+
     <style name="find" parent="Base.TextAppearance.AppCompat"></style>
 
     <style name="TextLabelA" parent="TextAppearance.AppCompat">
-    <!-- Hint color and label color in FALSE state -->
-    <item name="android:textColorHint">@android:color/holo_purple</item>
-    <item name="android:textSize">20sp</item>
-    <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
-    <item name="colorAccent">@color/colorAccent</item>
-    <item name="colorControlNormal">@android:color/holo_blue_dark</item>
-    <item name="colorControlActivated">@android:color/holo_green_dark</item>
- </style>
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@android:color/holo_purple</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@android:color/holo_blue_dark</item>
+        <item name="colorControlActivated">@android:color/holo_green_dark</item>
+    </style>
+
+    <style name="Startup" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorButtonNormal">@color/c_nero_gray</item>
+    </style>
 </resources>

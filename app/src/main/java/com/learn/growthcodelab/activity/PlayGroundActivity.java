@@ -7,8 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.learn.growthcodelab.R;
-import com.learn.growthcodelab.viewshowcase.constraint.AddViewToConstraintFragment;
-import com.learn.growthcodelab.viewshowcase.constraint.ConstraintSetFragment;
+import com.learn.growthcodelab.viewshowcase.constraint.StartupFragment;
 
 
 public class PlayGroundActivity extends AppCompatActivity {
@@ -24,8 +23,8 @@ public class PlayGroundActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fl_play_ground_container,
-                        ConstraintSetFragment.Companion.newInstance(),
-                        "constraint set")
+                        StartupFragment.Companion.newInstance(),
+                        "start up")
                 .addToBackStack(null)
                 .commit();
     }
