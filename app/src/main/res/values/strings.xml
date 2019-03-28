@@ -6,6 +6,7 @@
     <string name="s_fit_system_window">Fit System Window</string>
     <string name="s_full_screen">Full Screen</string>
     <string name="s_web_view">WebView</string>
+    <string name="court_counter">Court Counter</string>
     <string name="s_fit_system_window_tool_bar_title">Fit System Window</string>
     <string name="s_recycler">Recycler</string>
     <string name="s_measurement">Measurement</string>
@@ -129,5 +130,5 @@
     <string name="initial_point">0</string>
     <string name="three_points">+3 POINTS</string>
     <string name="two_points">+2 POINTS</string>
-    <string name="free_throw">FREe THROW</string>
+    <string name="free_throw">FREE THROW</string>
 </resources>
