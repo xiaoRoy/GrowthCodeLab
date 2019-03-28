@@ -44,6 +44,7 @@
                 android:onClick="@{onClickListener::onClick}"
                 android:text="@string/words"
                 />
+
             <Button
                 android:id="@+id/btn_main_data_binding"
                 android:layout_width="match_parent"
@@ -76,6 +77,13 @@
                 android:text="@string/s_full_screen"
                 />
 
+            <Button
+                android:id="@+id/btn_main_court_counter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{onClickListener::onClick}"
+                android:text="@string/court_counter"
+                />
 
             <Button
                 android:id="@+id/btn_main_web_view"
@@ -156,12 +164,14 @@
                 android:onClick="@{onClickListener::onClick}"
                 android:text="@string/touch_again"
                 />
+
             <Button
                 android:id="@+id/btn_main_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="@{onClickListener::onClick}"
                 android:text="@string/search"/>
+
             <Button
                 android:id="@+id/btn_main_window"
                 android:layout_width="match_parent"

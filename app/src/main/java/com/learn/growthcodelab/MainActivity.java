@@ -14,6 +14,7 @@ import com.learn.growthcodelab.activity.TransitionActivity;
 import com.learn.growthcodelab.activity.ViewPagerActivity;
 import com.learn.growthcodelab.activity.WebViewActivity;
 import com.learn.growthcodelab.activity.RecyclerActivity;
+import com.learn.growthcodelab.architecture.jetpack.courtcounter.CourtCounterActivity;
 import com.learn.growthcodelab.architecture.jetpack.word.ui.WordsActivity;
 import com.learn.growthcodelab.databinding.ActivityMainBinding;
 import com.learn.growthcodelab.fragment.FragmentPlayGroundActivity;
@@ -95,6 +96,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_drawer:
                 DrawerActivity.Companion.start(this);
+                break;
+            case R.id.btn_main_court_counter:
+                CourtCounterActivity.Companion.start(this);
                 break;
         }
     }
