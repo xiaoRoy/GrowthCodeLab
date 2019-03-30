@@ -6,6 +6,11 @@
     >
     <data>
         <variable
+            name="viewModel"
+            type="com.learn.growthcodelab.architecture.jetpack.courtcounter.CourtCounterViewModel"
+            />
+
+        <variable
             name="clickHandler"
             type="android.view.View.OnClickListener"
             />
@@ -40,7 +45,7 @@
             android:id="@+id/tv_team_a_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/initial_point"
+            android:text="@{String.valueOf(viewModel.teamAScore)}"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_large_x"
             app:layout_constraintEnd_toEndOf="@+id/tv_court_team_a"
@@ -100,7 +105,7 @@
             android:id="@+id/tv_team_b_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/initial_point"
+            android:text="@{String.valueOf(viewModel.teamBScore)}"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_large_x"
             android:onClick="@{clickHandler::onClick}"
