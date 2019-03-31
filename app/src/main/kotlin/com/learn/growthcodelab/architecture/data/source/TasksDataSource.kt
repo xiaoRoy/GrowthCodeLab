@@ -13,6 +13,10 @@ interface TasksDataSource {
 
     interface LoadSingleTaskCallback {
 
+        fun onSingleTaskLoaded(task: Task)
+
+        fun onSingleTaskNotAvailable()
+
     }
 
     fun refreshTasks()
@@ -22,4 +26,6 @@ interface TasksDataSource {
     fun deleteAllTasks()
 
     fun saveTask(task: Task)
+
+    fun loadSingleTaks(taskId: String, loadSingleTaskCallback: LoadSingleTaskCallback)
 }
