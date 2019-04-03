@@ -16,12 +16,13 @@ buildscript {
 ext {
     gradleVersion = '4.5.1'
     jUnitVersion = '4.12'
-    mockitoVersion = '2.22.0'
+    mockitoVersion = '2.25.1'
     lifecycle_version = '2.0.0-beta01'
     room_version = '2.0.0-beta01'
     android_x_version = '1.0.0-beta01'
     coroutines_version = '1.0.0'
     android_material_version = '1.1.0-alpha01'
+    archTestingVersion = '1.1.1'
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
 }
