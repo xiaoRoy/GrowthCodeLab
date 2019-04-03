@@ -24,5 +24,5 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines_version"
     kapt "androidx.room:room-compiler:$rootProject.room_version"
     androidTestImplementation "androidx.room:room-testing:$rootProject.room_version"
-    testImplementation "androidx.arch.core:core-testing:$rootProject.ext.lifecycle_version"
+    testImplementation "android.arch.core:core-testing:$rootProject.ext.archTestingVersion"
 }
