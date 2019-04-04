@@ -8,7 +8,7 @@ import com.learn.growthcodelab.architecture.jetpack.product.live.data.ProductDat
 import com.learn.growthcodelab.architecture.jetpack.product.model.Product
 import com.learn.growthcodelab.capture
 import com.learn.growthcodelab.mock
-import junit.framework.Assert
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
