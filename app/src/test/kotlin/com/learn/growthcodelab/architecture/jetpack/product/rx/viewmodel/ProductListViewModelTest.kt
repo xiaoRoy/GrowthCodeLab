@@ -9,7 +9,7 @@ import com.learn.growthcodelab.architecture.jetpack.product.rx.data.ProductDataS
 import com.learn.growthcodelab.capture
 import com.learn.growthcodelab.mock
 import io.reactivex.Single
-import junit.framework.Assert
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

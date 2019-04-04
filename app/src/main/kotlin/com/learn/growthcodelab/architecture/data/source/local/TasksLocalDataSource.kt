@@ -16,6 +16,10 @@ class TasksLocalDataSource : TasksDataSource {
         TODO("not implemented")
     }
 
+    override fun loadSingleTaks(taskId: String, loadSingleTaskCallback: TasksDataSource.LoadSingleTaskCallback) {
+        TODO("not implemented")
+    }
+
     override fun deleteAllTasks() {
         TODO("not implemented")
     }

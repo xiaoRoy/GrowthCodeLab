@@ -8,6 +8,7 @@ class TasksRepository
 constructor(private val tasksLocalDataSource: TasksLocalDataSource,
             private val tasksRemoteDataSource: TasksRemoteDataSource) : TasksDataSource {
 
+
     var isCacheDirty = false
 
     var cacheTasks: LinkedHashMap<String, Task> = LinkedHashMap()
@@ -66,6 +67,10 @@ constructor(private val tasksLocalDataSource: TasksLocalDataSource,
     }
 
     override fun deleteAllTasks() {
+        TODO("not implemented")
+    }
+
+    override fun loadSingleTaks(taskId: String, loadSingleTaskCallback: TasksDataSource.LoadSingleTaskCallback) {
         TODO("not implemented")
     }
 
