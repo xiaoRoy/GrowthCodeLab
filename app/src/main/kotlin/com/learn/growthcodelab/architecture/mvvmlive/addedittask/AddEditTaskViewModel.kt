@@ -45,7 +45,7 @@ class AddEditTaskViewModel(
         isNewTask = false
         isTaskLoading.value = true
 
-        tasksRepository.loadSingleTaks(taskId, this)
+        tasksRepository.loadSingleTask(taskId, this)
     }
 
     override fun onSingleTaskLoaded(task: Task) {

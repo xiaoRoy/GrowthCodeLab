@@ -70,7 +70,7 @@ constructor(private val tasksLocalDataSource: TasksLocalDataSource,
         TODO("not implemented")
     }
 
-    override fun loadSingleTaks(taskId: String, loadSingleTaskCallback: TasksDataSource.LoadSingleTaskCallback) {
+    override fun loadSingleTask(taskId: String, loadSingleTaskCallback: TasksDataSource.LoadSingleTaskCallback) {
         TODO("not implemented")
     }
 
