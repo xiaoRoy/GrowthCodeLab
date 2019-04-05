@@ -23,6 +23,7 @@ ext {
     coroutines_version = '1.0.0'
     android_material_version = '1.1.0-alpha01'
     archTestingVersion = '1.1.1'
+    hamcrestVersion = '1.3'
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
 }
@@ -79,6 +80,8 @@ subprojects {
 
             testImplementation "junit:junit:$rootProject.ext.jUnitVersion"
             testImplementation "org.mockito:mockito-inline:$rootProject.ext.mockitoVersion"
+            testImplementation "org.hamcrest:hamcrest-all:$hamcrestVersion"
+
         }
 }
 

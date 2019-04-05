@@ -27,5 +27,5 @@ interface TasksDataSource {
 
     fun saveTask(task: Task)
 
-    fun loadSingleTaks(taskId: String, loadSingleTaskCallback: LoadSingleTaskCallback)
+    fun loadSingleTask(taskId: String, loadSingleTaskCallback: LoadSingleTaskCallback)
 }
