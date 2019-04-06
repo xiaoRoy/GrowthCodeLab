@@ -12,4 +12,7 @@ data class Task (
     get() = !isCompleted
 
     override fun toString() = "Task with title $title"
+
+    val isEmpty
+    get() = title.isEmpty() && description.isEmpty()
 }
