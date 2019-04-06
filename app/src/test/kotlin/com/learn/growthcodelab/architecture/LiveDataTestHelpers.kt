@@ -13,11 +13,11 @@ fun <T> getValue(liveData: LiveData<T>): T {
     val observer = object : Observer<T> {
         override fun onChanged(value: T) {
             data[0] = value
-//            countDownLatch.countDown()
+            countDownLatch.countDown()
             liveData.removeObserver(this)
         }
     }
     liveData.observeForever(observer)
-//    countDownLatch.await(2, TimeUnit.SECONDS)
+    countDownLatch.await(2, TimeUnit.SECONDS)
     return data[0] as T
 }

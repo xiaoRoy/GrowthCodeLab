@@ -24,6 +24,9 @@ class AddEditTaskViewModelTest {
     @Captor
     private lateinit var loadSingleTaskCaptor: ArgumentCaptor<TasksDataSource.LoadSingleTaskCallback>
 
+    @Captor
+    private lateinit var savedTaskCaptor: ArgumentCaptor<Task>
+
     private lateinit var addEditTaskViewModel: AddEditTaskViewModel
 
     @Before
@@ -35,12 +38,23 @@ class AddEditTaskViewModelTest {
     @Test
     fun test_viewTask() {
         val task = Task("description", "title", id = "44")
-        addEditTaskViewModel = AddEditTaskViewModel(taskRepository)
         addEditTaskViewModel.start(taskId = task.id)
         Mockito.verify(taskRepository).loadSingleTask(eq("44"), capture(loadSingleTaskCaptor))
         loadSingleTaskCaptor.value.onSingleTaskLoaded(task)
         Assert.assertThat(getValue(addEditTaskViewModel.title), Matchers.`is`("title"))
         Assert.assertThat(getValue(addEditTaskViewModel.description), Matchers.`is`("description"))
+    }
+
+    @Test
+    fun test_addTask_showSuccessMessage() {
+        with(addEditTaskViewModel) {
+            description.value = "new description"
+            title.value = "new title"
+            saveTask()
+        }
+        Mockito.verify(taskRepository).saveTask(capture(savedTaskCaptor))
+        Assert.assertThat(savedTaskCaptor.value.title, Matchers.`is`("new title"))
+        Assert.assertThat(savedTaskCaptor.value.description, Matchers.`is`("new description"))
     }
 
 }
