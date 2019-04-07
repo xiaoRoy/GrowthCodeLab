@@ -1,0 +1,14 @@
+package com.learn.growthcodelab.architecture.mvvmlive.addedittask
+
+import android.os.Bundle
+import com.learn.growthcodelab.R
+import com.learn.growthcodelab.activity.BaseActivity
+
+class AddEditTaskActivity : BaseActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_add_edit_task)
+        
+    }
+}

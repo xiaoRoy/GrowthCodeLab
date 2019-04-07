@@ -4,9 +4,10 @@ import com.learn.growthcodelab.architecture.data.Task
 import com.learn.growthcodelab.architecture.data.source.local.TasksLocalDataSource
 import com.learn.growthcodelab.architecture.data.source.remote.TasksRemoteDataSource
 
-class TasksRepository
-constructor(private val tasksLocalDataSource: TasksLocalDataSource,
-            private val tasksRemoteDataSource: TasksRemoteDataSource) : TasksDataSource {
+class TasksRepository constructor(
+        private val tasksLocalDataSource: TasksLocalDataSource,
+        private val tasksRemoteDataSource: TasksRemoteDataSource
+) : TasksDataSource {
 
 
     var isCacheDirty = false

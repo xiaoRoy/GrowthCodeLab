@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.learn.growthcodelab.architecture.widget.ScrollChildSwipeRefreshLayout
+        android:id="@+id/refresh_layout_add_edit_task"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_small"
+                >
+
+                <EditText
+                    android:id="@+id/et_add_edit_task_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_title"
+                    android:imeOptions="flagNoExtractUi"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    />
+
+                <EditText
+                    android:id="@+id/et_add_edit_task_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:gravity="top"
+                    android:hint="@string/hint_title"
+                    android:imeOptions="flagNoExtractUi"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+    </com.learn.growthcodelab.architecture.widget.ScrollChildSwipeRefreshLayout>
+</layout>

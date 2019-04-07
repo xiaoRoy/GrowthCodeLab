@@ -37,4 +37,6 @@
         <item name="colorPrimaryDark">@color/court_count_primary_dark</item>
         <item name="colorButtonNormal">@color/court_count_primary</item>
     </style>
+
+    <style name="TodoToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 </resources>
