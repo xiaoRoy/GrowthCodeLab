@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.learn.growthcodelab.architecture.mvvmlive.addedittask.AddEditTaskViewModel"
+            />
+    </data>
+
     <com.learn.growthcodelab.architecture.widget.ScrollChildSwipeRefreshLayout
         android:id="@+id/refresh_layout_add_edit_task"
         android:layout_width="match_parent"
@@ -33,10 +40,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
                     android:gravity="top"
-                    android:hint="@string/hint_title"
+                    android:hint="@string/hint_description"
                     android:imeOptions="flagNoExtractUi"
                     />
-
+                <Button
+                    android:id="@+id/btn_add_edit_task_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save_task"
+                    android:onClick="@{view -> viewModel.saveTask()}"
+                    />
             </LinearLayout>
         </ScrollView>
     </com.learn.growthcodelab.architecture.widget.ScrollChildSwipeRefreshLayout>

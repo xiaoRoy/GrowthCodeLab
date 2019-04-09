@@ -75,7 +75,7 @@ class AddEditTaskViewModel(
         _isTaskLoading.value = false
     }
 
-    internal fun saveTask() {
+    fun saveTask() {
         val currentTitle = title.value
         val currentDescription = description.value
 
