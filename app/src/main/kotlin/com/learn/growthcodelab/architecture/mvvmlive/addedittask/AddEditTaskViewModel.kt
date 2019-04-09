@@ -1,8 +1,6 @@
 package com.learn.growthcodelab.architecture.mvvmlive.addedittask
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.architecture.data.Task
 import com.learn.growthcodelab.architecture.data.source.TasksDataSource
@@ -16,6 +14,18 @@ class AddEditTaskViewModel(
     val title = MutableLiveData<String>()
 
     val description = MutableLiveData<String>()
+
+    val isSaveEnabled = MutableLiveData<Boolean>()
+
+
+    init {
+        title.observeForever { title ->
+            isSaveEnabled.postValue(!title.isNullOrEmpty() && !description.value.isNullOrEmpty())
+        }
+        description.observeForever { description ->
+            isSaveEnabled.postValue(!title.value.isNullOrEmpty() && !description.isNullOrEmpty())
+        }
+    }
 
 
     // we just allow it to change in this view model instead of outside
@@ -40,6 +50,12 @@ class AddEditTaskViewModel(
 
     private var isTaskCompleted = false
 
+
+    //todo live data combine title and description
+    /*private val _isSaveEnabled = Transformations.switchMap()
+    val isSaveEnabled
+        get() = _isSaveEnabled*/
+
     fun start(taskId: String?) {
 
         isTaskLoading.value?.let {
@@ -61,6 +77,7 @@ class AddEditTaskViewModel(
         isNewTask = false
         _isTaskLoading.value = true
         tasksRepository.loadSingleTask(taskId, this)
+
     }
 
     override fun onSingleTaskLoaded(task: Task) {
@@ -73,6 +90,11 @@ class AddEditTaskViewModel(
 
     override fun onSingleTaskNotAvailable() {
         _isTaskLoading.value = false
+    }
+
+    private fun update() {
+        isSaveEnabled.postValue(!title.value.isNullOrEmpty() && !description.value.isNullOrEmpty())
+
     }
 
     fun saveTask() {
@@ -93,7 +115,7 @@ class AddEditTaskViewModel(
         val currentTaskId = taskId
         if (isNewTask || currentTaskId == null) {
             createTask(Task(currentDescription, currentTitle))
-        } else{
+        } else {
             val task = Task(currentDescription, currentTitle, currentTaskId, isTaskCompleted)
             updateTask(task)
         }
@@ -105,7 +127,7 @@ class AddEditTaskViewModel(
     }
 
     private fun updateTask(task: Task) {
-        if(isNewTask) {
+        if (isNewTask) {
             throw RuntimeException("updateTask() was called but task is new.")
         }
         tasksRepository.saveTask(task)
