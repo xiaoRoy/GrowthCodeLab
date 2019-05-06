@@ -23,6 +23,7 @@ import com.learn.growthcodelab.handler.HandlerActivity;
 import com.learn.growthcodelab.search.SearchActivity;
 import com.learn.growthcodelab.touchagain.TouchAgainActivity;
 import com.learn.growthcodelab.viewshowcase.ViewShowcaseActivity;
+import com.learn.growthcodelab.viewshowcase.toolbar.ToolbarActivity;
 import com.learn.growthcodelab.window.drawer.DrawerActivity;
 import com.learn.growthcodelab.window.WindowActivity;
 import com.learn.growthcodelab.window.WindowInsetActivity;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 WindowActivity.Companion.start(this);
                 break;
             case R.id.btn_view_showcase:
-                ViewShowcaseActivity.Companion.start(this);
+                ToolbarActivity.Companion.start(this);
                 break;
             case R.id.btn_main_words:
                 WordsActivity.Companion.start(this);

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+       android:drawable="@android:color/white"
+       android:insetTop="?attr/actionBarSize"
+    >
+    <item
+        android:drawable="@android:color/white"
+        android:gravity="center"
+        android:top="?attr/actionBarSize"
+        >
+    </item>
+</layer-list>

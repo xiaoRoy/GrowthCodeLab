@@ -131,7 +131,7 @@
     <string name="three_points">+3 POINTS</string>
     <string name="two_points">+2 POINTS</string>
     <string name="free_throw">FREE THROW</string>
-
+    <string name="toolbar_title">I am a title</string>
     <string name="empty_task_message">TO DOs cannot be empty</string>
     <string name="hint_title">Title</string>
     <string name="hint_description">Description</string>
