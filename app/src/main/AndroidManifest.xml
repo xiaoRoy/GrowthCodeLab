@@ -70,9 +70,9 @@
         <activity android:name=".architecture.jetpack.courtcounter.CourtCounterActivity"
                   android:theme="@style/CourtCounter"
             />
+        <activity android:name=".architecture.mvvmlive.addedittask.AddEditTaskActivity"/>
         <activity android:name=".viewshowcase.toolbar.ToolbarActivity"
                   android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-
             >
         </activity>
     </application>
