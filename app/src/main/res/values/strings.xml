@@ -136,4 +136,7 @@
     <string name="hint_title">Title</string>
     <string name="hint_description">Description</string>
     <string name="save_task">Save</string>
+    <string name="article_title">Article Title</string>
+    <string name="article_title_hint">Please input your title</string>
+    <string name="save_article">Save Article</string>
 </resources>
