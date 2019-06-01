@@ -48,6 +48,10 @@ subprojects {
         apply plugin: 'kotlin-kapt'
 
         android {
+            kotlinOptions {
+                jvmTarget = "1.8"
+            }
+
             compileOptions {
                 sourceCompatibility JavaVersion.VERSION_1_8
                 targetCompatibility JavaVersion.VERSION_1_8
@@ -83,6 +87,8 @@ subprojects {
             testImplementation "org.hamcrest:hamcrest-all:$hamcrestVersion"
 
         }
+
+
 }
 
 task clean(type: Delete) {
