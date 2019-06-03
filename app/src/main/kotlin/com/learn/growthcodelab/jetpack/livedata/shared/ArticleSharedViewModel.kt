@@ -14,4 +14,11 @@ class ArticleSharedViewModel : ViewModel() {
     fun navigateToArticleDetail(title: String) {
         _navigateToArticleDetail.value = Event(title)
     }
+
+    private val _navigateToEditArticle: MutableLiveData<Event<String>> = MutableLiveData()
+    val navigateToEditArticle: LiveData<Event<String>> = _navigateToEditArticle
+
+    fun navigateToEditArticle(title: String) {
+        _navigateToEditArticle.value = Event(title)
+    }
 }

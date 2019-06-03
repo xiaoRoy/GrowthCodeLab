@@ -2,6 +2,7 @@ package com.learn.growthcodelab.jetpack.livedata.shared
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.learn.growthcodelab.R
@@ -16,13 +17,16 @@ class ArticleActivity: BaseActivity(), ArticleNavigator {
         super.onCreate(savedInstanceState)
         DataBindingUtil.setContentView<ActivityArticleBinding>(this, R.layout.activity_article)
         if(savedInstanceState == null) {
-
+            supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.fl_article_container, ArticleDetailFragment())
+                    .commit()
         }
 
         articleSharedViewModel = obtainArticleSharedViewModel().apply {
             navigateToArticleDetail.observe(this@ArticleActivity, Observer {
-                it.getContentIfNotHandled()?.let {
-
+                it.getContentIfNotHandled()?.let { title ->
+                    replaceFragment(ArticleDetailFragment.newInstance(title), "Article Detail")
                 }
             })
         }
@@ -30,5 +34,13 @@ class ArticleActivity: BaseActivity(), ArticleNavigator {
 
     override fun obtainArticleSharedViewModel(): ArticleSharedViewModel {
         return ViewModelProviders.of(this).get(ArticleSharedViewModel::class.java)
+    }
+
+    private fun replaceFragment(fragment: Fragment, tag: String) {
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fl_article_container, fragment, tag)
+                .addToBackStack(null)
+                .commit()
     }
 }
