@@ -1,11 +1,26 @@
 package com.learn.growthcodelab
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.learn.growthcodelab.activity.*
+import com.learn.growthcodelab.architecture.jetpack.courtcounter.CourtCounterActivity
+import com.learn.growthcodelab.architecture.jetpack.word.ui.WordsActivity
 import com.learn.growthcodelab.databinding.ActivityMainBinding
+import com.learn.growthcodelab.fragment.FragmentPlayGroundActivity
+import com.learn.growthcodelab.fullscreen.FullScreenActivity
+import com.learn.growthcodelab.handler.HandlerActivity
+import com.learn.growthcodelab.search.SearchActivity
+import com.learn.growthcodelab.touchagain.TouchAgainActivity
+import com.learn.growthcodelab.viewshowcase.toolbar.ToolbarActivity
+import com.learn.growthcodelab.window.WindowActivity
+import com.learn.growthcodelab.window.WindowInsetActivity
+import com.learn.growthcodelab.window.drawer.DrawerActivity
+
+typealias Navigation = (Context) -> Unit
 
 class MainActivityK : AppCompatActivity() {
 
@@ -14,11 +29,34 @@ class MainActivityK : AppCompatActivity() {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
                 .getNavigation().observe(this, Observer {
-
+                    it.getContentIfNotHandled()?.let { destination ->
+                        navigationMap[destination]?.invoke(this@MainActivityK)
+                    }
                 })
     }
 
     private companion object {
-        val navigationMap: MutableMap<Int, (Unit) -> Unit> = mutableMapOf()
+        val navigationMap: MutableMap<Int, Navigation> = mutableMapOf(
+                R.id.btn_main_data_binding to { context -> DataBindingActivity.start(context) },
+                R.id.btn_main_fit_system_window to { context -> WindowInsetActivity.start(context) },
+                R.id.btn_main_web_view to { context -> WebViewActivity.start(context) },
+                R.id.btn_main_measurement to { context -> MeasurementActivity.start(context) },
+                R.id.btn_main_drawable to { context -> DrawableActivity.start(context) },
+                R.id.btn_main_play_ground to { context -> PlayGroundActivity.start(context) },
+                R.id.btn_main_layout to { context -> LayoutActivity.start(context) },
+                R.id.btn_main_view_pager to { context -> ViewPagerActivity.start(context) },
+                R.id.btn_main_tab_host to { _ -> Unit },
+                R.id.btn_main_scene to { context -> TransitionActivity.start(context) },
+                R.id.btn_main_full_screen to { context -> FullScreenActivity.start(context) },
+                R.id.btn_main_handler to { context -> HandlerActivity.start(context) },
+                R.id.btn_main_touch_again to { context -> TouchAgainActivity.start(context) },
+                R.id.btn_main_search to { context -> SearchActivity.start(context) },
+                R.id.btn_main_window to { context -> WindowActivity.start(context) },
+                R.id.btn_view_showcase to { context -> ToolbarActivity.start(context) },
+                R.id.btn_main_words to { context -> WordsActivity.start(context) },
+                R.id.btn_fragment_play_ground to { context -> FragmentPlayGroundActivity.start(context) },
+                R.id.btn_drawer to { context -> DrawerActivity.start(context) },
+                R.id.btn_main_court_counter to { context -> CourtCounterActivity.start(context) }
+        )
     }
 }
