@@ -4,7 +4,9 @@
     >
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.learn.growthcodelab.MainActivityViewModel"/>
         <variable
             name="onClickListener"
             type="android.view.View.OnClickListener"
@@ -25,7 +27,7 @@
                 android:id="@+id/btn_view_showcase"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/view_showcase"
                 />
 
@@ -33,7 +35,7 @@
                 android:id="@+id/btn_drawer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/drawer"
                 />
 
@@ -41,7 +43,7 @@
                 android:id="@+id/btn_main_words"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/words"
                 />
 
@@ -49,7 +51,7 @@
                 android:id="@+id/btn_main_data_binding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_data_binding"
                 />
 
@@ -57,7 +59,7 @@
                 android:id="@+id/btn_main_handler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_handler"
                 />
 
@@ -65,7 +67,7 @@
                 android:id="@+id/btn_main_fit_system_window"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_fit_system_window"
                 />
 
@@ -73,7 +75,7 @@
                 android:id="@+id/btn_main_full_screen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_full_screen"
                 />
 
@@ -81,7 +83,7 @@
                 android:id="@+id/btn_main_court_counter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/court_counter"
                 />
 
@@ -89,7 +91,7 @@
                 android:id="@+id/btn_main_web_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_web_view"
                 />
 
@@ -97,7 +99,7 @@
                 android:id="@+id/btn_main_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_recycler"
                 />
 
@@ -105,7 +107,7 @@
                 android:id="@+id/btn_main_measurement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_measurement"
                 />
 
@@ -113,7 +115,7 @@
                 android:id="@+id/btn_main_drawable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_drawable"
                 />
 
@@ -121,7 +123,7 @@
                 android:id="@+id/btn_main_play_ground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_play_ground"
                 />
 
@@ -129,7 +131,7 @@
                 android:id="@+id/btn_main_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_layout_inflater"
                 />
 
@@ -137,7 +139,7 @@
                 android:id="@+id/btn_main_view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_view_pager"
                 />
 
@@ -145,7 +147,7 @@
                 android:id="@+id/btn_main_tab_host"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_tab_host"
                 />
 
@@ -153,7 +155,7 @@
                 android:id="@+id/btn_main_scene"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/s_scene_transition"
                 />
 
@@ -161,7 +163,7 @@
                 android:id="@+id/btn_main_touch_again"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/touch_again"
                 />
 
@@ -169,14 +171,14 @@
                 android:id="@+id/btn_main_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/search"/>
 
             <Button
                 android:id="@+id/btn_main_window"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/window"
                 />
 
@@ -184,7 +186,7 @@
                 android:id="@+id/btn_fragment_play_ground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{onClickListener::onClick}"
+                android:onClick="@{view -> viewModel.navigate(viwe.id)}"
                 android:text="@string/fragment_play_ground"
                 />
         </LinearLayout>
