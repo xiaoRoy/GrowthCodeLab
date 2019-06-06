@@ -22,17 +22,19 @@ import com.learn.growthcodelab.window.drawer.DrawerActivity
 
 typealias Navigation = (Context) -> Unit
 
-class MainActivityK : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
-                .getNavigation().observe(this, Observer {
+        val mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
+        mainActivityViewModel.getNavigation().observe(this, Observer {
                     it.getContentIfNotHandled()?.let { destination ->
-                        navigationMap[destination]?.invoke(this@MainActivityK)
+                        navigationMap[destination]?.invoke(this@MainActivity)
                     }
                 })
+        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main).apply {
+            viewModel =  mainActivityViewModel
+        }
     }
 
     private companion object {

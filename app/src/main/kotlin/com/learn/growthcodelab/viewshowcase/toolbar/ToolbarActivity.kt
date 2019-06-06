@@ -25,7 +25,6 @@ class ToolbarActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_toolbar)
-        setTheme()
       /*  val shadow = LayoutInflater.from(this).inflate(R.layout.layout_shadow_pre_lollipop, binding.toolbarToolbar, false)
         val layoutParams: Toolbar.LayoutParams = shadow.layoutParams as Toolbar.LayoutParams
         layoutParams.gravity = Gravity.BOTTOM
