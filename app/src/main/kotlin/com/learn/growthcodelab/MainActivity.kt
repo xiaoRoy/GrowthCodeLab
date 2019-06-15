@@ -13,12 +13,14 @@ import com.learn.growthcodelab.databinding.ActivityMainBinding
 import com.learn.growthcodelab.fragment.FragmentPlayGroundActivity
 import com.learn.growthcodelab.fullscreen.FullScreenActivity
 import com.learn.growthcodelab.handler.HandlerActivity
+import com.learn.growthcodelab.jetpack.livedata.shared.ArticleActivity
 import com.learn.growthcodelab.search.SearchActivity
 import com.learn.growthcodelab.touchagain.TouchAgainActivity
 import com.learn.growthcodelab.viewshowcase.toolbar.ToolbarActivity
 import com.learn.growthcodelab.window.WindowActivity
 import com.learn.growthcodelab.window.WindowInsetActivity
 import com.learn.growthcodelab.window.drawer.DrawerActivity
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 typealias Navigation = (Context) -> Unit
 
@@ -58,7 +60,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_main_words to { context -> WordsActivity.start(context) },
                 R.id.btn_fragment_play_ground to { context -> FragmentPlayGroundActivity.start(context) },
                 R.id.btn_drawer to { context -> DrawerActivity.start(context) },
-                R.id.btn_main_court_counter to { context -> CourtCounterActivity.start(context) }
+                R.id.btn_main_court_counter to { context -> CourtCounterActivity.start(context) },
+                R.id.btn_jet_pack to { context -> ArticleActivity.start(context) }
         )
     }
 }

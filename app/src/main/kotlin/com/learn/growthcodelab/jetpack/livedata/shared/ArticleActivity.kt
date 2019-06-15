@@ -1,5 +1,7 @@
 package com.learn.growthcodelab.jetpack.livedata.shared
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -19,7 +21,7 @@ class ArticleActivity: BaseActivity(), ArticleNavigator {
         if(savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .add(R.id.fl_article_container, ArticleDetailFragment())
+                    .add(R.id.fl_article_container, ArticleListFragment())
                     .commit()
         }
 
@@ -42,5 +44,11 @@ class ArticleActivity: BaseActivity(), ArticleNavigator {
                 .replace(R.id.fl_article_container, fragment, tag)
                 .addToBackStack(null)
                 .commit()
+    }
+
+    companion object {
+        fun start(context: Context) {
+            context.startActivity(Intent(context, ArticleActivity::class.java))
+        }
     }
 }
