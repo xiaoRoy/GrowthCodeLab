@@ -21,6 +21,7 @@
     <string name="action_search">Search</string>
     <string name="window">Window</string>
     <string name="fragment_play_ground">Fragment Play Ground</string>
+    <string name="jet_pack">Jet Pack</string>
     <string name="words">Words</string>
     <string name="view_showcase">View Showcase</string>
     <string name="image_view">ImageView</string>

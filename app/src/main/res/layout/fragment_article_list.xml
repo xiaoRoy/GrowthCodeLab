@@ -3,18 +3,27 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+    <data>
+        <variable
+            name="sharedViewModel"
+            type="com.learn.growthcodelab.jetpack.livedata.shared.ArticleSharedViewModel"/>
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_article_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_normal"
             android:textSize="@dimen/text_size_normal"
+            android:onClick="@{view -> sharedViewModel.navigateToArticleDetail(tvArticleTitle.text.toString)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
