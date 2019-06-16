@@ -140,4 +140,6 @@
     <string name="article_title">Article Title</string>
     <string name="article_title_hint">Please input your title</string>
     <string name="save_article">Save Article</string>
+    <string name="how_to_be_happy">How to be Happy</string>
+    <string name="article_content">No one knows. And&#8320;</string>
 </resources>
