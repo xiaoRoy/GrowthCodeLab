@@ -1,24 +1,42 @@
 package com.learn.growthcodelab.jetpack.livedata.shared
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.DialogTitle
 import androidx.databinding.DataBindingUtil
 import com.learn.growthcodelab.R
-import com.learn.growthcodelab.databinding.FragmentArticleListBinding
+import com.learn.growthcodelab.databinding.FragmentArticleDetailBinding
 import com.learn.growthcodelab.fragment.BaseFragment
 
 class ArticleDetailFragment : BaseFragment() {
 
+    private val articleLifeCycleAwareness: ArticleLifeCycleAwareness = ArticleLifeCycleAwareness()
+
+    private lateinit var title: String
+
     override fun getLayoutRes(): Int {
-         return R.layout.fragment_article_list
+        return R.layout.fragment_article_detail
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        articleLifeCycleAwareness.onArticleAttach(context)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        title = arguments?.getString(BUNDLE_KEY_ARTICLE_TITLE) ?: throw IllegalArgumentException()
     }
 
     override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return DataBindingUtil.inflate<FragmentArticleListBinding>(
-                layoutInflater, layoutRes, container, false).root
+        return DataBindingUtil.inflate<FragmentArticleDetailBinding>(layoutInflater, layoutRes, container, false)
+                .apply {
+                    sharedViewModel = articleLifeCycleAwareness.articleNavigator.obtainArticleSharedViewModel()
+                    title = this@ArticleDetailFragment.title
+                }
+                .root
     }
 
     companion object {
