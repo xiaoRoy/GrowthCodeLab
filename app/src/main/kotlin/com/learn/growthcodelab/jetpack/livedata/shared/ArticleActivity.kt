@@ -11,14 +11,14 @@ import com.learn.growthcodelab.R
 import com.learn.growthcodelab.activity.BaseActivity
 import com.learn.growthcodelab.databinding.ActivityArticleBinding
 
-class ArticleActivity: BaseActivity(), ArticleNavigator {
+class ArticleActivity : BaseActivity(), ArticleNavigator {
 
     private lateinit var articleSharedViewModel: ArticleSharedViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         DataBindingUtil.setContentView<ActivityArticleBinding>(this, R.layout.activity_article)
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
                     .add(R.id.fl_article_container, ArticleListFragment())
@@ -29,6 +29,11 @@ class ArticleActivity: BaseActivity(), ArticleNavigator {
             navigateToArticleDetail.observe(this@ArticleActivity, Observer {
                 it.getContentIfNotHandled()?.let { title ->
                     replaceFragment(ArticleDetailFragment.newInstance(title), "Article Detail")
+                }
+            })
+            navigateToEditArticle.observe(this@ArticleActivity, Observer {
+                it.getContentIfNotHandled()?.let { title ->
+                    replaceFragment(EditArticleFragment.newInstance(title), "Edit Article")
                 }
             })
         }
