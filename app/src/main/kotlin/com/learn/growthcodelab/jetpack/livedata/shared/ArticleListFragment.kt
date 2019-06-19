@@ -20,6 +20,6 @@ class ArticleListFragment : BaseFragment() {
 
     override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             DataBindingUtil.inflate<FragmentArticleListBinding>(inflater, layoutRes, container, false)
-                    .apply { sharedViewModel = articleLifeCycleAwareness.articleNavigator.obtainArticleSharedViewModel() }
+                    .apply { sharedViewModel = articleLifeCycleAwareness.articleSharedViewModel }
                     .root
 }

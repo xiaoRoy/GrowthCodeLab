@@ -27,16 +27,16 @@ class ArticleDetailFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = arguments?.getString(BUNDLE_KEY_ARTICLE_TITLE) ?: throw IllegalArgumentException()
+        title = arguments?.getString(BUNDLE_KEY_ARTICLE_TITLE)
+                ?: throw IllegalArgumentException("Should put he title into the bundle")
     }
 
     override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return DataBindingUtil.inflate<FragmentArticleDetailBinding>(layoutInflater, layoutRes, container, false)
                 .apply {
-                    sharedViewModel = articleLifeCycleAwareness.articleNavigator.obtainArticleSharedViewModel()
+                    sharedViewModel = articleLifeCycleAwareness.articleSharedViewModel
                     title = this@ArticleDetailFragment.title
-                }
-                .root
+                }.root
     }
 
     companion object {
