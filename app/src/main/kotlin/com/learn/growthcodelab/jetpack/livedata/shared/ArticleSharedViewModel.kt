@@ -22,4 +22,9 @@ class ArticleSharedViewModel : ViewModel() {
     fun navigateToEditArticle(title: String) {
         _navigateToEditArticle.value = Event(title)
     }
+
+    private val _titleUpdated: MutableLiveData<Event<String>> = MutableLiveData()
+    val titleUpdated: MutableLiveData<Event<String>>
+        get() = _titleUpdated
+
 }
