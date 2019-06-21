@@ -49,11 +49,6 @@ class EditArticleFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         editArticleViewModel.title.value = title
-        editArticleViewModel.title.observe(viewLifecycleOwner, Observer {
-            it?.let { title ->
-                articleLifeCycleAwareness.articleSharedViewModel.titleUpdated.value = Event(title)
-            }
-        })
     }
 
     override fun getLayoutRes(): Int = R.layout.fragment_edit_article
