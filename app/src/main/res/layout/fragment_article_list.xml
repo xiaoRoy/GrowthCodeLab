@@ -4,6 +4,11 @@
 
 
     <data>
+
+        <variable
+            name="title"
+            type="String"/>
+
         <variable
             name="sharedViewModel"
             type="com.learn.growthcodelab.jetpack.livedata.shared.ArticleSharedViewModel"/>
@@ -24,7 +29,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/how_to_be_happy"
+            android:text="@{title}"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
