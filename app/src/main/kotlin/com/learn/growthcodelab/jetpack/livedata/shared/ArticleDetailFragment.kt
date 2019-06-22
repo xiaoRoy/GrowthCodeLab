@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.databinding.FragmentArticleDetailBinding
 import com.learn.growthcodelab.fragment.BaseFragment
@@ -15,6 +16,8 @@ class ArticleDetailFragment : BaseFragment() {
     private val articleLifeCycleAwareness: ArticleLifeCycleAwareness = ArticleLifeCycleAwareness()
 
     private lateinit var title: String
+
+    private lateinit var binding: FragmentArticleDetailBinding
 
     override fun getLayoutRes(): Int {
         return R.layout.fragment_article_detail
@@ -28,7 +31,14 @@ class ArticleDetailFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         title = arguments?.getString(BUNDLE_KEY_ARTICLE_TITLE)
-                ?: throw IllegalArgumentException("Should put he title into the bundle")
+                ?: throw IllegalArgumentException("Should put the title into the bundle")
+        articleLifeCycleAwareness.articleSharedViewModel.titleUpdated.observe(this, Observer {
+            it.getContentIfNotHandled()?.let { title ->
+                if (::binding.isInitialized) {
+                    binding.title = title
+                }
+            }
+        })
     }
 
     override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -36,7 +46,9 @@ class ArticleDetailFragment : BaseFragment() {
                 .apply {
                     sharedViewModel = articleLifeCycleAwareness.articleSharedViewModel
                     title = this@ArticleDetailFragment.title
-                }.root
+                }
+                .also { binding = it }
+                .root
     }
 
     companion object {

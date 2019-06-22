@@ -43,7 +43,9 @@ class EditArticleFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        editArticleViewModel = ViewModelProviders.of(this).get(EditArticleViewModel::class.java)
+        editArticleViewModel = ViewModelProviders.of(this,
+                EditArticleViewModelFactory.genInstance(articleLifeCycleAwareness.articleSharedViewModel))
+                .get(EditArticleViewModel::class.java)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
