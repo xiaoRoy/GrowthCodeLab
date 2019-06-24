@@ -142,4 +142,7 @@
     <string name="save_article">Save Article</string>
     <string name="how_to_be_happy">How to be Happy</string>
     <string name="article_content">No one knows. And&#8320;</string>
+
+    <string name="article_like_amount">Likes:%1$s</string>
+    <string name="article_like">Like</string>
 </resources>
