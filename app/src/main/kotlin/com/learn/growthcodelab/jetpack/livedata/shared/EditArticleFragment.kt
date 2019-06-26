@@ -19,6 +19,8 @@ class EditArticleFragment : BaseFragment() {
 
     private lateinit var editArticleViewModel: EditArticleViewModel
 
+    private lateinit var binding: FragmentEditArticleBinding
+
     private val articleLifeCycleAwareness = ArticleLifeCycleAwareness()
 
     override fun onAttach(context: Context?) {
@@ -36,8 +38,8 @@ class EditArticleFragment : BaseFragment() {
         return DataBindingUtil.inflate<FragmentEditArticleBinding>(inflater, layoutRes, container, false)
                 .apply {
                     setLifecycleOwner(this@EditArticleFragment)
-                    editArticleViewModel = this@EditArticleFragment.editArticleViewModel
                 }
+                .also { binding = it }
                 .root
     }
 
@@ -46,6 +48,7 @@ class EditArticleFragment : BaseFragment() {
         editArticleViewModel = ViewModelProviders.of(this,
                 EditArticleViewModelFactory.genInstance(articleLifeCycleAwareness.articleSharedViewModel))
                 .get(EditArticleViewModel::class.java)
+                .also { binding.editArticleViewModel = it }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

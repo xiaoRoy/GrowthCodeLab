@@ -31,5 +31,24 @@
             app:layout_constraintTop_toTopOf="parent"
             android:text="@{title}"
             />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_article_like_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_article_title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/margin_normal"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_article_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_article_like_amount"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/margin_normal"
+            android:text="@string/article_like"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
