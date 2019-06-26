@@ -27,4 +27,12 @@ class ArticleSharedViewModel : ViewModel() {
     val titleUpdated: MutableLiveData<Event<String>>
         get() = _titleUpdated
 
+    private val titleUpdatedAnother = MutableLiveData<Event<String>>()
+
+    fun getTitleUpdated(): LiveData<Event<String>> = titleUpdatedAnother
+
+    fun updateTitle(title: String) {
+        titleUpdatedAnother.value = Event(title)
+    }
+
 }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.databinding.FragmentArticleDetailBinding
 import com.learn.growthcodelab.fragment.BaseFragment
@@ -32,6 +33,16 @@ class ArticleDetailFragment : BaseFragment() {
         super.onCreate(savedInstanceState)
         title = arguments?.getString(BUNDLE_KEY_ARTICLE_TITLE)
                 ?: throw IllegalArgumentException("Should put the title into the bundle")
+        /*activity?.let { activity ->
+            ViewModelProviders.of(activity).get(ArticleSharedViewModel::class.java)
+                    .titleUpdated.observe(this, Observer {
+                it.getContentIfNotHandled()?.let { title ->
+                    if (::binding.isInitialized) {
+                        binding.title = title
+                    }
+                }
+            })
+        }*/
         articleLifeCycleAwareness.articleSharedViewModel.titleUpdated.observe(this, Observer {
             it.getContentIfNotHandled()?.let { title ->
                 if (::binding.isInitialized) {

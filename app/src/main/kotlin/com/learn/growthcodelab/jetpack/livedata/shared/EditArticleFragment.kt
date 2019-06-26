@@ -58,6 +58,10 @@ class EditArticleFragment : BaseFragment() {
 
     override fun getLayoutRes(): Int = R.layout.fragment_edit_article
 
+   /* private fun saveTitle(title: String) {
+        articleLifeCycleAwareness.articleSharedViewModel.titleUpdated.value = Event(title)
+    }*/
+
     companion object {
         private const val BUNDLE_KEY_ARTICLE_TITLE = "bundle_key_title"
 
