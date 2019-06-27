@@ -76,6 +76,10 @@
             >
         </activity>
         <activity android:name=".jetpack.livedata.shared.ArticleActivity"/>
+        <activity android:name=".viewshowcase.CoordinatorActivity"
+                  android:windowSoftInputMode="adjustResize"
+                  android:theme="@style/FullScreen"
+            />
     </application>
 
 </manifest>

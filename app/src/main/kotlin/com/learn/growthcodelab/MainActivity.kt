@@ -16,6 +16,7 @@ import com.learn.growthcodelab.handler.HandlerActivity
 import com.learn.growthcodelab.jetpack.livedata.shared.ArticleActivity
 import com.learn.growthcodelab.search.SearchActivity
 import com.learn.growthcodelab.touchagain.TouchAgainActivity
+import com.learn.growthcodelab.viewshowcase.CoordinatorActivity
 import com.learn.growthcodelab.viewshowcase.toolbar.ToolbarActivity
 import com.learn.growthcodelab.window.WindowActivity
 import com.learn.growthcodelab.window.WindowInsetActivity
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_main_web_view to { context -> WebViewActivity.start(context) },
                 R.id.btn_main_measurement to { context -> MeasurementActivity.start(context) },
                 R.id.btn_main_drawable to { context -> DrawableActivity.start(context) },
-                R.id.btn_main_play_ground to { context -> PlayGroundActivity.start(context) },
+                R.id.btn_main_play_ground to { context -> CoordinatorActivity.start(context) },
                 R.id.btn_main_layout to { context -> LayoutActivity.start(context) },
                 R.id.btn_main_view_pager to { context -> ViewPagerActivity.start(context) },
                 R.id.btn_main_tab_host to { _ -> Unit },
