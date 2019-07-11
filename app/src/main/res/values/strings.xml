@@ -145,4 +145,6 @@
 
     <string name="article_like_amount">Likes:%1$s</string>
     <string name="article_like">Like</string>
+
+    <string name="cheese_search">search</string>
 </resources>
