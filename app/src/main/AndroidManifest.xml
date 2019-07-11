@@ -76,6 +76,7 @@
             >
         </activity>
         <activity android:name=".jetpack.livedata.shared.ArticleActivity"/>
+        <activity android:name=".rx.cheese.CheeseActivity"/>
     </application>
 
 </manifest>
