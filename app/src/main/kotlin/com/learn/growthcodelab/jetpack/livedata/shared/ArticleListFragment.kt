@@ -28,6 +28,10 @@ class ArticleListFragment : BaseFragment() {
         articleLifeCycleAwareness.onArticleAttach(context)
     }
 
+    override fun enableLifeCycleLog(): Boolean {
+        return true
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         articleLifeCycleAwareness.articleSharedViewModel.titleUpdated.observe(this, Observer {
