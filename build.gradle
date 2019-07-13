@@ -27,6 +27,8 @@ ext {
     app_compat_verson = '1.0.2'
     recycler_view_version = '1.0.0'
     card_version = '1.0.0'
+    rx_java_version = '2.2.10'
+    rx_android_version = '2.1.1'
 
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
@@ -74,9 +76,12 @@ subprojects {
             implementation "androidx.recyclerview:recyclerview:$rootProject.ext.recycler_view_version"
             implementation "androidx.cardview:cardview:$rootProject.ext.card_version"
             implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
-            implementation "io.reactivex.rxjava2:rxjava:2.1.8"
+            implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
             implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
             implementation "com.google.android.material:material:$android_material_version"
+            implementation("io.reactivex.rxjava2:rxandroid:$rx_android_version") {
+                exclude group: 'io.reactivex.rxjava2', module: 'rxjava'
+            }
 //            kapt "com.android.databinding:compiler:$android_plugin_version"
             implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.lifecycle_version"
 
