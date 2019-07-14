@@ -38,4 +38,5 @@
 
     <dimen name="padding_small">16dp</dimen>
     <dimen name="floating_action_button_margin">16dp</dimen>
+    <dimen name="cheese_height">56dp</dimen>
 </resources>
