@@ -14,6 +14,6 @@ class CheeseProvider {
     }
 
     private fun doSearchCheese(query: String): List<Cheese> {
-        return Cheese.cheeses[query] ?: emptyList()
+        return Cheese.cheeses[query] ?: Cheese.defaultCheese
     }
 }
