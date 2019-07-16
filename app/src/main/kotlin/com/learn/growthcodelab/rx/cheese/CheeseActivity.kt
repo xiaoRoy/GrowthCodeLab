@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.activity.BaseActivity
 import com.learn.growthcodelab.widget.SimpleTextWatcher
+import io.reactivex.BackpressureStrategy
+import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -51,11 +53,13 @@ class CheeseActivity : BaseActivity() {
     override fun onStart() {
         super.onStart()
         val searchButtonClick = createSearchButtonClickObservable()
+                .toFlowable(BackpressureStrategy.LATEST)
         val searchQueryChange = createSearchQueryChangeObservable()
-        Observable.merge<String>(searchButtonClick, searchQueryChange)
+                .toFlowable(BackpressureStrategy.BUFFER)
+        Flowable.merge<String>(searchButtonClick, searchQueryChange)
                 .doOnNext { showProgress(true) }
                 .observeOn(Schedulers.io())
-                .flatMap { cheeseProvider.search(it) }
+                .flatMap { cheeseProvider.search(it).toFlowable(BackpressureStrategy.BUFFER) }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::showCheeseSearchResult)
 
