@@ -1,7 +1,8 @@
 package com.learn.growthcodelab.rx.cheese
 
 class Cheese(
-        val name: String
+        val name: String,
+        var hasFavorite: Boolean = false
 ) {
 
     companion object {
