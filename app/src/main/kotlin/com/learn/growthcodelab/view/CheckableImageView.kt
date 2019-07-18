@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.Checkable
 import androidx.appcompat.widget.AppCompatImageView
+import com.learn.growthcodelab.R
 
 class CheckableImageView(context: Context,
                          attrs: AttributeSet?,
@@ -19,12 +20,22 @@ class CheckableImageView(context: Context,
 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
+    init {
+        val typedArray = context
+                .obtainStyledAttributes(attrs, R.styleable.CheckableImageView, defStyleAttr, 0)
+        try {
+            isChecked = typedArray.getBoolean(R.styleable.CheckableImageView_checked, false)
+        }finally {
+            typedArray.recycle()
+        }
+    }
+
     override fun onCreateDrawableState(extraSpace: Int): IntArray {
-        val drawableState  = super.onCreateDrawableState(extraSpace + 1)
-        if(isChecked) {
+        val drawableState = super.onCreateDrawableState(extraSpace + 1)
+        if (isChecked) {
             View.mergeDrawableStates(drawableState, checkStateArray)
         }
-        return super.onCreateDrawableState(extraSpace)
+        return drawableState
     }
 
     override fun drawableStateChanged() {
@@ -40,7 +51,7 @@ class CheckableImageView(context: Context,
     }
 
     override fun setChecked(checked: Boolean) {
-        if(this.checked != checked) {
+        if (this.checked != checked) {
             this.checked = checked
             refreshDrawableState()
         }

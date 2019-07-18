@@ -3,4 +3,8 @@
     <declare-styleable name="WhatInsetFrameLayout">
         <attr name="whatInsetForeground" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="CheckableImageView">
+        <attr name="checked"/>
+    </declare-styleable>
 </resources>

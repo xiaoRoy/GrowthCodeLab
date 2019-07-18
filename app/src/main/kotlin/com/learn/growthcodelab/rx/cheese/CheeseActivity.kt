@@ -57,6 +57,7 @@ class CheeseActivity : BaseActivity() {
         val searchQueryChange = createSearchQueryChangeObservable()
                 .toFlowable(BackpressureStrategy.BUFFER)
         Flowable.merge<String>(searchButtonClick, searchQueryChange)
+                .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext { showProgress(true) }
                 .observeOn(Schedulers.io())
                 .flatMap { cheeseProvider.search(it).toFlowable(BackpressureStrategy.BUFFER) }
