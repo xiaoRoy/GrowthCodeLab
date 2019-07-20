@@ -50,6 +50,11 @@ class CheckableImageView(context: Context,
         isChecked = !checked
     }
 
+    override fun performClick(): Boolean {
+        toggle()
+        return super.performClick()
+    }
+
     override fun setChecked(checked: Boolean) {
         if (this.checked != checked) {
             this.checked = checked
