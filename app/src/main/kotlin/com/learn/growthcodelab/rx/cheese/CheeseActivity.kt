@@ -19,6 +19,7 @@ import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
@@ -31,6 +32,9 @@ class CheeseActivity : BaseActivity() {
 
     private lateinit var cheeseProvider: CheeseProvider
     private lateinit var cheesesAdapter: CheesesAdapter
+
+    private val compositeDisposable = CompositeDisposable()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +67,7 @@ class CheeseActivity : BaseActivity() {
                 .flatMap { cheeseProvider.search(it).toFlowable(BackpressureStrategy.BUFFER) }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::showCheeseSearchResult)
-
+                .also { compositeDisposable.add(it) }
 
     }
 
@@ -86,6 +90,11 @@ class CheeseActivity : BaseActivity() {
     private fun showProgress(isVisible: Boolean) {
         val visibility = if (isVisible) View.VISIBLE else View.GONE
         progressCheese.visibility = visibility
+    }
+
+    override fun onDestroy() {
+        compositeDisposable.clear()
+        super.onDestroy()
     }
 
     private fun createSearchQueryChangeObservable(): Observable<String> =
