@@ -49,6 +49,9 @@ class ArticleListFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.title = getString(R.string.how_to_be_happy)
         binding.btnArticleLike.setOnClickListener { articleListViewModel.like() }
+        /*
+        * using the fragment lifecycle here cause onChange get invoked multiple time when click the like button.
+        * */
         ViewModelProviders.of(this).get(ArticleListViewModel::class.java).also { articleListViewModel = it }
                 .likeAmount.observe(this, Observer {
             println("trail.like")

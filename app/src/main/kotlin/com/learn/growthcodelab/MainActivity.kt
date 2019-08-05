@@ -21,7 +21,6 @@ import com.learn.growthcodelab.viewshowcase.toolbar.ToolbarActivity
 import com.learn.growthcodelab.window.WindowActivity
 import com.learn.growthcodelab.window.WindowInsetActivity
 import com.learn.growthcodelab.window.drawer.DrawerActivity
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 typealias Navigation = (Context) -> Unit
 
