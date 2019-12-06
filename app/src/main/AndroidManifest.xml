@@ -78,6 +78,7 @@
         <activity android:name=".jetpack.livedata.shared.ArticleActivity"/>
         <activity android:name=".activityfield.DuckActivity"/>
         <activity android:name=".rx.cheese.CheeseActivity"/>
+        <activity android:name=".navigation.NavigationActivity" />
     </application>
 
 </manifest>
