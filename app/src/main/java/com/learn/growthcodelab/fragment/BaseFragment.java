@@ -27,7 +27,7 @@ public class BaseFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         logLifeCycle("onAttach");
         super.onAttach(context);
     }

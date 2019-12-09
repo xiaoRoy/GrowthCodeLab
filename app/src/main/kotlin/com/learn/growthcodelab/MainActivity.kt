@@ -61,7 +61,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_fragment_play_ground to { context -> FragmentPlayGroundActivity.start(context) },
                 R.id.btn_drawer to { context -> DrawerActivity.start(context) },
                 R.id.btn_main_court_counter to { context -> CourtCounterActivity.start(context) },
-                R.id.btn_jet_pack to { context -> ArticleActivity.start(context) }
+                R.id.btn_jet_pack to { context -> ArticleActivity.start(context) },
+                R.id.btn_navigation to { context -> ArticleActivity.start(context) }
         )
     }
 }
