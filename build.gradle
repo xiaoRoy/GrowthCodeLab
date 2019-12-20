@@ -101,8 +101,8 @@ subprojects {
             androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
                 exclude group: 'com.android.support', module: 'support-annotations'
             })
-            implementation "androidx.navigation:navigation-fragment:$nav_version"
-            implementation "androidx.navigation:navigation-ui:$nav_version"
+            implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+            implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
 
             testImplementation "junit:junit:$rootProject.ext.jUnitVersion"

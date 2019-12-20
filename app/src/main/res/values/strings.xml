@@ -149,7 +149,7 @@
     <string name="cheese_search">search</string>
     <string name="phone_save">Save</string>
 
-    <string name="navigation"/>
+    <string name="navigation">Navigation</string>
       <!-- Menu strings -->
     <string name="shopping_cart">Shopping Cart</string>
     <string name="home">Home</string>
