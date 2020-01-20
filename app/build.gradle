@@ -26,4 +26,5 @@ dependencies {
     kapt "androidx.room:room-compiler:$rootProject.room_version"
     androidTestImplementation "androidx.room:room-testing:$rootProject.room_version"
     testImplementation "android.arch.core:core-testing:$rootProject.ext.archTestingVersion"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 }
