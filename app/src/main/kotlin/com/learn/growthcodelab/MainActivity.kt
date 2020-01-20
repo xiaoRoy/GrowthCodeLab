@@ -14,6 +14,7 @@ import com.learn.growthcodelab.fragment.FragmentPlayGroundActivity
 import com.learn.growthcodelab.fullscreen.FullScreenActivity
 import com.learn.growthcodelab.handler.HandlerActivity
 import com.learn.growthcodelab.jetpack.livedata.shared.ArticleActivity
+import com.learn.growthcodelab.navigation.NavigationActivity
 import com.learn.growthcodelab.rx.cheese.CheeseActivity
 import com.learn.growthcodelab.search.SearchActivity
 import com.learn.growthcodelab.touchagain.TouchAgainActivity
@@ -61,7 +62,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_fragment_play_ground to { context -> FragmentPlayGroundActivity.start(context) },
                 R.id.btn_drawer to { context -> DrawerActivity.start(context) },
                 R.id.btn_main_court_counter to { context -> CourtCounterActivity.start(context) },
-                R.id.btn_jet_pack to { context -> ArticleActivity.start(context) }
+                R.id.btn_jet_pack to { context -> ArticleActivity.start(context) },
+                R.id.btn_navigation to { context -> NavigationActivity.start(context) }
         )
     }
 }

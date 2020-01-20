@@ -23,7 +23,7 @@ class EditArticleFragment : BaseFragment() {
 
     private val articleLifeCycleAwareness = ArticleLifeCycleAwareness()
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         articleLifeCycleAwareness.onArticleAttach(context)
     }

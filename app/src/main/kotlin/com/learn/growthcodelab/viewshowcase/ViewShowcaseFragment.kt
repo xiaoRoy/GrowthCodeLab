@@ -18,7 +18,7 @@ class ViewShowcaseFragment : BaseFragment(){
         fun newInstance() = ViewShowcaseFragment()
     }
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         viewShowcaseNavigator = if (context is ViewShowcaseNavigator) context
                                 else throw IllegalArgumentException()

@@ -23,7 +23,7 @@ class AddEditTaskFragment : BaseFragment() {
     private lateinit var navigator: AddEditTaskNavigator
     private lateinit var binding: FragmentAddEditTaskBinding
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         navigator = if (context is AddEditTaskNavigator) context
         else throw IllegalAccessException()
