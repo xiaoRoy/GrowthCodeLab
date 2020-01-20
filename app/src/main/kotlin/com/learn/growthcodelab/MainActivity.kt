@@ -42,11 +42,11 @@ class MainActivity : AppCompatActivity() {
     private companion object {
         val navigationMap: Map<Int, Navigation> = mapOf(
                 R.id.btn_main_data_binding to { context -> DataBindingActivity.start(context) },
-                R.id.btn_main_fit_system_window to { context -> WindowInsetActivity.start(context) },
+                R.id.btn_main_fit_system_window to { context -> FitSystemWindowActivity.start(context) },
                 R.id.btn_main_web_view to { context -> WebViewActivity.start(context) },
                 R.id.btn_main_measurement to { context -> MeasurementActivity.start(context) },
                 R.id.btn_main_drawable to { context -> DrawableActivity.start(context) },
-                R.id.btn_main_play_ground to { context -> CheeseActivity.start(context) },
+                R.id.btn_main_play_ground to { context -> PlayGroundActivity.start(context) },
                 R.id.btn_main_layout to { context -> LayoutActivity.start(context) },
                 R.id.btn_main_view_pager to { context -> ViewPagerActivity.start(context) },
                 R.id.btn_main_tab_host to { _ -> Unit },
