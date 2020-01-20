@@ -70,6 +70,13 @@
                 android:onClick="@{view -> viewModel.navigate(view.id)}"
                 android:text="@string/s_fit_system_window"
                 />
+            <Button
+                android:id="@+id/btn_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{view -> viewModel.navigate(view.id)}"
+                android:text="@string/navigation"
+                />
 
             <Button
                 android:id="@+id/btn_main_full_screen"

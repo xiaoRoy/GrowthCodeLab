@@ -24,7 +24,7 @@ class ArticleDetailFragment : BaseFragment() {
         return R.layout.fragment_article_detail
     }
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         articleLifeCycleAwareness.onArticleAttach(context)
     }

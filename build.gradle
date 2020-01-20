@@ -30,7 +30,7 @@ ext {
     rx_java_version = '2.2.10'
     rx_android_version = '2.1.1'
     rx_binding_version = '3.0.0-alpha2'
-
+    nav_version = "2.1.0"
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
 }
@@ -101,6 +101,8 @@ subprojects {
             androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
                 exclude group: 'com.android.support', module: 'support-annotations'
             })
+            implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+            implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
 
             testImplementation "junit:junit:$rootProject.ext.jUnitVersion"

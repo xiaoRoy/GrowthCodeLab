@@ -8,7 +8,7 @@ abstract class BaseDrawerFragment : BaseFragment(){
 
     protected lateinit var navigator: DrawerNavigator
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         navigator = if (context is DrawerNavigator) context else throw IllegalArgumentException()
     }
