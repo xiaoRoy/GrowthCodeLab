@@ -48,4 +48,6 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
+
+    <style name="MaterialTheme" parent="Theme.MaterialComponents.Light.NoActionBar"/>
 </resources>

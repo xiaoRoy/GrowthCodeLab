@@ -7,4 +7,6 @@
     <declare-styleable name="CheckableImageView">
         <attr name="checked"/>
     </declare-styleable>
+
+    <attr name="unSelectable" format="boolean"/>
 </resources>
