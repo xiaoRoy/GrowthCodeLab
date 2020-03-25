@@ -30,8 +30,13 @@ class EditArticleFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = arguments?.getString(BUNDLE_KEY_ARTICLE_TITLE)
-                ?: throw IllegalArgumentException("Should put he title into the bundle")
+//        title = arguments?.getString(BUNDLE_KEY_ARTICLE_TITLE)
+//                ?: throw IllegalArgumentException("Should put he title into the bundle")
+        title = "title"
+
+        val addedBooksInfo = arguments?.getParcelable<ArticleActivity.AddedBooksInfo>(BUNDLE_KEY_ADDED_BOOK_INFO)
+        println("trail:${addedBooksInfo?.count}")
+        println("trail:${addedBooksInfo?.books}")
     }
 
     override fun bindView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -64,6 +69,7 @@ class EditArticleFragment : BaseFragment() {
 
     companion object {
         private const val BUNDLE_KEY_ARTICLE_TITLE = "bundle_key_title"
+        private const val BUNDLE_KEY_ADDED_BOOK_INFO = "added_book_info"
 
         fun newInstance(title: String) =
                 EditArticleFragment().apply {
@@ -71,5 +77,13 @@ class EditArticleFragment : BaseFragment() {
                         putString(BUNDLE_KEY_ARTICLE_TITLE, title)
                     }
                 }
+
+        fun newInstanceWithAddedBooksInfo(addedBooksInfo: ArticleActivity.AddedBooksInfo) =
+                EditArticleFragment().apply {
+                    arguments = Bundle(1).apply {
+                        putParcelable(BUNDLE_KEY_ADDED_BOOK_INFO, addedBooksInfo)
+                    }
+                }
+
     }
 }

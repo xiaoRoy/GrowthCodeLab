@@ -8,4 +8,17 @@
 
     <color name="court_count_primary">#FF9800</color>
     <color name="court_count_primary_dark">#FB8C00</color>
+
+    <color name="option_selected">#518ad7</color>
+    <color name="option_selectable">#fff</color>
+    <color name="option_un_selectable">#f5f6f8</color>
+
+    <color name="option_text_selected">#fff</color>
+    <color name="option_text_selectable">#71777f</color>
+    <color name="option_text_un_selectable">#9699a0</color>
+
+    <color name="option_stroke_selected">#518ad7</color>
+    <color name="option_stroke_selectable">#71777f</color>
+    <color name="option_stroke_un_selectable">#9699a0</color>
+
 </resources>

@@ -24,6 +24,7 @@
     <string name="jet_pack">Jet Pack</string>
     <string name="words">Words</string>
     <string name="view_showcase">View Showcase</string>
+    <string name="material">Material</string>
     <string name="image_view">ImageView</string>
     <string name="drawer">Drawer</string>
     <string name="span">Span</string>
@@ -166,4 +167,13 @@
     <string name="next_step_button">Navigate next step</string>
     <string name="finish_button">Finish Flow</string>
     <string name="send_deep_link_notification_button">Send deep link notification</string>
+
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="orange">Orange</string>
+
+    <string name="perform_search">Perform Search</string>
+    <string name="top_choice">Top Choice</string>
 </resources>

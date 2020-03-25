@@ -3,6 +3,8 @@ package com.learn.growthcodelab.jetpack.livedata.shared
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -28,12 +30,15 @@ class ArticleActivity : BaseActivity(), ArticleNavigator {
         articleSharedViewModel = obtainArticleSharedViewModel().apply {
             navigateToArticleDetail.observe(this@ArticleActivity, Observer {
                 it.getContentIfNotHandled()?.let { title ->
-                    replaceFragment(ArticleDetailFragment.newInstance(title), "Article Detail")
+//                    replaceFragment(ArticleDetailFragment.newInstance(title), "Article Detail")
+                    replaceFragment(EditArticleFragment.newInstanceWithAddedBooksInfo(AddedBooksInfo.createAddedBooksInfo()), "Edit Article")
                 }
             })
             navigateToEditArticle.observe(this@ArticleActivity, Observer {
                 it.getContentIfNotHandled()?.let { title ->
                     replaceFragment(EditArticleFragment.newInstance(title), "Edit Article")
+
+
                 }
             })
         }
@@ -55,5 +60,42 @@ class ArticleActivity : BaseActivity(), ArticleNavigator {
         fun start(context: Context) {
             context.startActivity(Intent(context, ArticleActivity::class.java))
         }
+    }
+
+    class Book(val id: String, val name: String)
+
+    class AddedBooksInfo(val count: Int, val books: List<Book>, val owner: String? = null) : Parcelable {
+        constructor(parcel: Parcel) : this(
+                parcel.readInt(),
+                mutableListOf<Book>(),
+                parcel.readString()) {
+            parcel.readList(books, books::class.java.classLoader)
+        }
+
+        override fun writeToParcel(parcel: Parcel, flags: Int) {
+            parcel.writeInt(count)
+            parcel.writeString(owner)
+            parcel.writeList(books)
+        }
+
+        override fun describeContents(): Int {
+            return 0
+        }
+
+        companion object CREATOR : Parcelable.Creator<AddedBooksInfo> {
+            override fun createFromParcel(parcel: Parcel): AddedBooksInfo {
+                return AddedBooksInfo(parcel)
+            }
+
+            override fun newArray(size: Int): Array<AddedBooksInfo?> {
+                return arrayOfNulls(size)
+            }
+
+            fun createAddedBooksInfo(): AddedBooksInfo {
+                val books = listOf(Book("123", "What"), Book("444", "where"))
+                return AddedBooksInfo(4, books, "No One")
+            }
+        }
+
     }
 }
