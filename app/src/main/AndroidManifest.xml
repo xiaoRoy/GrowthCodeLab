@@ -40,7 +40,7 @@
         <activity android:name=".touchagain.TouchAgainActivity" />
         <activity
             android:name=".search.SearchActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/SearchActivity" />
         <activity android:name=".window.WindowActivity" />
         <activity android:name=".viewshowcase.ViewShowcaseActivity" />
         <activity android:name=".architecture.guide.ui.UserProfileActivity" />

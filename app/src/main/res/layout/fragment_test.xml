@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.learn.growthcodelab.view.TestViewModel" />
+<!--        <variable-->
+<!--            name="what"-->
+<!--            type="com.learn.growthcodelab.view.WhatViewModel" />-->
+        <variable
+            name="where"
+            type="com.learn.growthcodelab.view.WhereViewModel" />
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.learn.growthcodelab.view.TopChoiceLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:topChoice="@{viewModel.topChoice}"
+            />
+        <com.learn.growthcodelab.view.TopChoiceLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:topChoice="@={where.topChoice}"
+            />
+    </LinearLayout>
+</layout>

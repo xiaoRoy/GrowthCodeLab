@@ -31,14 +31,14 @@
         <item name="colorControlNormal">@android:color/holo_blue_dark</item>
         <item name="colorControlActivated">@android:color/holo_green_dark</item>
     </style>
-    
+
     <style name="CourtCounter" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/court_count_primary</item>
         <item name="colorPrimaryDark">@color/court_count_primary_dark</item>
         <item name="colorButtonNormal">@color/court_count_primary</item>
     </style>
 
-    <style name="TodoToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="TodoToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <!-- Base application theme. -->
     <style name="Navigation" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -49,5 +49,13 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
-    <style name="MaterialTheme" parent="Theme.MaterialComponents.Light.NoActionBar"/>
+    <style name="MaterialTheme" parent="Theme.MaterialComponents.Light.NoActionBar" />
+
+
+    <style name="SearchActivity" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="searchViewStyle">@style/SearchViewStyle</item>
+    </style>
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="searchIcon">@null</item>
+    </style>
 </resources>

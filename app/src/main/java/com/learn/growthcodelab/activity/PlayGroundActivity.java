@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.learn.growthcodelab.R;
 import com.learn.growthcodelab.databinding.notify.PhoneFragment;
+import com.learn.growthcodelab.databinding.twoway.SwitchFragment;
 import com.learn.growthcodelab.playground.OverdrawFragment;
 import com.learn.growthcodelab.viewshowcase.constraint.AddViewToConstraintFragment;
 
@@ -25,8 +26,8 @@ public class PlayGroundActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fl_play_ground_container,
-                        PhoneFragment.Companion.newInstance(),
-                        "phone")
+                        SwitchFragment.newInstance(),
+                        "switch")
                 .addToBackStack(null)
                 .commit();
     }

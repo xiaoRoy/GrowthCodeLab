@@ -173,4 +173,7 @@
     <string name="yellow">Yellow</string>
     <string name="green">Green</string>
     <string name="orange">Orange</string>
+
+    <string name="perform_search">Perform Search</string>
+    <string name="top_choice">Top Choice</string>
 </resources>

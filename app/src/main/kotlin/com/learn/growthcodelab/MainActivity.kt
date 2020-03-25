@@ -17,6 +17,7 @@ import com.learn.growthcodelab.jetpack.livedata.shared.ArticleActivity
 import com.learn.growthcodelab.material.MaterialActivity
 import com.learn.growthcodelab.navigation.NavigationActivity
 import com.learn.growthcodelab.rx.cheese.CheeseActivity
+import com.learn.growthcodelab.search.DictionaryActivity
 import com.learn.growthcodelab.search.SearchActivity
 import com.learn.growthcodelab.touchagain.TouchAgainActivity
 import com.learn.growthcodelab.viewshowcase.toolbar.ToolbarActivity
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_main_web_view to { context -> WebViewActivity.start(context) },
                 R.id.btn_main_measurement to { context -> MeasurementActivity.start(context) },
                 R.id.btn_main_drawable to { context -> DrawableActivity.start(context) },
-                R.id.btn_main_play_ground to { context -> CheeseActivity.start(context) },
+                R.id.btn_main_play_ground to { context -> PlayGroundActivity.start(context) },
                 R.id.btn_main_layout to { context -> LayoutActivity.start(context) },
                 R.id.btn_main_view_pager to { context -> ViewPagerActivity.start(context) },
                 R.id.btn_main_tab_host to { _ -> Unit },
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_main_full_screen to { context -> FullScreenActivity.start(context) },
                 R.id.btn_main_handler to { context -> HandlerActivity.start(context) },
                 R.id.btn_main_touch_again to { context -> TouchAgainActivity.start(context) },
-                R.id.btn_main_search to { context -> SearchActivity.start(context) },
+                R.id.btn_main_search to { context -> DictionaryActivity.start(context) },
                 R.id.btn_main_window to { context -> WindowActivity.start(context) },
                 R.id.btn_view_showcase to { context -> ToolbarActivity.start(context) },
                 R.id.btn_main_words to { context -> WordsActivity.start(context) },
