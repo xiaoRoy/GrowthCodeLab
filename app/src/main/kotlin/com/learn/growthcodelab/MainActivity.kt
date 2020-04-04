@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_main_touch_again to { context -> TouchAgainActivity.start(context) },
                 R.id.btn_main_search to { context -> SearchActivity.start(context) },
                 R.id.btn_main_window to { context -> WindowActivity.start(context) },
-                R.id.btn_view_showcase to { context -> ToolbarActivity.start(context) },
+                R.id.btn_view_showcase to { context -> PlayGroundActivity.start(context) },
                 R.id.btn_main_words to { context -> WordsActivity.start(context) },
                 R.id.btn_fragment_play_ground to { context -> FragmentPlayGroundActivity.start(context) },
                 R.id.btn_drawer to { context -> DrawerActivity.start(context) },
