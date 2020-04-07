@@ -24,6 +24,14 @@
             >
 
             <Button
+                android:id="@+id/btn_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{view -> viewModel.navigate(view.id)}"
+                android:text="@string/material"
+                />
+
+            <Button
                 android:id="@+id/btn_view_showcase"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

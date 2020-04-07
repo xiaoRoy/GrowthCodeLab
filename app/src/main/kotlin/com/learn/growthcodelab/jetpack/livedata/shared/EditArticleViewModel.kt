@@ -3,7 +3,6 @@ package com.learn.growthcodelab.jetpack.livedata.shared
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.learn.growthcodelab.architecture.mvvmlive.Event
 
 class EditArticleViewModel(private val sharedViewModel: ArticleSharedViewModel) : ViewModel() {
@@ -18,20 +17,20 @@ class EditArticleViewModel(private val sharedViewModel: ArticleSharedViewModel) 
 class EditArticleViewModelFactory private constructor(
         private val sharedViewModel: ArticleSharedViewModel
 ) : ViewModelProvider.NewInstanceFactory() {
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
 
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-
-        with(modelClass) {
+        return with(modelClass) {
             when {
                 isAssignableFrom(EditArticleViewModel::class.java) ->
                     EditArticleViewModel(sharedViewModel)
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }
-        }
+        } as T
 
-        return super.create(modelClass)
     }
+
     companion object {
 
         @Volatile
