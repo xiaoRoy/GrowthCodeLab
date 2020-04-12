@@ -71,7 +71,7 @@
         <activity android:name=".architecture.mvvmlive.addedittask.AddEditTaskActivity" />
         <activity
             android:name=".viewshowcase.toolbar.ToolbarActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".jetpack.livedata.shared.ArticleActivity" />
         <activity android:name=".activityfield.DuckActivity" />
         <activity android:name=".rx.cheese.CheeseActivity" />
@@ -82,6 +82,9 @@
             android:theme="@style/MaterialTheme"
             >
         </activity>
+        <activity android:name=".viewshowcase.viewpager2.ViewPager2Activity"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            />
     </application>
 
 </manifest>

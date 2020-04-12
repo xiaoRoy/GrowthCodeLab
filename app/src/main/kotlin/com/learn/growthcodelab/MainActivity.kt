@@ -21,6 +21,7 @@ import com.learn.growthcodelab.search.DictionaryActivity
 import com.learn.growthcodelab.search.SearchActivity
 import com.learn.growthcodelab.touchagain.TouchAgainActivity
 import com.learn.growthcodelab.viewshowcase.toolbar.ToolbarActivity
+import com.learn.growthcodelab.viewshowcase.viewpager2.ViewPager2Activity
 import com.learn.growthcodelab.window.WindowActivity
 import com.learn.growthcodelab.window.WindowInsetActivity
 import com.learn.growthcodelab.window.drawer.DrawerActivity
@@ -66,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_main_court_counter to { context -> CourtCounterActivity.start(context) },
                 R.id.btn_jet_pack to { context -> ArticleActivity.start(context) },
                 R.id.btn_navigation to { context -> NavigationActivity.start(context) },
-                R.id.btn_material to { context -> MaterialActivity.start(context)}
+                R.id.btn_material to { context -> ViewPager2Activity.start(context)}
         )
     }
 }
