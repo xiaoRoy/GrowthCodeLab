@@ -82,6 +82,7 @@
             android:theme="@style/MaterialTheme"
             >
         </activity>
+        <activity android:name=".mvx.mvc.view.BookListActivity" />
     </application>
 
 </manifest>
