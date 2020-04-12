@@ -25,14 +25,14 @@ class MaterialActivity : BaseActivity() {
 //                    lastCheckedId = checkedId
 //                }
 //            }
-            for(index in 0 until  chipGroupOptions.childCount) {
-                val child = chipGroupOptions.getChildAt(index)
-                if(child is Chip) {
-                    child.setOnTouchListener { view, event ->
-                        child.isChecked
-                    }
-                }
-            }
+//            for(index in 0 until  chipGroupOptions.childCount) {
+//                val child = chipGroupOptions.getChildAt(index)
+//                if(child is Chip) {
+//                    child.setOnTouchListener { view, event ->
+//                        child.isChecked
+//                    }
+//                }
+//            }
         }
 
     }
