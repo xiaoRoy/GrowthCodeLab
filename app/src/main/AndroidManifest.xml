@@ -82,6 +82,7 @@
             android:theme="@style/MaterialTheme"
             >
         </activity>
+        <activity android:name=".mvx.mvc.view.BookListActivity" />
         <activity android:name=".viewshowcase.viewpager2.ViewPager2Activity"
             android:theme="@style/Theme.MaterialComponents.Light"
             />
