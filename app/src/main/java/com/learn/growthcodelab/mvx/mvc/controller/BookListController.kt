@@ -8,7 +8,17 @@ class BookListController(
         private val bookListView: BookListView
 ) {
 
+    fun setup() {
+        bookListView.reorderBooksAction = {
+           bookListView.showBookList(booksDataModel.reorderBooks())
+        }
+    }
+
     fun showBookList() {
         bookListView.showBookList(booksDataModel.getAllBooks())
+    }
+
+    fun addBook(id: String, title: String) {
+
     }
 }

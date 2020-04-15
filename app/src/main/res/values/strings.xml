@@ -176,4 +176,7 @@
 
     <string name="perform_search">Perform Search</string>
     <string name="top_choice">Top Choice</string>
+
+    <string name="add_book">Add Book</string>
+    <string name="reorder">Reorder</string>
 </resources>

@@ -13,6 +13,8 @@ class BookListView {
 
     private lateinit var bookListAdapter: BookListAdapter
 
+    lateinit var reorderBooksAction: () -> Unit
+
     fun initView(activity: Activity) {
         binding = DataBindingUtil.setContentView(activity, R.layout.activity_book_list)
         bookListAdapter = BookListAdapter()
@@ -20,9 +22,15 @@ class BookListView {
             layoutManager = LinearLayoutManager(context)
             adapter = bookListAdapter
         }
+
+        binding.btnBookListReorder.setOnClickListener {
+            reorderBooksAction()
+        }
     }
 
     fun showBookList(bookList: List<Book>) {
         bookListAdapter.update(bookList)
     }
+
+
 }

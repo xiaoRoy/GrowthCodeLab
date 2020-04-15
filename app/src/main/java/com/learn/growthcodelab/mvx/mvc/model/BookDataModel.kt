@@ -4,10 +4,21 @@ import com.learn.growthcodelab.mvx.mvc.model.bean.Book
 
 class BookDataModel {
 
-    fun getAllBooks(): List<Book> {
-        return (0 until 44).map {
+    private val books: MutableList<Book> = mutableListOf()
+
+    init {
+        books.addAll((0 until 44).map {
             val id = it.toString()
             Book(id, "Book:$id")
-        }
+        })
+    }
+
+    fun getAllBooks(): List<Book> {
+        return books
+    }
+
+    fun reorderBooks(): List<Book> {
+        books.shuffle()
+        return books
     }
 }
