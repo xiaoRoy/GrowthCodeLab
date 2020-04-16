@@ -4,7 +4,7 @@ import com.learn.growthcodelab.R
 import com.learn.growthcodelab.mvx.mvc.model.bean.Book
 import com.learn.growthcodelab.recycler.BaseDataBindingAdapter
 
-class BookListAdapter(): BaseDataBindingAdapter() {
+class BookListAdapter : BaseDataBindingAdapter() {
 
     private val bookList: MutableList<Book> = mutableListOf()
 
@@ -20,11 +20,16 @@ class BookListAdapter(): BaseDataBindingAdapter() {
         return bookList.size
     }
 
-    fun update(bookList: List<Book>) {
-        if(bookList.isNotEmpty()) {
+    fun updateAllBooks(bookList: List<Book>) {
+        if (bookList.isNotEmpty()) {
             this.bookList.clear()
             this.bookList.addAll(bookList)
             notifyDataSetChanged()
         }
+    }
+
+    fun addBook(book: Book) {
+        bookList.add(book)
+        notifyItemChanged(bookList.size - 1)
     }
 }
