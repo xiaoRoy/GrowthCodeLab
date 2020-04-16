@@ -5,6 +5,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.databinding.ActivityBookListBinding
+import com.learn.growthcodelab.mvx.mvc.controller.BookListController
+import com.learn.growthcodelab.mvx.mvc.model.BookDataModel
 import com.learn.growthcodelab.mvx.mvc.model.bean.Book
 
 class BookListView {
@@ -13,7 +15,7 @@ class BookListView {
 
     private lateinit var bookListAdapter: BookListAdapter
 
-    lateinit var reorderBooksAction: () -> Unit
+    private var bookListController: BookListController = BookListController(BookDataModel(), this)
 
     fun initView(activity: Activity) {
         binding = DataBindingUtil.setContentView(activity, R.layout.activity_book_list)
@@ -24,13 +26,24 @@ class BookListView {
         }
 
         binding.btnBookListReorder.setOnClickListener {
-            reorderBooksAction()
+            bookListController.reorderBook()
+        }
+
+        binding.btnBookListAdd.setOnClickListener {
+            bookListController.addBook("New Book")
         }
     }
 
-    fun showBookList(bookList: List<Book>) {
-        bookListAdapter.update(bookList)
+    fun showAllBooks() {
+        bookListController.showBookList()
     }
 
+    fun showBookList(bookList: List<Book>) {
+        bookListAdapter.updateAllBooks(bookList)
+    }
+
+    fun displayNewlyAddedBook(book: Book) {
+        bookListAdapter.addBook(book)
+    }
 
 }

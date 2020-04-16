@@ -21,4 +21,9 @@ class BookDataModel {
         books.shuffle()
         return books
     }
+
+    fun addBook(title: String, onBookAdded: (Book) -> Unit) {
+        //net work...
+        onBookAdded(Book(books.size.toString(), title))
+    }
 }
