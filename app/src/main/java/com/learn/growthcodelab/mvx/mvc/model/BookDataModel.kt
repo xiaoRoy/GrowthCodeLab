@@ -2,9 +2,11 @@ package com.learn.growthcodelab.mvx.mvc.model
 
 import com.learn.growthcodelab.mvx.mvc.model.bean.Book
 
-class BookDataModel {
+class BookDataModel : BookObservable {
 
     private val books: MutableList<Book> = mutableListOf()
+
+    private val bookObservers: MutableSet<BookObserver> = mutableSetOf()
 
     init {
         books.addAll((0 until 44).map {
@@ -24,6 +26,19 @@ class BookDataModel {
 
     fun addBook(title: String, onBookAdded: (Book) -> Unit) {
         //net work...
-        onBookAdded(Book(books.size.toString(), title))
+        onBookAdded(Book(books.size.toString(), title).also { books.add(it) })
+    }
+
+    override fun registryObserver(bookObserver: BookObserver) {
+        bookObservers.add(bookObserver)
+    }
+
+    fun addBookActive(title: String) {
+        bookObservers.forEach { bookObserver ->
+            bookObserver.onBookAdded(Book(books.size.toString(), title).also { books.add(it) })
+        }
+    }
+
+    override fun removeObserver(bookObserver: BookObserver) {
     }
 }

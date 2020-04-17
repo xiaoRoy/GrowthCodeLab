@@ -32,6 +32,10 @@ class BookListView {
         binding.btnBookListAdd.setOnClickListener {
             bookListController.addBook("New Book")
         }
+
+        binding.btnBookListAddActive.setOnClickListener {
+            bookListController.addBookActive("Active New Book")
+        }
     }
 
     fun showAllBooks() {
