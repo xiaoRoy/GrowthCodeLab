@@ -30,6 +30,6 @@ class BookListAdapter : BaseDataBindingAdapter() {
 
     fun addBook(book: Book) {
         bookList.add(book)
-        notifyItemChanged(bookList.size - 1)
+        notifyItemInserted(bookList.size - 1)
     }
 }
