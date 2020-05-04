@@ -26,8 +26,11 @@ class NavHomeFragment : BaseFragment() {
                 popExit = R.anim.slide_out_right
             }
         }
+        val args = FlowStepFragmentArgs.Builder().apply {
+            flowStep = FlowStepFragment.STEP_ONE
+        }.build().toBundle()
         view.findViewById<Button>(R.id.navigate_destination_button).setOnClickListener {
-            findNavController().navigate(R.id.destination_nav_step_two, null, navOptions)
+            findNavController().navigate(R.id.destination_nav_step_one, args, navOptions)
         }
 
 
@@ -36,9 +39,7 @@ class NavHomeFragment : BaseFragment() {
          )*/
 
         view.findViewById<Button>(R.id.navigate_action_button).setOnClickListener {
-            findNavController().navigate(NavHomeFragmentDirections.actionFlowStepOne().apply {
-                flowStep = FlowStepFragment.STEP_ONE
-            })
+            findNavController().navigate(NavHomeFragmentDirections.actionFlowStepOne())
         }
     }
 }
