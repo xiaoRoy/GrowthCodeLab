@@ -11,17 +11,30 @@
         tools:layout="@layout/fragment_nav_home">
         <action
             android:id="@+id/action_flow_step_one"
-            app:destination="@id/destination_nav__step_one"
+            app:destination="@id/destination_nav_step_one"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             />
     </fragment>
     <fragment
-        android:id="@+id/destination_nav__step_one"
+        android:id="@+id/destination_nav_step_one"
         android:name="com.learn.growthcodelab.navigation.FlowStepFragment"
         android:label="@string/step_one"
         tools:layout="@layout/fragment_nav_flow_step_one">
+        <argument
+            android:name="flowStep"
+            app:argType="integer"
+            android:defaultValue="1"
+            />
         <action
             android:id="@+id/action_flow_step_two"
             app:destination="@id/destination_nav_step_two"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             />
     </fragment>
     <fragment
@@ -29,6 +42,18 @@
         android:name="com.learn.growthcodelab.navigation.FlowStepFragment"
         android:label="@string/step_two"
         tools:layout="@layout/fragment_nav_flow_step_two">
+
+        <argument
+            android:name="flowStep"
+            app:argType="integer"
+            android:defaultValue="2"
+            />
+        <action
+            android:id="@+id/action_back_to_home"
+            app:popUpTo="@id/destination_nav_home"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
 
     </fragment>
     <fragment
