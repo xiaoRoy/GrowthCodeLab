@@ -77,7 +77,9 @@
         <activity android:name=".rx.cheese.CheeseActivity" />
         <activity
             android:name=".navigation.NavigationActivity"
-            android:theme="@style/Navigation" />
+            android:theme="@style/Navigation"
+            android:parentActivityName=".MainActivity"
+            />
         <activity android:name=".material.MaterialActivity"
             android:theme="@style/MaterialTheme"
             >
@@ -86,6 +88,18 @@
         <activity android:name=".viewshowcase.viewpager2.ViewPager2Activity"
             android:theme="@style/Theme.MaterialComponents.Light"
             />
+
+        <receiver android:name=".navigation.DeepLinkAppWidgetProvider">
+            <intent-filter>
+                <action
+                    android:name="android.appwidget.action.APPWIDGET_UPDATE"
+                    />
+            </intent-filter>
+                <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/app_widget_info_deep_link"
+                    />
+        </receiver>
     </application>
 
 </manifest>
