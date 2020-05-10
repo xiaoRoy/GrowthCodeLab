@@ -9,4 +9,10 @@
     </declare-styleable>
 
     <attr name="unSelectable" format="boolean"/>
+
+    <declare-styleable name="FilterFlowLayout">
+        <attr name="maxCollapsedLine" format="integer"/>
+        <attr name="lineSpacing" />
+        <attr name="itemSpacing" />
+    </declare-styleable>
 </resources>
