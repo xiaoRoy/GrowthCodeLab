@@ -180,4 +180,5 @@
     <string name="add_book">Add Book</string>
     <string name="add_book_active">Add Book Active</string>
     <string name="reorder">Reorder</string>
+    <string name="clear_all">Clear All</string>
 </resources>
