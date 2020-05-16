@@ -13,13 +13,10 @@ import com.learn.growthcodelab.databinding.ActivityMainBinding
 import com.learn.growthcodelab.fragment.FragmentPlayGroundActivity
 import com.learn.growthcodelab.fullscreen.FullScreenActivity
 import com.learn.growthcodelab.handler.HandlerActivity
+import com.learn.growthcodelab.jetpack.lifecycle.LifeCycleActivity
 import com.learn.growthcodelab.jetpack.livedata.shared.ArticleActivity
-import com.learn.growthcodelab.material.MaterialActivity
-import com.learn.growthcodelab.mvx.mvc.view.BookListActivity
 import com.learn.growthcodelab.navigation.NavigationActivity
-import com.learn.growthcodelab.rx.cheese.CheeseActivity
 import com.learn.growthcodelab.search.DictionaryActivity
-import com.learn.growthcodelab.search.SearchActivity
 import com.learn.growthcodelab.touchagain.TouchAgainActivity
 import com.learn.growthcodelab.viewshowcase.toolbar.ToolbarActivity
 import com.learn.growthcodelab.viewshowcase.viewpager2.ViewPager2Activity
@@ -35,12 +32,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
         mainActivityViewModel.getNavigation().observe(this, Observer {
-                    it.getContentIfNotHandled()?.let { destination ->
-                        navigationMap[destination]?.invoke(this@MainActivity)
-                    }
-                })
+            it.getContentIfNotHandled()?.let { destination ->
+                navigationMap[destination]?.invoke(this@MainActivity)
+            }
+        })
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main).apply {
-            viewModel =  mainActivityViewModel
+            viewModel = mainActivityViewModel
         }
     }
 
@@ -51,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_main_web_view to { context -> WebViewActivity.start(context) },
                 R.id.btn_main_measurement to { context -> MeasurementActivity.start(context) },
                 R.id.btn_main_drawable to { context -> DrawableActivity.start(context) },
-                R.id.btn_main_play_ground to { context -> BookListActivity.start(context) },
+                R.id.btn_main_play_ground to { context -> LifeCycleActivity.start(context) },
                 R.id.btn_main_layout to { context -> LayoutActivity.start(context) },
                 R.id.btn_main_view_pager to { context -> ViewPagerActivity.start(context) },
                 R.id.btn_main_tab_host to { _ -> Unit },
@@ -68,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_main_court_counter to { context -> CourtCounterActivity.start(context) },
                 R.id.btn_jet_pack to { context -> ArticleActivity.start(context) },
                 R.id.btn_navigation to { context -> NavigationActivity.start(context) },
-                R.id.btn_material to { context -> ViewPager2Activity.start(context)}
+                R.id.btn_material to { context -> ViewPager2Activity.start(context) }
         )
     }
 }
