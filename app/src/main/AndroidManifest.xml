@@ -88,6 +88,7 @@
         <activity android:name=".viewshowcase.viewpager2.ViewPager2Activity"
             android:theme="@style/Theme.MaterialComponents.Light"
             />
+        <activity android:name=".jetpack.lifecycle.LifeCycleActivity" />
 
         <receiver android:name=".navigation.DeepLinkAppWidgetProvider">
             <intent-filter>
