@@ -1,6 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+
 buildscript {
+    ext {
+        nav_version = "2.1.0"
+    }
+
     repositories {
         mavenCentral()
         google()
@@ -9,8 +14,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$project.android_plugin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$project.kotlin_version"
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
     }
 }
 
@@ -30,7 +34,7 @@ ext {
     rx_java_version = '2.2.10'
     rx_android_version = '2.1.1'
     rx_binding_version = '3.0.0-alpha2'
-    nav_version = "2.1.0"
+
 //    kotlin_version = project.kotlin_version
 //    android_plugin_version = project.android_plugin_version
 }
@@ -53,6 +57,7 @@ subprojects {
         apply plugin: 'kotlin-android'
         apply plugin: 'kotlin-android-extensions'
         apply plugin: 'kotlin-kapt'
+        apply plugin: "androidx.navigation.safeargs"
 
         android {
             kotlinOptions {
@@ -101,8 +106,8 @@ subprojects {
             androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
                 exclude group: 'com.android.support', module: 'support-annotations'
             })
-            implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-            implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+            implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.nav_version"
+            implementation "androidx.navigation:navigation-ui-ktx:$rootProject.nav_version"
 
 
             testImplementation "junit:junit:$rootProject.ext.jUnitVersion"

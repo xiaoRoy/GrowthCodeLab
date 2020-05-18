@@ -39,4 +39,7 @@
     <dimen name="padding_small">16dp</dimen>
     <dimen name="floating_action_button_margin">16dp</dimen>
     <dimen name="cheese_height">56dp</dimen>
+
+    <dimen name="widget_min_width">110dp</dimen>
+    <dimen name="widget_min_height">40dp</dimen>
 </resources>
