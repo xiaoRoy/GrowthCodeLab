@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.learn.growthcodelab.R
 import com.learn.growthcodelab.fragment.BaseFragment
+import com.learn.growthcodelab.navigation.game.GameActivity
 
 class NavHomeFragment : BaseFragment() {
 
@@ -40,6 +41,10 @@ class NavHomeFragment : BaseFragment() {
 
         view.findViewById<Button>(R.id.navigate_action_button).setOnClickListener {
             findNavController().navigate(NavHomeFragmentDirections.actionFlowStepOne())
+        }
+
+        view.findViewById<Button>(R.id.btn_to_game).setOnClickListener {
+            findNavController().navigate(NavHomeFragmentDirections.actionGame())
         }
     }
 }
