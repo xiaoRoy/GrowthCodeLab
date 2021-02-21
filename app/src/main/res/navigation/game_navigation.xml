@@ -1,7 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/game_navigation"
-    >
+    app:startDestination="@id/game_entrance">
+    <fragment
+        android:id="@+id/game_entrance"
+        android:name="com.learn.growthcodelab.navigation.game.GameEntranceFragment"
+        android:label="game entrance"
+        tools:layout="@layout/fragment_game_entrance">
+        <action
+            android:id="@+id/action_navigate_to_register"
+            app:destination="@id/game_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/game_register"
+        android:name="com.learn.growthcodelab.navigation.game.GameRegisterFragment"
+        android:label="game sign up"
+        tools:layout="@layout/fragment_game_register">
+
+        <action
+            android:id="@+id/action_navigate_to_game_match"
+            app:destination="@+id/game_match" />
+    </fragment>
 
 
+    <fragment
+        android:id="@+id/game_match"
+        android:name="com.learn.growthcodelab.navigation.game.MatchFragment"
+        android:label="game match"
+        tools:layout="@layout/fragment_match">
+
+        <action
+            android:id="@+id/action_navigate_to_in_game"
+            app:destination="@+id/game_in_game" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/game_in_game"
+        android:name="com.learn.growthcodelab.navigation.game.InGameFragment"
+        android:label="in game"
+        tools:layout="@layout/fragment_in_game">
+        <action
+            android:id="@+id/action_navigate_to_game_over"
+            app:destination="@id/game_game_over" />
+        <action
+            android:id="@+id/action_navigate_to_game_result_winner"
+            app:destination="@id/game_result_winner" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/game_game_over"
+        android:name="com.learn.growthcodelab.navigation.game.GameOverFragment"
+        android:label="game over"
+        tools:layout="@layout/fragment_game_over">
+        <action
+            android:id="@+id/action_navigate_to_game_match"
+            app:destination="@id/game_match" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/game_result_winner"
+        android:name="com.learn.growthcodelab.navigation.game.ResultWinnerFragment"
+        android:label="result winner"
+        tools:layout="@layout/fragment_result_winner">
+        <action
+            android:id="@+id/action_navigate_to_game_match"
+            app:destination="@id/game_match" />
+    </fragment>
 </navigation>

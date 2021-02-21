@@ -21,4 +21,9 @@
     <color name="option_stroke_selectable">#71777f</color>
     <color name="option_stroke_un_selectable">#9699a0</color>
 
+    <color name="game_match_background">#444</color>
+    <color name="in_game_background">#7dffff</color>
+    <color name="result_winner_background">#B7F8C9</color>
+    <color name="game_over_background">#FF897D</color>
+
 </resources>
