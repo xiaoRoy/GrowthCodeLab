@@ -164,6 +164,8 @@
     <string name="shopping_fragment_text">Shopping Fragment</string>
     <string name="navigate_destination_button">Navigate to destination</string>
     <string name="navigate_action_button">Navigate with action</string>
+    <string name="navigate_to_game">Navigate to game</string>
+    <string name="game">Game</string>
     <string name="next_step_button">Navigate next step</string>
     <string name="finish_button">Finish Flow</string>
     <string name="send_deep_link_notification_button">Send deep link notification</string>

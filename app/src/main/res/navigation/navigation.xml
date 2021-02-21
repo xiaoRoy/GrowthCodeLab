@@ -16,6 +16,11 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_game"
+            app:destination="@+id/destination_game"
+            />
     </fragment>
     <fragment
         android:id="@+id/destination_nav_step_one"
@@ -61,4 +66,14 @@
         android:name="com.learn.growthcodelab.navigation.NavDeepLinkFragment"
         android:label="@string/deep_link"
         tools:layout="@layout/fragment_navigation_deep_link" />
+
+
+    <activity
+        android:id="@+id/destination_game"
+        android:name="com.learn.growthcodelab.navigation.game.GameActivity"
+        android:label="@string/game"
+        tools:layout="@layout/activity_game"
+        >
+
+    </activity>
 </navigation>
