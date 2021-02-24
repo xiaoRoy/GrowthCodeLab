@@ -169,6 +169,13 @@
     <string name="next_step_button">Navigate next step</string>
     <string name="finish_button">Finish Flow</string>
     <string name="send_deep_link_notification_button">Send deep link notification</string>
+    <string name="start">START</string>
+    <string name="first_option">First Option</string>
+    <string name="second_option">Second Option</string>
+    <string name="next_match">Next Match</string>
+    <string name="try_again">Try Again?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="play">Play</string>
 
     <string name="red">Red</string>
     <string name="blue">Blue</string>
