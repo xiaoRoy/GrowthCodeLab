@@ -14,46 +14,17 @@
 
         <action
             android:id="@+id/action_navigate_to_in_game"
-            app:destination="@+id/game_in_game" />
+            app:destination="@+id/navigation_game_in_game" />
 
-        <action android:id="@+id/action_navigate_nested_game_entrance"
-            app:destination="@+id/navigation_game_entrance"
-            />
+        <action
+            android:id="@+id/action_navigate_nested_game_entrance"
+            app:destination="@+id/navigation_game_entrance" />
     </fragment>
 
-    <fragment
-        android:id="@+id/game_in_game"
-        android:name="com.learn.growthcodelab.navigation.game.InGameFragment"
-        android:label="in game"
-        tools:layout="@layout/fragment_in_game">
-        <action
-            android:id="@+id/action_navigate_to_game_over"
-            app:destination="@id/game_game_over" />
-        <action
-            android:id="@+id/action_navigate_to_game_result_winner"
-            app:destination="@id/game_result_winner" />
-    </fragment>
+    <include app:graph="@navigation/navigation_game_nested_in_game" />
 
-    <fragment
-        android:id="@+id/game_game_over"
-        android:name="com.learn.growthcodelab.navigation.game.GameOverFragment"
-        android:label="game over"
-        tools:layout="@layout/fragment_game_over">
-        <action
-            android:id="@+id/action_navigate_to_game_match"
-            app:destination="@id/game_match" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/game_result_winner"
-        android:name="com.learn.growthcodelab.navigation.game.ResultWinnerFragment"
-        android:label="result winner"
-        tools:layout="@layout/fragment_result_winner">
-        <action
-            android:id="@+id/action_navigate_to_game_match"
-            app:destination="@id/game_match" />
-    </fragment>
-    <navigation android:id="@+id/navigation_game_entrance"
+    <navigation
+        android:id="@+id/navigation_game_entrance"
         app:startDestination="@id/game_entrance">
         <fragment
             android:id="@+id/game_entrance"
